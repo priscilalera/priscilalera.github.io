@@ -1,0 +1,309 @@
+/* ==========================================================================
+   CASO DE ESTUDIO — plantilla compartida por todos los proyectos
+   ========================================================================== */
+
+.progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 70;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+/* ---- Hero del caso --------------------------------------------------- */
+
+.case-hero {
+  padding-top: calc(var(--header-h) + var(--space-2xl));
+  padding-bottom: var(--space-3xl);
+}
+.case-hero__top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-m);
+  padding-bottom: var(--space-s);
+  margin-bottom: var(--space-3xl);
+  border-bottom: 1px solid var(--border);
+}
+.case-hero__meta { color: var(--text-muted); }
+
+.case-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 1rem + 12vw, 12rem);
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+}
+.case-hero__intro {
+  display: grid;
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+}
+@media (min-width: 60rem) {
+  .case-hero__intro { grid-template-columns: 7fr 5fr; align-items: end; column-gap: var(--gutter); }
+}
+.case-hero__lead { font-size: var(--fs-lead); max-width: 40ch; }
+.case-hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-s); }
+@media (min-width: 60rem) { .case-hero__actions { justify-content: flex-end; } }
+
+.case-cover { margin-top: var(--space-3xl); }
+.case-cover .showcase { aspect-ratio: 16 / 9; }
+.case-cover .showcase__bg { inset: 0; }
+.case-cover .showcase__phone { width: 19%; }
+.case-cover .showcase__phone--a { left: 30%; top: 8%; }
+.case-cover .showcase__phone--b { left: 52%; top: 14%; }
+.case-cover .showcase__logo { width: 22%; left: 4%; bottom: 8%; }
+.case-cover .zw-piece--poster { left: 14%; top: 8%; width: 24%; }
+.case-cover .zw-piece--logo   { right: 18%; top: 12%; width: 20%; }
+.case-cover .zw-piece--app    { right: 24%; bottom: 8%; width: 28%; }
+
+@media (max-width: 40rem) {
+  .case-cover .showcase { aspect-ratio: 4 / 5; }
+  .case-cover .showcase__phone { width: 40%; }
+  .case-cover .showcase__phone--a { left: 8%; top: 6%; }
+  .case-cover .showcase__phone--b { left: 52%; top: 14%; }
+  .case-cover .showcase__logo { width: 46%; left: 6%; bottom: 5%; }
+  .case-cover .zw-piece--poster { left: 8%; top: 6%; width: 50%; }
+  .case-cover .zw-piece--logo   { right: 8%; top: 12%; width: 36%; }
+  .case-cover .zw-piece--app    { right: 8%; bottom: 6%; width: 60%; }
+}
+
+/* ---- Ficha técnica --------------------------------------------------- */
+
+.case-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0 var(--gutter);
+  padding-block: var(--space-xl) var(--space-4xl);
+}
+.case-facts > div {
+  padding-block: var(--space-m);
+  border-top: 1px solid var(--text);
+}
+.case-facts dt { color: var(--text-muted); margin-bottom: var(--space-xs); }
+.case-facts dd { font-size: 0.9375rem; }
+
+/* ---- Cuerpo: índice lateral + secciones ------------------------------ */
+
+.case-body {
+  display: grid;
+  gap: var(--space-2xl);
+  padding-bottom: var(--section);
+}
+@media (min-width: 64rem) {
+  .case-body {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gutter);
+  }
+  .case-toc  { grid-column: 1 / span 3; }
+  .case-main { grid-column: 4 / -1; }
+}
+
+.case-toc { display: none; }
+@media (min-width: 64rem) {
+  .case-toc { display: block; }
+  .case-toc__inner { position: sticky; top: calc(var(--header-h) + 2rem); }
+}
+.case-toc__title { color: var(--text-muted); margin-bottom: var(--space-m); }
+.case-toc ol { display: grid; gap: 0.15rem; }
+.case-toc a {
+  display: flex;
+  gap: var(--space-s);
+  padding-block: 0.3rem;
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  text-decoration: none;
+  transition: color var(--dur-fast), transform var(--dur-base) var(--ease-out);
+}
+.case-toc a span { font-family: var(--font-mono); font-size: 0.6875rem; padding-top: 0.2em; }
+.case-toc a:hover { color: var(--text); }
+.case-toc a.is-active { color: var(--text); transform: translateX(6px); }
+.case-toc a.is-active span { color: var(--accent); }
+
+.case-section {
+  padding-block: var(--space-3xl);
+  border-top: 1px solid var(--border);
+}
+.case-section:first-child { border-top: 0; padding-top: 0; }
+.case-section__num { color: var(--accent); margin-bottom: var(--space-m); }
+.case-section__title {
+  margin-bottom: var(--space-l);
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 1.5rem + 2.6vw, 3.75rem);
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+.case-section__text {
+  max-width: 62ch;
+  color: var(--text-muted);
+}
+.case-section__text + .case-section__text { margin-top: var(--space-m); }
+.case-section__text strong { color: var(--text); font-weight: 500; }
+
+.case-media { margin-top: var(--space-2xl); }
+.case-media figcaption { margin-top: var(--space-s); }
+
+.media-grid {
+  display: grid;
+  gap: var(--space-m);
+  margin-top: var(--space-2xl);
+}
+.media-grid--2 { grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+.media-grid--3 { grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); }
+.media-grid--4 { grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); }
+.media-grid figure { display: grid; gap: var(--space-s); }
+
+/* Pantallas en fila */
+.screens {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: var(--space-l);
+  margin-top: var(--space-2xl);
+  padding: clamp(1.5rem, 1rem + 3vw, 3.5rem);
+  border-radius: var(--radius-l);
+  background: var(--c-rose-mist);
+}
+.screens .phone { transition: transform var(--dur-slow) var(--ease-out); }
+.screens .phone:hover { transform: translateY(-8px); }
+
+/* Pasos del proceso */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: var(--space-m);
+  margin-top: var(--space-2xl);
+  counter-reset: step;
+}
+.step {
+  padding: var(--space-l);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  background: var(--surface);
+  transition: border-color var(--dur-base), transform var(--dur-base) var(--ease-out);
+}
+.step:hover { border-color: var(--accent); transform: translateY(-3px); }
+.step::before {
+  counter-increment: step;
+  content: "0" counter(step);
+  display: block;
+  margin-bottom: var(--space-l);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+}
+.step__title { font-weight: 500; margin-bottom: 0.25rem; }
+.step__text { color: var(--text-muted); font-size: var(--fs-sm); }
+
+/* ---- Specimen del Design System ------------------------------------- */
+
+.ds {
+  display: grid;
+  gap: var(--space-m);
+  margin-top: var(--space-2xl);
+}
+@media (min-width: 48rem) { .ds { grid-template-columns: repeat(2, 1fr); } }
+
+.ds-card {
+  padding: var(--space-l);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  background: var(--surface);
+}
+.ds-card__label {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-muted);
+  margin-bottom: var(--space-l);
+}
+.ds-swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-xs); }
+.ds-swatches .ph { --ph-radius: var(--radius-s); --ratio: 1; }
+.ds-type { display: grid; gap: var(--space-xs); }
+.ds-type__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-m);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px dashed var(--border);
+}
+.ds-type__row span:last-child { color: var(--text-muted); }
+.ds-components { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+.ds-components .ph { --ph-radius: var(--radius-pill); --ratio: auto; height: 2.75rem; padding-inline: 1.25rem; }
+
+/* ---- Galería horizontal (manual de marca) --------------------------- */
+
+.rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(14rem, 32%);
+  gap: var(--space-m);
+  margin-top: var(--space-2xl);
+  padding-bottom: var(--space-m);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
+}
+.rail > * { scroll-snap-align: start; }
+.rail:focus-visible { outline-offset: 6px; }
+.rail-hint { margin-top: var(--space-xs); color: var(--text-muted); }
+
+/* ---- Siguiente proyecto --------------------------------------------- */
+
+.next-project {
+  padding-block: var(--section);
+  background: var(--bg);
+  color: var(--text);
+}
+.next-project__link {
+  display: grid;
+  gap: var(--space-m);
+  text-decoration: none;
+}
+.next-project__label { color: var(--text-muted); }
+.next-project__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.3em;
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 1rem + 10vw, 10rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+.next-project__arrow {
+  color: var(--accent);
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+.next-project__link:hover .next-project__arrow { transform: translateX(0.15em); }
+.next-project__link:hover .next-project__name { font-style: italic; }
+
+/* ---- Tema propio de Zombie Walk -------------------------------------- *
+ * El caso adopta la paleta de su marca. Valores provisionales hasta
+ * recibir el manual: se reemplazan solo estos tokens.                  */
+
+.theme-zombie {
+  --bg:         #121112;
+  --surface:    #1B1A1B;
+  --text:       #EDEBEA;
+  --text-muted: #A6A2A0;
+  --border:     #2F2D2E;
+  --accent:     var(--c-rose);
+  --accent-ink: #121112;
+  --focus:      var(--c-rose);
+}
+.theme-zombie .ph {
+  --ph-bg: #1E1D1E;
+  --ph-line: rgb(237 235 234 / 0.05);
+  --ph-border: #3A3839;
+  --ph-ink: #A6A2A0;
+}
+.theme-zombie .site-header { --text: #EDEBEA; --text-muted: #A6A2A0; --accent: var(--c-rose); }
+.theme-zombie .site-header.is-scrolled {
+  background: color-mix(in srgb, #121112 82%, transparent);
+  border-color: #2F2D2E;
+}
+.theme-zombie .site-nav .site-nav__cta:hover { color: #121112; }
+.theme-zombie .screens { background: var(--surface); }

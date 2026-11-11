@@ -1,0 +1,143 @@
+/* ==========================================================================
+   MOVIMIENTO
+   Todo el movimiento vive dentro de "prefers-reduced-motion: no-preference".
+   Si la persona pidió reducir el movimiento, el sitio se muestra estático y
+   completo: ningún contenido depende de una animación para ser visible.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  /* ---- Entrada del hero ------------------------------------------- */
+
+  .hero__title .line__inner {
+    animation: line-rise var(--dur-reveal) var(--ease-out) both;
+    animation-delay: calc(150ms + var(--i, 0) * 110ms);
+  }
+
+  .hero__portrait-frame {
+    animation: unveil 1300ms var(--ease-in-out) 250ms both;
+  }
+  .hero__portrait .dim,
+  .hero__caption {
+    animation: fade-in var(--dur-slow) var(--ease-out) 1100ms both;
+  }
+
+  .intro-fade {
+    animation: fade-up var(--dur-slow) var(--ease-out) both;
+    animation-delay: calc(450ms + var(--i, 0) * 120ms);
+  }
+
+  .pulse::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: inherit;
+    animation: pulse 2.4s var(--ease-out) infinite;
+  }
+
+  /* ---- Aparición al hacer scroll ----------------------------------- *
+   * Solo se oculta el contenido si hay JS para mostrarlo después.      */
+
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(32px);
+    transition:
+      opacity var(--dur-reveal) var(--ease-out),
+      transform var(--dur-reveal) var(--ease-out);
+  }
+  .js [data-reveal].is-in { opacity: 1; transform: none; }
+
+  .js [data-reveal-stagger] { transform: none; opacity: 1; }
+  .js [data-reveal-stagger] > * {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity var(--dur-reveal) var(--ease-out),
+      transform var(--dur-reveal) var(--ease-out);
+    transition-delay: calc(var(--i, 0) * 90ms);
+  }
+  .js [data-reveal-stagger].is-in > * { opacity: 1; transform: none; }
+
+  /* ---- Efectos ligados al scroll (mejora progresiva) --------------- */
+
+  @supports (animation-timeline: view()) {
+    /* La "sala" se expande hasta ocupar todo el ancho al entrar */
+    .stage {
+      animation: stage-open linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+
+    /* Profundidad: cada capa se desplaza a distinta velocidad */
+    .parallax {
+      animation: drift linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
+  }
+
+  @supports (animation-timeline: scroll()) {
+    .progress {
+      animation: grow-x linear both;
+      animation-timeline: scroll(root);
+    }
+  }
+
+  /* ---- Transiciones entre páginas (Chrome/Edge; el resto navega normal) */
+
+  @view-transition { navigation: auto; }
+
+  .vt-visual-fullescabio { view-transition-name: visual-fullescabio; }
+  .vt-title-fullescabio  { view-transition-name: title-fullescabio; }
+  .vt-visual-zombie      { view-transition-name: visual-zombie; }
+  .vt-title-zombie       { view-transition-name: title-zombie; }
+
+  ::view-transition-group(*) {
+    animation-duration: 600ms;
+    animation-timing-function: var(--ease-in-out);
+  }
+}
+
+/* ---- Keyframes ------------------------------------------------------ */
+
+@keyframes line-rise {
+  from { transform: translateY(105%); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes unveil {
+  from { clip-path: inset(100% 0 0 0 round 999px 999px 14px 14px); transform: scale(1.04); }
+  to   { clip-path: inset(0 0 0 0 round 999px 999px 14px 14px);    transform: none; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1);   opacity: 0.6; }
+  70%  { transform: scale(2.6); opacity: 0; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+
+@keyframes stage-open {
+  from { clip-path: inset(0 var(--gutter) 0 var(--gutter) round var(--radius-l)); }
+  to   { clip-path: inset(0 0 0 0 round var(--radius-l) var(--radius-l) 0 0); }
+}
+
+@keyframes drift {
+  from { translate: 0 calc(var(--drift, 30px) * -1); }
+  to   { translate: 0 var(--drift, 30px); }
+}
+
+@keyframes grow-x {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}

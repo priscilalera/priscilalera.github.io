@@ -1,0 +1,407 @@
+/* ==========================================================================
+   PROPUESTA B · ITERACIÓN 3
+   Se carga ENCIMA de direccion-b.css y direccion-b2.css.
+   El hero conserva estructura, proporciones y animaciones: solo cambia
+   la tipografía de "Lera" y la foto ocupa el lugar del placeholder.
+   ========================================================================== */
+
+/* ---- 1. Serif de prueba: Ogg y Canela ------------------------------- *
+ * Son fuentes comerciales (Sharp Type y Commercial Type). Sus versiones
+ * de prueba solo permiten evaluación privada, nunca publicar en la web.
+ * Para verlas en este prototipo local:
+ *   a) instalar las fuentes de prueba en la computadora (las toma local()), o
+ *   b) copiar los archivos en assets/fonts/ogg/ y assets/fonts/canela/
+ *      con los nombres indicados abajo.
+ * Si no están disponibles, el navegador usa su serif genérica y la página
+ * lo avisa. NO se reemplazan por otras familias parecidas.               */
+
+@font-face {
+  font-family: "Ogg Prueba";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Ogg Regular"), local("Ogg-Regular"), local("Ogg Roman"), local("Ogg-Roman"),
+       local("Ogg TRIAL Regular"), local("OggTRIAL-Regular"),
+       url("../assets/fonts/ogg/Ogg-Regular.woff2") format("woff2"),
+       url("../assets/fonts/ogg/Ogg-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Ogg Prueba";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Ogg Italic"), local("Ogg-Italic"),
+       local("Ogg TRIAL Italic"), local("OggTRIAL-Italic"),
+       url("../assets/fonts/ogg/Ogg-Italic.woff2") format("woff2"),
+       url("../assets/fonts/ogg/Ogg-Italic.otf") format("opentype");
+}
+@font-face {
+  font-family: "Canela Prueba";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Canela Regular"), local("Canela-Regular"),
+       local("Canela Trial Regular"), local("CanelaTrial-Regular"),
+       url("../assets/fonts/canela/Canela-Regular.woff2") format("woff2"),
+       url("../assets/fonts/canela/Canela-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Canela Prueba";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Canela Regular Italic"), local("Canela-RegularItalic"),
+       local("Canela Trial Regular Italic"), local("CanelaTrial-RegularItalic"),
+       url("../assets/fonts/canela/Canela-RegularItalic.woff2") format("woff2"),
+       url("../assets/fonts/canela/Canela-RegularItalic.otf") format("opentype");
+}
+
+/* La serif activa se elige con una clase en <html> (barra de revisión).
+   B2 ya usa --font-accent en todos los acentos: alcanza con redefinirla. */
+.type-ogg    { --font-accent: "Ogg Prueba", serif;    --accent-label: "Ogg · Italic"; }
+.type-canela { --font-accent: "Canela Prueba", serif; --accent-label: "Canela · Italic"; }
+
+/* ---- 2. Dónde aparece la serif (y solo ahí) ------------------------- *
+ * Itálica: "Lera", una palabra por título de sección, una palabra en el
+ *          texto del hero y en Sobre mí.
+ * Redonda: "Hablemos." (título destacado del cierre).                    */
+
+.accent,
+.section-title em,
+.system-card__title em,
+.contact-b3__lead em {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.06em;
+  letter-spacing: -0.01em;
+}
+.hero-b__lead .accent { font-size: 1.08em; }
+
+/* "Lera": mismo tamaño, lugar y animación; cambia solo la familia */
+.hero-b__word--light {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+.hero-b__dot { font-family: var(--font-display); font-style: normal; }
+
+.text-select__box::after { content: var(--accent-label); }
+
+/* ---- 3. Foto del hero ------------------------------------------------ */
+
+.canvas__photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 20%;
+  border-radius: 999px 999px var(--radius-m) var(--radius-m);
+  background: var(--c-line);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .canvas__photo { transition: transform var(--dur-slow) var(--ease-out); }
+  .canvas:hover .canvas__photo { transform: scale(1.02); }
+}
+
+/* ---- 4. Carrusel: sin barra, flechas a los lados --------------------- */
+
+.disc { position: relative; }
+.disc__progress { display: none; }
+
+.disc__nav {
+  position: absolute;
+  inset: 2.15rem 0 1rem;   /* alto de la cabecera / respiro inferior del carril */
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.disc__btn {
+  border-color: var(--c-line);
+  background: var(--c-white);
+  box-shadow: 0 10px 24px -14px rgb(28 28 28 / 0.45);
+  pointer-events: auto;
+  transition: opacity var(--dur-base) var(--ease-out), visibility var(--dur-base),
+              background-color var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out);
+}
+.disc__btn[data-carousel-prev] { translate: -50% 0; }
+.disc__btn[data-carousel-next] { translate: 50% 0; }
+.disc__btn:disabled { opacity: 0; visibility: hidden; }
+.disc__btn:hover:not(:disabled) { border-color: var(--c-ink); }
+
+@media (max-width: 40rem) {
+  .disc__btn { width: 2.5rem; height: 2.5rem; }
+  .disc__btn[data-carousel-prev] { translate: -0.25rem 0; }
+  .disc__btn[data-carousel-next] { translate: 0.25rem 0; }
+}
+
+/* ---- 5. Logos de herramientas ---------------------------------------- *
+ * Monocromos (tinta sobre gris claro): misma escala y peso visual para
+ * todos, sin sumar los colores de cada marca a la paleta.                */
+
+.tool-groups--b2 .tool__mark {
+  color: var(--c-ink);
+  background: var(--c-paper);
+}
+.tool__mark svg { width: 1.375rem; height: 1.375rem; fill: currentColor; }
+
+/* Anula la inversión de color de la versión anterior: solo rota */
+.tool:hover .tool__mark,
+.tool.is-tapped .tool__mark {
+  background: var(--c-paper);
+  color: var(--c-ink);
+  transform: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .tool-groups--b2 .tool__mark {
+    transition: transform 520ms cubic-bezier(0.34, 1.4, 0.64, 1), box-shadow var(--dur-base);
+  }
+  .tool:hover .tool__mark,
+  .tool.is-tapped .tool__mark {
+    transform: rotate(-10deg) scale(1.06);
+    box-shadow: 0 8px 16px -10px rgb(28 28 28 / 0.4);
+  }
+}
+
+/* ---- 6. Contacto + cierre -------------------------------------------- */
+
+.contact-b3 { padding-block: var(--section) var(--space-3xl); }
+
+.contact-b3__grid { display: grid; gap: var(--space-2xl) var(--gutter); }
+@media (min-width: 60rem) {
+  .contact-b3__grid { grid-template-columns: repeat(12, minmax(0, 1fr)); align-items: end; }
+  .contact-b3__intro { grid-column: 1 / span 5; }
+  .contact-b3__main  { grid-column: 7 / -1; }
+}
+
+.contact-b3__intro .eyebrow { margin-bottom: var(--space-xl); }
+.contact-b3__title {
+  margin-bottom: var(--space-l);
+  font-family: var(--font-accent);
+  font-size: clamp(3.25rem, 1.8rem + 4.6vw, 6.5rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+.contact-b3__title span { color: var(--accent); }
+.contact-b3__lead { max-width: 34ch; color: var(--text-muted); font-size: var(--fs-lead); line-height: 1.5; }
+
+.contact-b3__key { margin-bottom: var(--space-xs); color: var(--text-muted); }
+
+.contact-b3__email {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-s) var(--space-m);
+  padding-bottom: var(--space-l);
+  border-bottom: 1px solid var(--border);
+}
+.contact-b3__email-link {
+  font-size: clamp(1.375rem, 1rem + 1.6vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  background: linear-gradient(var(--accent), var(--accent)) 0 100% / 0% 1px no-repeat;
+  transition: background-size var(--dur-slow) var(--ease-out), color var(--dur-base);
+}
+.contact-b3__email-link:hover { background-size: 100% 1px; color: var(--accent); }
+
+.contact-b3__copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.5rem;
+  padding: 0 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color var(--dur-base), color var(--dur-base);
+}
+.contact-b3__copy .icon { width: 1rem; height: 1rem; }
+.contact-b3__copy:hover { border-color: var(--accent); color: var(--accent); }
+
+.contact-b3__cursor { right: 1.5rem; bottom: -0.2rem; }
+
+.contact-b3__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs) var(--space-l);
+  padding-top: var(--space-l);
+}
+.contact-b3__cv { margin-left: auto; }
+
+.xlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  color: var(--text);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.xlink .icon { width: 1.15rem; height: 1.15rem; color: var(--text-muted); transition: color var(--dur-base), transform var(--dur-base) var(--ease-out); }
+.xlink__arrow { color: var(--text-muted); font-size: 0.8em; transition: transform var(--dur-base) var(--ease-out), color var(--dur-base); }
+.xlink .tbd-tag { margin-inline-start: 0; }
+a.xlink:not([aria-disabled]):hover .icon,
+a.xlink:not([aria-disabled]):hover .xlink__arrow { color: var(--accent); }
+a.xlink:not([aria-disabled]):hover .xlink__arrow { transform: translate(2px, -2px); }
+.xlink.is-pending { opacity: 0.55; }
+
+.xlink--cv {
+  padding: 0 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+}
+.xlink--cv[aria-disabled="true"] { opacity: 0.6; cursor: not-allowed; }
+
+@media (max-width: 40rem) {
+  .contact-b3__cv { margin-left: 0; flex-basis: 100%; }
+  .contact-b3__cursor { right: auto; left: 6.6rem; bottom: 0.9rem; }
+}
+
+/* Cierre: una sola línea, sin repetir enlaces del bloque de contacto */
+.footer-b3 { padding-block: var(--space-l); }
+
+/* ---- 7. Barra de revisión -------------------------------------------- */
+
+.compare__sep { width: 1px; align-self: stretch; background: var(--c-ink); }
+.compare__type[aria-pressed="true"] { background: var(--c-rose-deep); color: var(--c-white); }
+.compare__type[aria-pressed="true"]:hover { color: var(--c-white); }
+
+.type-note {
+  position: fixed;
+  right: 1rem;
+  bottom: 3.6rem;
+  z-index: 60;
+  max-width: min(24rem, calc(100% - 2rem));
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--c-rose-deep);
+  border-radius: 10px;
+  background: var(--c-white);
+  color: var(--c-ink);
+  font-size: 0.625rem;
+  line-height: 1.5;
+  text-transform: none;
+  box-shadow: 0 8px 24px -10px rgb(0 0 0 / 0.3);
+}
+@media (max-width: 40rem) {
+  .compare--b3 .compare__opt { padding-inline: 0.55rem; }
+  .type-note { left: 1rem; right: auto; bottom: 6.6rem; }
+}
+
+/* ---- 8. Cinta de programas (movimiento lento y continuo) -------------- */
+
+.disc { margin-bottom: var(--space-2xl); }
+
+.marquee { margin-bottom: var(--space-2xl); }
+.marquee__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-m);
+  margin-bottom: var(--space-m);
+}
+.marquee__label { display: flex; gap: var(--space-s); color: var(--text-muted); }
+.marquee__count { color: var(--accent); }
+
+.marquee__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.25rem;
+  padding: 0 0.85rem;
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-pill);
+  background: var(--c-white);
+  color: var(--c-ink);
+  cursor: pointer;
+  transition: border-color var(--dur-base);
+}
+.marquee__toggle:hover { border-color: var(--c-ink); }
+/* Ícono de pausa (dos barras) / reproducir (triángulo) */
+.marquee__toggle-icon {
+  width: 0.55rem;
+  height: 0.6rem;
+  border-inline: 2px solid currentColor;
+}
+.marquee__toggle[aria-pressed="true"] .marquee__toggle-icon {
+  width: 0;
+  height: 0;
+  border: 0;
+  border-left: 0.5rem solid currentColor;
+  border-block: 0.3rem solid transparent;
+}
+
+.marquee__viewport {
+  display: flex;
+  gap: var(--space-m);
+  overflow: hidden;
+  padding-block: 0.5rem;
+  margin-block: -0.5rem;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.marquee__viewport:focus-visible { outline-offset: 2px; border-radius: var(--radius-m); }
+
+.marquee__track {
+  display: flex;
+  flex: none;
+  gap: var(--space-m);
+}
+
+.prog {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 0.75rem;
+  width: 7rem;
+  height: 7.5rem;
+  border-radius: 20px;
+  background: var(--c-white);
+  box-shadow: 0 1px 0 rgb(28 28 28 / 0.04);
+}
+.prog__logo {
+  display: grid;
+  place-items: center;
+  color: var(--c-ink);
+}
+.prog__logo svg { width: 2rem; height: 2rem; fill: currentColor; }
+.prog__name { font-size: 0.875rem; font-weight: 500; letter-spacing: -0.01em; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .marquee__track { animation: b3-marquee 45s linear infinite; }
+  .marquee:hover .marquee__track,
+  .marquee:focus-within .marquee__track,
+  .marquee.is-paused .marquee__track { animation-play-state: paused; }
+
+  .prog__logo { transition: transform 520ms cubic-bezier(0.34, 1.4, 0.64, 1); }
+  .prog:hover .prog__logo,
+  .prog.is-tapped .prog__logo { transform: rotate(-10deg) scale(1.08); }
+}
+
+/* Sin movimiento: una sola fila, desplazable con el dedo o el teclado */
+@media (prefers-reduced-motion: reduce) {
+  .marquee__toggle { display: none; }
+  .marquee__viewport { overflow-x: auto; scrollbar-width: none; -webkit-mask-image: none; mask-image: none; }
+  .marquee__viewport::-webkit-scrollbar { display: none; }
+  .marquee__track--clone { display: none; }
+}
+.no-js .marquee__toggle { display: none; }
+
+/* Cada fila se mueve exactamente su ancho + el espacio entre filas: el bucle no salta */
+@keyframes b3-marquee {
+  to { transform: translateX(calc(-100% - var(--space-m))); }
+}
