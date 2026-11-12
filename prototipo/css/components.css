@@ -335,6 +335,21 @@
   --btn-hover-fg: var(--bg);
 }
 
+/* Resaltado: relleno butter con texto ink (12.8:1). Para llamados a la
+   acción puntuales; al pasar el cursor se llena del dorado de la paleta
+   (#C4A644, el de las líneas de selección; texto ink: 7.3:1). */
+.btn--highlight {
+  --btn-bg: var(--ui-fill);
+  --btn-fg: var(--c-ink);
+  --btn-border: var(--ui-fill);
+  --btn-hover-bg: var(--ui-line);
+  --btn-hover-fg: var(--c-ink);
+}
+
+.btn:hover .btn__icon--right {
+  transform: translateX(4px);
+}
+
 .btn[aria-disabled="true"] {
   cursor: not-allowed;
   opacity: 0.55;

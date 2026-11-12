@@ -62,7 +62,7 @@ prototipo/
 └── assets/
     ├── favicon.svg
     └── img/
-        ├── retrato-16-contraste.jpg
+        ├── retrato-blush.jpg      (foto del hero: fondo blush, 992 × 1240)
         └── fullescabio-logo.png   (copiado de la versión anterior)
 ```
 

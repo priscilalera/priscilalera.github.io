@@ -184,3 +184,9 @@
   justify-content: center;
   margin-top: var(--space-3xl);
 }
+/* Un poco más grande que los botones comunes: es el cierre de la sección */
+.stage__more .btn {
+  min-height: 3.5rem;
+  padding-inline: 2rem;
+  font-size: 1rem;
+}
