@@ -12,7 +12,7 @@
 
   const group = (attr, values, fallback) => {
     const buttons = document.querySelectorAll(`[data-b11-${attr}]`);
-    const key = `pl-b11-${attr}-v2`;  /* v2: el color elegido pasa a ser el predeterminado */
+    const key = `pl-b11-${attr}-v3`;  /* v3: las opciones elegidas pasan a ser las predeterminadas */
     const read = (b) => b.getAttribute(`data-b11-${attr}`);
 
     const apply = (value) => {
@@ -34,7 +34,7 @@
   };
 
   group("nombre", ["serif", "mixto"], "mixto");
-  group("peso", ["actual", "450", "400"], "actual");
+  group("peso", ["actual", "450", "400"], "450");
   group("color", ["ninguno", "lera", "lera-oscuro", "priscila"], "lera-oscuro");
   group("lienzo", ["actual", "puntos", "cursor"], "cursor");
   group("eco", ["con", "sin"], "con");
