@@ -185,4 +185,23 @@
     });
     document.body.append(btn);
   }
+
+  /* ---- 7. Lienzo: linterna de puntos que sigue al mouse ----------------- *
+   * En cualquier bloque con data-lienzo (hero de la home, portada de los
+   * casos). Solo con mouse; la grilla y la linterna se dibujan en CSS.    */
+
+  document.querySelectorAll("[data-lienzo]").forEach((area) => {
+    let frame;
+    area.addEventListener("pointermove", (e) => {
+      if (e.pointerType !== "mouse") return;
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const r = area.getBoundingClientRect();
+        area.style.setProperty("--mx", `${e.clientX - r.left}px`);
+        area.style.setProperty("--my", `${e.clientY - r.top}px`);
+        area.classList.add("is-pointing");
+      });
+    });
+    area.addEventListener("pointerleave", () => area.classList.remove("is-pointing"));
+  });
 })();

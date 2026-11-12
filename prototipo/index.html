@@ -14,30 +14,19 @@
     <!-- Instrument Sans (voz principal) + Playfair Display Italic (acentos) + Geist Mono (detalles) -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Instrument+Sans:wght@400..700&display=swap" />
 
+    <!-- Comunes a todas las páginas -->
     <link rel="stylesheet" href="css/tokens.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/home.css" />
     <link rel="stylesheet" href="css/motion.css" />
-    <!-- Capas de la home, en orden: cada una se carga encima de la anterior y redefine solo lo necesario.
-         Los casos de estudio usan solo las cinco hojas de arriba + case.css. -->
-    <link rel="stylesheet" href="css/direccion-b.css" />
-    <!-- B2: carrusel de disciplinas, selección de texto, contacto -->
-    <link rel="stylesheet" href="css/direccion-b2.css" />
-    <!-- B3: foto del hero, contacto y cierre -->
-    <link rel="stylesheet" href="css/direccion-b3.css" />
-    <!-- B4: paleta ampliada (malva, malva oscuro) -->
-    <link rel="stylesheet" href="css/direccion-b4.css" />
-    <!-- B5: colores de selección del retrato -->
-    <link rel="stylesheet" href="css/direccion-b5.css" />
-    <!-- B6: paleta rosa + amarillo, cinta de programas -->
-    <link rel="stylesheet" href="css/direccion-b6.css" />
-    <!-- B7: contacto en dos columnas y cierre -->
-    <link rel="stylesheet" href="css/direccion-b7.css" />
-    <!-- B10: tipografía (Instrument Sans + Playfair Display) -->
-    <link rel="stylesheet" href="css/direccion-b10.css" />
-    <!-- B11: pesos, color de "Lera", cinta, cursor del hero, lienzo de puntos -->
-    <link rel="stylesheet" href="css/direccion-b11.css" />
+    <!-- Secciones de la home -->
+    <link rel="stylesheet" href="css/home/hero.css" />
+    <link rel="stylesheet" href="css/home/proyectos.css" />
+    <link rel="stylesheet" href="css/home/sobre-mi.css" />
+    <link rel="stylesheet" href="css/home/herramientas.css" />
+    <link rel="stylesheet" href="css/home/trayectoria.css" />
+    <!-- Contacto y cierre (también en los casos de estudio) -->
+    <link rel="stylesheet" href="css/contacto.css" />
 
     <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script src="js/main.js" defer></script>
@@ -74,7 +63,7 @@
 
     <main id="contenido">
       <!-- ============================= HERO ============================= -->
-      <section class="hero-b" aria-labelledby="hero-title">
+      <section class="hero-b" aria-labelledby="hero-title" data-lienzo>
         <div class="container hero-b__grid">
           <p class="hero-b__meta mono">
             <span data-intro style="--d: 0">Portfolio — 2026</span>
@@ -499,8 +488,15 @@
             </div>
 
             <nav class="contact-b7__block" aria-labelledby="perfiles-title">
-              <p class="contact-b7__key mono" id="perfiles-title">Perfiles</p>
+              <p class="contact-b7__key mono" id="perfiles-title">Otros medios</p>
               <ul class="contact-b7__links" role="list">
+                <li>
+                  <a class="contact-b7__link" href="https://wa.me/5491124548583" target="_blank" rel="noopener noreferrer">
+                    <svg class="icon" aria-hidden="true"><use href="#i-whatsapp" /></svg><span class="contact-b7__link-name">WhatsApp</span>
+                    <span class="contact-b7__arrow" aria-hidden="true">↗</span>
+                    <span class="visually-hidden">(se abre en una pestaña nueva)</span>
+                  </a>
+                </li>
                 <li>
                   <a class="contact-b7__link" href="https://www.linkedin.com/in/priscilalera" target="_blank" rel="noopener noreferrer">
                     <svg class="icon" aria-hidden="true"><use href="#i-linkedin" /></svg><span class="contact-b7__link-name">LinkedIn</span>
@@ -515,12 +511,6 @@
                     <span class="contact-b7__arrow" aria-hidden="true">↗</span>
                     <span class="visually-hidden">(se abre en una pestaña nueva)</span>
                   </a>
-                </li>
-                <li>
-                  <span class="contact-b7__link is-pending">
-                    <svg class="icon" aria-hidden="true"><use href="#i-behance" /></svg><span class="contact-b7__link-name">Behance</span>
-                    <span class="tbd-tag">pendiente</span>
-                  </span>
                 </li>
               </ul>
             </nav>
@@ -540,7 +530,7 @@
       <div class="container footer-b7__inner mono">
         <p>© 2026 Priscila Lera</p>
         <p>Buenos Aires, Argentina</p>
-        <a class="link-arrow" href="#contenido"><span class="link-arrow__label">Volver arriba</span><span aria-hidden="true">↑</span></a>
+        <a class="link-arrow to-top" href="#contenido"><span class="link-arrow__label">Volver arriba</span><span class="to-top__icon" aria-hidden="true">↑</span></a>
       </div>
     </footer>
 
@@ -548,7 +538,7 @@
     <svg class="icon-sprite" aria-hidden="true" focusable="false">
       <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4" /><path d="M8 10.5V16.5" /><circle cx="8" cy="7.6" r="0.4" /><path d="M11.5 16.5V10.5M11.5 13.2c0-1.7 1-2.7 2.4-2.7s2.4 1 2.4 2.7v3.3" /></symbol>
       <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" /><path d="M9 18c-4.51 2-5-2-7-2" /></symbol>
-      <symbol id="i-behance" viewBox="0 0 24 24"><path d="M2.5 6.5h4.8a2.6 2.6 0 0 1 0 5.2H2.5zM2.5 11.7h5.4a2.9 2.9 0 0 1 0 5.8H2.5z" /><path d="M14 14h7.2a3.6 3.6 0 1 0-1.1 2.6" /><path d="M15.2 7.5h4.6" /></symbol>
+      <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M3.6 20.4l1.2-3.9a8.6 8.6 0 1 1 3.3 3.1z" /><path d="M9 8.6c.2-.5.6-.6.9-.6h.5l.9 2.1-.7.9a5.4 5.4 0 0 0 2.6 2.6l.9-.7 2.1.9v.5c0 .3-.1.7-.6.9-.7.4-1.8.3-3.2-.5a8 8 0 0 1-2.9-2.9C8.7 10.4 8.6 9.3 9 8.6z" /></symbol>
       <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5" /><path d="m3 7 7.9 5.3a2 2 0 0 0 2.2 0L21 7" /></symbol>
       <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2.5H6.5a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V8z" /><path d="M14 2.5V8h5.5M12 11.5v6M9.3 14.8 12 17.5l2.7-2.7" /></symbol>
       <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="12" height="12" rx="2.5" /><path d="M15.5 8.5V6a2.5 2.5 0 0 0-2.5-2.5H6A2.5 2.5 0 0 0 3.5 6v7A2.5 2.5 0 0 0 6 15.5h2.5" /></symbol>

@@ -1,32 +1,9 @@
 /* ==========================================================================
-   MOVIMIENTO
-   Todo el movimiento vive dentro de "prefers-reduced-motion: no-preference".
-   Si la persona pidió reducir el movimiento, el sitio se muestra estático y
-   completo: ningún contenido depende de una animación para ser visible.
+   MOVIMIENTO — animaciones comunes y keyframes. Todo respeta
+   prefers-reduced-motion.
    ========================================================================== */
 
 @media (prefers-reduced-motion: no-preference) {
-
-  /* ---- Entrada del hero ------------------------------------------- */
-
-  .hero__title .line__inner {
-    animation: line-rise var(--dur-reveal) var(--ease-out) both;
-    animation-delay: calc(150ms + var(--i, 0) * 110ms);
-  }
-
-  .hero__portrait-frame {
-    animation: unveil 1300ms var(--ease-in-out) 250ms both;
-  }
-  .hero__portrait .dim,
-  .hero__caption {
-    animation: fade-in var(--dur-slow) var(--ease-out) 1100ms both;
-  }
-
-  .intro-fade {
-    animation: fade-up var(--dur-slow) var(--ease-out) both;
-    animation-delay: calc(450ms + var(--i, 0) * 120ms);
-  }
-
   .pulse::after {
     content: "";
     position: absolute;
@@ -35,32 +12,34 @@
     background: inherit;
     animation: pulse 2.4s var(--ease-out) infinite;
   }
-
-  /* ---- Aparición al hacer scroll ----------------------------------- *
-   * Solo se oculta el contenido si hay JS para mostrarlo después.      */
-
   .js [data-reveal] {
     opacity: 0;
     transform: translateY(32px);
-    transition:
-      opacity var(--dur-reveal) var(--ease-out),
+    transition: opacity var(--dur-reveal) var(--ease-out),
       transform var(--dur-reveal) var(--ease-out);
   }
-  .js [data-reveal].is-in { opacity: 1; transform: none; }
-
-  .js [data-reveal-stagger] { transform: none; opacity: 1; }
+  .js [data-reveal].is-in {
+    opacity: 1;
+    transform: none;
+  }
+  .js [data-reveal-stagger] {
+    transform: none;
+    opacity: 1;
+  }
   .js [data-reveal-stagger] > * {
     opacity: 0;
     transform: translateY(24px);
-    transition:
-      opacity var(--dur-reveal) var(--ease-out),
+    transition: opacity var(--dur-reveal) var(--ease-out),
       transform var(--dur-reveal) var(--ease-out);
     transition-delay: calc(var(--i, 0) * 90ms);
   }
-  .js [data-reveal-stagger].is-in > * { opacity: 1; transform: none; }
+  .js [data-reveal-stagger].is-in > * {
+    opacity: 1;
+    transform: none;
+  }
+}
 
-  /* ---- Efectos ligados al scroll (mejora progresiva) --------------- */
-
+@media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
     /* La "sala" se expande hasta ocupar todo el ancho al entrar */
     .stage {
@@ -68,7 +47,6 @@
       animation-timeline: view();
       animation-range: entry 0% entry 60%;
     }
-
     /* Profundidad: cada capa se desplaza a distinta velocidad */
     .parallax {
       animation: drift linear both;
@@ -76,30 +54,37 @@
       animation-range: cover 0% cover 100%;
     }
   }
+}
 
+@media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: scroll()) {
     .progress {
       animation: grow-x linear both;
       animation-timeline: scroll(root);
     }
   }
+}
 
-  /* ---- Transiciones entre páginas (Chrome/Edge; el resto navega normal) */
-
+@media (prefers-reduced-motion: no-preference) {
   @view-transition { navigation: auto; }
 
-  .vt-visual-fullescabio { view-transition-name: visual-fullescabio; }
-  .vt-title-fullescabio  { view-transition-name: title-fullescabio; }
-  .vt-visual-zombie      { view-transition-name: visual-zombie; }
-  .vt-title-zombie       { view-transition-name: title-zombie; }
-
+  .vt-visual-fullescabio {
+    view-transition-name: visual-fullescabio;
+  }
+  .vt-title-fullescabio {
+    view-transition-name: title-fullescabio;
+  }
+  .vt-visual-zombie {
+    view-transition-name: visual-zombie;
+  }
+  .vt-title-zombie {
+    view-transition-name: title-zombie;
+  }
   ::view-transition-group(*) {
     animation-duration: 600ms;
     animation-timing-function: var(--ease-in-out);
   }
 }
-
-/* ---- Keyframes ------------------------------------------------------ */
 
 @keyframes line-rise {
   from { transform: translateY(105%); }
@@ -141,3 +126,76 @@
   from { transform: scaleX(0); }
   to   { transform: scaleX(1); }
 }
+
+@keyframes b-draw-x { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+@keyframes b-draw-y { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+@keyframes b-rise {
+  from { transform: translateY(105%) rotate(4deg); opacity: 0; }
+  60%  { opacity: 1; }
+  to   { transform: none; opacity: 1; }
+}
+
+@keyframes b-pop {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}
+
+@keyframes b-cursor-in {
+  from { translate: 5rem 4rem; opacity: 0; }
+  to   { translate: 0 0;       opacity: 1; }
+}
+
+@keyframes b-click {
+  0%, 100% { scale: 1; }
+  50%      { scale: 0.82; }
+}
+
+@keyframes b-idle {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(-6px, -5px); }
+}
+
+@keyframes b-slide-in {
+  from { translate: -1.5rem 0; opacity: 0; }
+  to   { translate: 0 0;       opacity: 1; }
+}
+
+@keyframes b2-dash { to { stroke-dashoffset: -12; } }
+
+/* Cada fila se mueve exactamente su ancho + el espacio entre filas: el bucle no salta */
+@keyframes b3-marquee {
+  to { transform: translateX(calc(-100% - var(--space-m))); }
+}
+
+@keyframes b5-rail {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-38%); }
+}
+
+/* El desplazamiento es exactamente un grupo + un espacio: el bucle no salta */
+@keyframes b6-ribbon {
+  to { transform: translateX(calc(-1 * var(--ribbon-loop, 50%))); }
+}
+
+@keyframes b11-frame {
+  0%, 100% { inset: 0; }
+  40%, 62% { inset: 0 -18px -22px 0; }
+}
+
+@keyframes b11-media {
+  0%, 100% { scale: 1; }
+  40%, 62% { scale: 1.049 1.048; }   /* 386/368 × 482/460 */
+}
+
+@keyframes b11-drag {
+  0%, 100% { margin: 0; }
+  40%, 62% { margin: 22px 0 0 18px; }
+}
+
+@keyframes b11-size {
+  0%, 100% { margin-left: 0; }
+  40%, 62% { margin-left: 9px; }
+}
+

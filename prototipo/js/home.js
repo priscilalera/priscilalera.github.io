@@ -6,7 +6,7 @@
    1. Carrusel de disciplinas (flechas, teclado, táctil nativo, sin autoplay)
    2. Cinta de programas: loop continuo; se detiene con cursor, foco o toque
    3. Hero: el cursor estira el marco de la foto y lo suelta (una sola vez)
-   4. Hero: linterna de puntos que sigue al mouse
+   (La linterna de puntos del hero vive en main.js: la comparten los casos.)
 
    Con "reducir movimiento": sin cinta en movimiento ni animación del cursor.
    ========================================================================== */
@@ -169,21 +169,6 @@
     }, 3700);
   }
 
-  /* ---- 4. Linterna de puntos en el hero (solo con mouse) ------------- */
-
-  const hero = document.querySelector(".hero-b");
-  if (hero) {
-    let frame;
-    hero.addEventListener("pointermove", (e) => {
-      if (e.pointerType !== "mouse") return;
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        const r = hero.getBoundingClientRect();
-        hero.style.setProperty("--mx", `${e.clientX - r.left}px`);
-        hero.style.setProperty("--my", `${e.clientY - r.top}px`);
-        hero.classList.add("is-pointing");
-      });
-    });
-    hero.addEventListener("pointerleave", () => hero.classList.remove("is-pointing"));
-  }
+  // La linterna de puntos del hero está en main.js (bloque "Lienzo"),
+  // porque también la usan las portadas de los casos de estudio.
 })();

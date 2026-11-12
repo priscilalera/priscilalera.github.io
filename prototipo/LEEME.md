@@ -36,29 +36,26 @@ Las versiones anteriores (Propuesta A y B1–B11) quedaron guardadas en el commi
 prototipo/
 ├── index.html                 Home: hero, proyectos, sobre mí, herramientas, trayectoria, contacto
 ├── proyectos/
-│   ├── fullescabio.html       Caso de estudio (plantilla UX/UI)
-│   └── zombie-walk.html       Caso de estudio (plantilla branding, con tema propio)
+│   ├── fullescabio.html       Caso de estudio UX/UI (fondo claro)
+│   └── zombie-walk.html       Caso de estudio de branding (fondo negro, .theme-zombie)
 ├── css/
-│   ├── tokens.css             Colores, tipografía, espacios y tiempos (base común)
+│   ├── tokens.css             Identidad: colores, tipografías, pesos, espacios, tiempos
 │   ├── base.css               Reset, tipografía base, utilidades, accesibilidad
-│   ├── components.css         Header, menú, botones, links, placeholders, teléfono, footer
-│   ├── home.css               Secciones de la home (base común)
-│   ├── case.css               Plantilla de casos de estudio
-│   ├── motion.css             Animaciones comunes (respetan prefers-reduced-motion)
-│   │
-│   │   Capas de la home (solo index.html), en este orden:
-│   ├── direccion-b.css        Hero con lienzo, secuencia de entrada, secciones
-│   ├── direccion-b2.css       Carrusel de disciplinas, selección de texto, contacto
-│   ├── direccion-b3.css       Foto del hero, cinta de programas, cierre
-│   ├── direccion-b4.css       Paleta ampliada (malvas)
-│   ├── direccion-b5.css       Colores de selección del retrato
-│   ├── direccion-b6.css       Paleta rosa + amarillo, cinta de programas en loop
-│   ├── direccion-b7.css       Contacto en dos columnas y cierre
-│   ├── direccion-b10.css      Tipografía: Instrument Sans + Playfair Display
-│   └── direccion-b11.css      Pesos, "Lera" en malva, cinta, cursor del hero, lienzo de puntos
+│   ├── components.css         Header, menú, botones, enlaces, títulos, etiquetas, placeholders,
+│   │                          teléfono, contenido pendiente, footer, piezas de proyecto (showcase)
+│   ├── motion.css             Animaciones comunes y keyframes (respetan prefers-reduced-motion)
+│   ├── contacto.css           "Hablemos.", email, perfiles, CV y cierre de la home
+│   ├── case.css               Casos de estudio: plantilla, pie con contacto, tema oscuro de Zombie Walk
+│   └── home/                  Secciones de la home, en el orden de la página
+│       ├── hero.css
+│       ├── proyectos.css
+│       ├── sobre-mi.css
+│       ├── herramientas.css
+│       └── trayectoria.css
 ├── js/
-│   ├── main.js                Común: header, menú, navegación activa, aparición al scroll, copiar email
-│   └── home.js                Home: carrusel, cinta de programas, cursor del hero, linterna de puntos
+│   ├── main.js                Común: header, menú, navegación activa, aparición al scroll,
+│   │                          copiar email, contenido pendiente, lienzo de puntos ([data-lienzo])
+│   └── home.js                Home: carrusel, cinta de programas, cursor del hero
 └── assets/
     ├── favicon.svg
     └── img/
@@ -66,11 +63,7 @@ prototipo/
         └── fullescabio-logo.png   (copiado de la versión anterior)
 ```
 
-Las capas `direccion-*.css` se pisan en orden. Pendiente para una etapa aparte:
-unirlas en una hoja organizada por secciones.
-
-Los casos de estudio todavía usan el estilo de la Propuesta A (Instrument Serif + Geist):
-cargan solo `tokens`, `base`, `components`, `home`, `motion` y `case.css`.
+Orden de carga: `tokens` → `base` → `components` → `motion` → home: `home/*.css` + `contacto.css` · casos: `case.css`.
 
 ## Cómo reemplazar un placeholder por una imagen
 

@@ -1,0 +1,179 @@
+/* ==========================================================================
+   HOME · PROYECTOS — sala oscura con los dos casos
+   ========================================================================== */
+
+.stage {
+  position: relative;
+  padding-block: var(--section);
+  background: var(--bg);
+  color: var(--text);
+  border-radius: var(--radius-l) var(--radius-l) 0 0;
+}
+
+.chapters {
+  display: grid;
+  gap: clamp(6rem, 4rem + 8vw, 11rem);
+}
+
+.chapter {
+  position: relative;
+  display: grid;
+  gap: var(--space-2xl);
+}
+
+@media (min-width: 60rem) {
+  .chapter {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gutter);
+    align-items: center;
+  }
+  .chapter__info {
+    grid-row: 1;
+  }
+  .chapter__visual {
+    grid-row: 1;
+  }
+}
+
+.chapter__num {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-m);
+  padding-top: var(--space-s);
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.chapter__title {
+  font-family: var(--font-display);
+}
+
+.chapter__link {
+  text-decoration: none;
+}
+
+.chapter__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.chapter__link:focus-visible {
+  outline: none;
+}
+
+.chapter:has(.chapter__link:focus-visible) {
+  outline: 2px solid var(--focus);
+  outline-offset: 1.25rem;
+  border-radius: var(--radius-l);
+}
+
+.chapter__desc {
+  max-width: 32ch;
+  margin-bottom: var(--space-xl);
+}
+
+.chapter__meta {
+  margin-bottom: var(--space-xl);
+}
+
+.chapter__meta > div {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: var(--space-m);
+  padding-block: var(--space-s);
+  border-top: 1px solid var(--border);
+  font-size: var(--fs-sm);
+}
+
+.chapter__meta dt {
+  color: var(--text-muted);
+  padding-top: 0.15em;
+}
+
+.chapter__cta {
+  color: var(--accent);
+}
+
+.chapter:hover .chapter__cta .link-arrow__label {
+  background-size: 0% 1px;
+  background-position: 100% 100%;
+}
+
+.chapter:hover .chapter__cta .link-arrow__icon {
+  transform: translateX(6px);
+}
+
+.chapter:hover .showcase__badge,
+.chapter:focus-within .showcase__badge {
+  opacity: 1;
+  transform: none;
+}
+
+.chapter:hover .showcase__phone--a .phone {
+  transform: translateY(-14px) rotate(-2.5deg);
+}
+
+.chapter:hover .showcase__phone--b .phone {
+  transform: translateY(10px) rotate(2.5deg);
+}
+
+.chapter:hover .showcase--fullescabio .showcase__bg {
+  inset: 5% -2% -2% -2%;
+}
+
+.chapter:hover .showcase__logo {
+  transform: translateX(-6px) rotate(-3deg);
+}
+
+.chapter:hover .showcase--zombie .showcase__bg {
+  inset: 5% -2% -2% -2%;
+}
+
+.chapter:hover .zw-piece--poster .zw-piece__inner {
+  transform: rotate(0) translate(-10px, -8px);
+}
+
+.chapter:hover .zw-piece--logo .zw-piece__inner {
+  transform: scale(1.05);
+}
+
+.chapter:hover .zw-piece--app .zw-piece__inner {
+  transform: rotate(0) translate(10px, 8px);
+}
+
+@media (min-width: 60rem) {
+  .chapter__info {
+    grid-column: 1 / span 4;
+  }
+  .chapter__visual {
+    grid-column: 5 / -1;
+  }
+  .chapter--reverse .chapter__info {
+    grid-column: 9 / -1;
+  }
+  .chapter--reverse .chapter__visual {
+    grid-column: 1 / span 8;
+  }
+}
+
+.chapter__num {
+  margin-bottom: var(--space-xl);
+}
+
+.chapter__title {
+  margin-bottom: var(--space-m);
+  font-size: var(--fs-chapter);
+  font-weight: var(--w-display);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.chapter__desc {
+  font-size: var(--fs-lead);
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+

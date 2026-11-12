@@ -1,94 +1,103 @@
 /* ==========================================================================
-   TOKENS — Sistema visual del portfolio
-   Todos los colores, tipografías, espacios y tiempos de animación viven acá.
-   Para ajustar la identidad, se cambia este archivo y no los componentes.
+   TOKENS — identidad visual del portfolio
+   Colores, tipografías, pesos, espacios y tiempos. Lo usan todas las páginas.
+   Tipografía: Instrument Sans (voz principal) + Playfair Display Italic
+   (acentos) + Geist Mono (etiquetas). Paleta: paper, ink, malva, malva
+   oscuro, butter, blush.
    ========================================================================== */
-
 :root {
-  /* ---- Paleta base (identidad de Priscila) ---------------------------- */
-  --c-paper:      #F3F3F3;  /* fondo general                               */
-  --c-white:      #FFFFFF;  /* superficies elevadas                        */
-  --c-ink:        #1C1C1C;  /* texto principal          15.4:1 sobre paper */
-  --c-ink-muted:  #5C5C5C;  /* texto secundario          6.0:1 sobre paper */
-  --c-line:       #D9D9D9;  /* bordes y divisores (nunca texto)            */
-  --c-rose:       #B8757D;  /* acento sobre negro        5.4:1 sobre stage */
-  --c-rose-deep:  #965C64;  /* acento sobre claro        4.7:1 sobre paper */
-  --c-rose-mist:  #F0E2E4;  /* superficies suaves (texto siempre ink)      */
-  --c-stage:      #0E0E0E;  /* "sala" de proyectos y cierre                */
-  --c-stage-2:    #181818;  /* superficies dentro de la sala               */
-  --c-stage-line: #2E2E2E;
+  --c-paper: #F3F3F3;
+  --c-white: #FFFFFF;
+  --c-ink: #1C1C1C;
+  --c-ink-muted: #5C5C5C;
+  --c-line: #D9D9D9;
   --c-stage-text: #F3F3F3;
-  --c-stage-muted:#A3A3A3;  /*                           8.4:1 sobre stage */
-
-  /* ---- Roles (lo que usan los componentes) ---------------------------- */
-  --bg:          var(--c-paper);
-  --surface:     var(--c-white);
-  --text:        var(--c-ink);
-  --text-muted:  var(--c-ink-muted);
-  --border:      var(--c-line);
-  --accent:      var(--c-rose-deep);
-  --accent-ink:  var(--c-white);
-  --focus:       var(--c-rose-deep);
-
-  /* ---- Tipografía ----------------------------------------------------- */
-  --font-display: "Instrument Serif", "Iowan Old Style", "Times New Roman", serif;
-  --font-sans:    "Geist", "Segoe UI", system-ui, -apple-system, sans-serif;
-  --font-mono:    "Geist Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
-
-  --fs-mono:    0.75rem;
-  --fs-sm:      0.875rem;
-  --fs-base:    1.0625rem;
-  --fs-lead:    clamp(1.125rem, 1rem + 0.55vw, 1.375rem);
-  --fs-h3:      clamp(1.5rem, 1.2rem + 1.1vw, 2.125rem);
-  --fs-h2:      clamp(2.75rem, 1.6rem + 4.2vw, 5.5rem);
-  --fs-chapter: clamp(3.25rem, 1.5rem + 6.5vw, 8rem);
-  --fs-display: clamp(4.75rem, 0.5rem + 13vw, 13rem);
-
+  --c-stage-muted: #A3A3A3;
+  --bg: var(--c-paper);
+  --surface: var(--c-white);
+  --text: var(--c-ink);
+  --text-muted: var(--c-ink-muted);
+  --border: var(--c-line);
+  --accent: var(--c-rose-deep);
+  --accent-ink: var(--c-white);
+  --focus: var(--c-rose-deep);
+  --font-mono: "Geist Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --fs-mono: 0.75rem;
+  --fs-sm: 0.875rem;
   --lh-tight: 0.92;
-  --lh-snug:  1.2;
-  --lh-body:  1.6;
-
-  /* ---- Espaciado ------------------------------------------------------ */
+  --lh-snug: 1.2;
+  --lh-body: 1.6;
   --space-2xs: 0.25rem;
-  --space-xs:  0.5rem;
-  --space-s:   0.75rem;
-  --space-m:   1rem;
-  --space-l:   1.5rem;
-  --space-xl:  2rem;
+  --space-xs: 0.5rem;
+  --space-s: 0.75rem;
+  --space-m: 1rem;
+  --space-l: 1.5rem;
+  --space-xl: 2rem;
   --space-2xl: 3rem;
   --space-3xl: 4.5rem;
   --space-4xl: 6.5rem;
-
-  --section:   clamp(5rem, 3rem + 8vw, 10rem);
-  --gutter:    clamp(1.25rem, 0.6rem + 2.4vw, 2.75rem);
+  --section: clamp(5rem, 3rem + 8vw, 10rem);
+  --gutter: clamp(1.25rem, 0.6rem + 2.4vw, 2.75rem);
   --container: 82rem;
-
-  /* ---- Formas --------------------------------------------------------- */
-  --radius-s:    6px;
-  --radius-m:    14px;
-  --radius-l:    28px;
+  --radius-s: 6px;
+  --radius-m: 14px;
+  --radius-l: 28px;
   --radius-pill: 999px;
-
-  /* ---- Movimiento ----------------------------------------------------- */
-  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --dur-fast:    160ms;
-  --dur-base:    320ms;
-  --dur-slow:    700ms;
-  --dur-reveal:  1000ms;
-
+  --dur-fast: 160ms;
+  --dur-base: 320ms;
+  --dur-slow: 700ms;
+  --dur-reveal: 1000ms;
   --header-h: 4.5rem;
+  --fs-base: 1.0625rem;
+  --fs-lead: clamp(1.125rem, 1.02rem + 0.45vw, 1.3125rem);
+  --fs-h3: clamp(1.1875rem, 1.05rem + 0.5vw, 1.4375rem);
+  --fs-h2: clamp(2.125rem, 1.4rem + 2.6vw, 3.75rem);
+  --fs-chapter: clamp(2.5rem, 1.6rem + 3.2vw, 4.75rem);
+  --fs-display: clamp(3.5rem, 1.1rem + 7.4vw, 8.5rem);
+  --w-display: 700;
+  --w-title: 600;
+  --w-sub: 600;
+  --w-light: 300;
+  --c-mauve: #AD7D8B;
+  --c-mauve-deep: #87596A;
+  --c-periwinkle: #8995C5;
+  --c-rose: var(--c-mauve);
+  --c-rose-deep: var(--c-mauve-deep);
+  --c-rose-mist: var(--c-lavender);
+  --c-stage: #1C1C1C;
+  --c-stage-2: #262626;
+  --c-stage-line: #363636;
+  --font-display: "Instrument Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-sans: "Instrument Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-accent: "Playfair Display", "Didot", Georgia, serif;
+  --accent-label: "Playfair Display · Italic";
+  --track-xl: -0.035em;
+  --track-l: -0.025em;
+  --wt-display: 600;
+  --wt-title: 550;
+  --wt-sub: 550;
+  --wt-medium: 450;
+  --wt-lead: 450;
 }
 
+/* Superficie oscura (sala de proyectos, contacto) */
 /* Superficies oscuras: los componentes reutilizan los mismos roles */
 .on-stage,
 [data-surface="stage"] {
-  --bg:         var(--c-stage);
-  --surface:    var(--c-stage-2);
-  --text:       var(--c-stage-text);
+  --bg: var(--c-stage);
+  --surface: var(--c-stage-2);
+  --text: var(--c-stage-text);
   --text-muted: var(--c-stage-muted);
-  --border:     var(--c-stage-line);
-  --accent:     var(--c-rose);
+  --border: var(--c-stage-line);
+  --accent: var(--c-rose);
   --accent-ink: var(--c-stage);
-  --focus:      var(--c-rose);
+  --focus: var(--c-rose);
+}
+/* Paleta elegida: rosa + amarillo (líneas doradas, rellenos butter, fondo blush) */
+:root {
+  --ui-line: #C4A644;
+  --ui-fill: #F2DF9B;
+  --c-lavender: #F6E6EA;
 }

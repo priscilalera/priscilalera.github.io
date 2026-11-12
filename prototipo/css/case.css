@@ -29,11 +29,44 @@
 }
 .case-hero__meta { color: var(--text-muted); }
 
+/* Mismo tratamiento que los nombres de proyecto de la home (Instrument Sans) */
 .case-hero__title {
   font-family: var(--font-display);
   font-size: clamp(4rem, 1rem + 12vw, 12rem);
+  font-weight: var(--wt-display);
   line-height: 0.88;
-  letter-spacing: -0.03em;
+  letter-spacing: var(--track-xl);
+}
+
+/* Lienzo (prueba): la grilla de puntos del hero de la home, con la linterna
+   que sigue al mouse (main.js, bloque "Lienzo"). Se desvanece hacia abajo. */
+.case-hero { position: relative; isolation: isolate; --dot: 28 28 28; }
+.case-hero::before,
+.case-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(circle, rgb(var(--dot) / var(--dot-a)) 1px, transparent 1.4px);
+  background-size: 18px 18px;
+  background-position: center top;
+  pointer-events: none;
+}
+.case-hero::before {
+  --dot-a: 0.13;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 55%, transparent 85%);
+          mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 55%, transparent 85%);
+}
+.case-hero::after {
+  --dot-a: 0.42;
+  opacity: 0;
+  transition: opacity 400ms var(--ease-out);
+  -webkit-mask-image: radial-gradient(circle 9rem at var(--mx, 50%) var(--my, 50%), #000, transparent);
+          mask-image: radial-gradient(circle 9rem at var(--mx, 50%) var(--my, 50%), #000, transparent);
+}
+.case-hero.is-pointing::after { opacity: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .case-hero::before { animation: fade-in 1400ms var(--ease-out) 200ms both; }
 }
 .case-hero__intro {
   display: grid;
@@ -100,6 +133,9 @@
   .case-main { grid-column: 4 / -1; }
 }
 
+/* Sin esto, la galería horizontal (.rail) ensancha la columna en mobile */
+.case-main { min-width: 0; }
+
 .case-toc { display: none; }
 @media (min-width: 64rem) {
   .case-toc { display: block; }
@@ -127,19 +163,29 @@
 }
 .case-section:first-child { border-top: 0; padding-top: 0; }
 .case-section__num { color: var(--accent); margin-bottom: var(--space-m); }
+/* Igual que los títulos de sección de la home: sans + una palabra en
+   Playfair Display Italic, en malva */
 .case-section__title {
   margin-bottom: var(--space-l);
   font-family: var(--font-display);
-  font-size: clamp(2.25rem, 1.5rem + 2.6vw, 3.75rem);
-  line-height: 1;
-  letter-spacing: -0.015em;
+  font-size: var(--fs-h2);
+  font-weight: var(--wt-title);
+  line-height: 1.02;
+  letter-spacing: var(--track-l);
+}
+.case-section__title em {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--accent);
 }
 .case-section__text {
   max-width: 62ch;
   color: var(--text-muted);
 }
 .case-section__text + .case-section__text { margin-top: var(--space-m); }
-.case-section__text strong { color: var(--text); font-weight: 500; }
+.case-section__text strong { color: var(--text); font-weight: var(--wt-sub); }
 
 .case-media { margin-top: var(--space-2xl); }
 .case-media figcaption { margin-top: var(--space-s); }
@@ -192,7 +238,7 @@
   font-family: var(--font-mono);
   font-size: var(--fs-mono);
 }
-.step__title { font-weight: 500; margin-bottom: 0.25rem; }
+.step__title { font-weight: var(--wt-sub); margin-bottom: 0.25rem; }
 .step__text { color: var(--text-muted); font-size: var(--fs-sm); }
 
 /* ---- Specimen del Design System ------------------------------------- */
@@ -270,19 +316,21 @@
   gap: 0 0.3em;
   font-family: var(--font-display);
   font-size: clamp(3.5rem, 1rem + 10vw, 10rem);
+  font-weight: var(--wt-display);
   line-height: 0.9;
-  letter-spacing: -0.03em;
+  letter-spacing: var(--track-xl);
 }
 .next-project__arrow {
   color: var(--accent);
   transition: transform var(--dur-slow) var(--ease-out);
 }
+.next-project__name { transition: color var(--dur-base); }
 .next-project__link:hover .next-project__arrow { transform: translateX(0.15em); }
-.next-project__link:hover .next-project__name { font-style: italic; }
+.next-project__link:hover .next-project__name { color: var(--accent); }
 
-/* ---- Tema propio de Zombie Walk -------------------------------------- *
- * El caso adopta la paleta de su marca. Valores provisionales hasta
- * recibir el manual: se reemplazan solo estos tokens.                  */
+/* ---- Tema oscuro de Zombie Walk --------------------------------------- *
+ * Fullescabio va sobre fondo claro; Zombie Walk, sobre negro. Mismas
+ * tipografías y malva como acento (#AD7D8B sobre oscuro: 4.9:1).       */
 
 .theme-zombie {
   --bg:         #121112;
@@ -290,20 +338,122 @@
   --text:       #EDEBEA;
   --text-muted: #A6A2A0;
   --border:     #2F2D2E;
-  --accent:     var(--c-rose);
+  --accent:     var(--c-mauve);
   --accent-ink: #121112;
-  --focus:      var(--c-rose);
+  --focus:      var(--c-mauve);
 }
+/* Puntos claros sobre el fondo oscuro */
+.theme-zombie .case-hero { --dot: 237 235 234; }
+.theme-zombie .case-hero::before { --dot-a: 0.1; }
+.theme-zombie .case-hero::after  { --dot-a: 0.32; }
 .theme-zombie .ph {
   --ph-bg: #1E1D1E;
   --ph-line: rgb(237 235 234 / 0.05);
   --ph-border: #3A3839;
   --ph-ink: #A6A2A0;
 }
-.theme-zombie .site-header { --text: #EDEBEA; --text-muted: #A6A2A0; --accent: var(--c-rose); }
+.theme-zombie .site-header { --text: #EDEBEA; --text-muted: #A6A2A0; --accent: var(--c-mauve); }
 .theme-zombie .site-header.is-scrolled {
   background: color-mix(in srgb, #121112 82%, transparent);
   border-color: #2F2D2E;
 }
 .theme-zombie .site-nav .site-nav__cta:hover { color: #121112; }
 .theme-zombie .screens { background: var(--surface); }
+
+/* ---- Pie de los proyectos ------------------------------------------- *
+ * Reemplaza al bloque "Hablemos." de la home: toda la información y las
+ * formas de contacto en un pie compacto, sobre la superficie oscura.    */
+
+.footer-case { padding-block: var(--space-3xl) var(--space-l); }
+
+.footer-case__grid {
+  display: grid;
+  gap: var(--space-2xl) var(--gutter);
+  padding-bottom: var(--space-2xl);
+}
+@media (min-width: 48rem) {
+  .footer-case__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 64rem) {
+  .footer-case__grid { grid-template-columns: 4fr 4fr 3fr 3fr; }
+}
+
+.footer-case__name {
+  margin-bottom: var(--space-xs);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: var(--wt-display);
+  letter-spacing: -0.03em;
+}
+.footer-case__role { margin-bottom: var(--space-m); color: var(--text-muted); }
+.footer-case__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: var(--fs-mono);
+}
+.footer-case__dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--c-mauve);
+}
+
+.footer-case__key {
+  margin-bottom: var(--space-s);
+  color: var(--text-muted);
+  font-size: var(--fs-mono);
+}
+.footer-case__list { display: grid; gap: 0.15rem; }
+.footer-case__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 2.25rem;
+  color: var(--text);
+  font-weight: var(--wt-medium);
+  text-decoration: none;
+  transition: color var(--dur-fast);
+}
+.footer-case__link .icon { width: 1.1rem; height: 1.1rem; color: var(--text-muted); transition: color var(--dur-fast); }
+a.footer-case__link:hover,
+a.footer-case__link:hover .icon { color: var(--c-mauve); }
+.footer-case__link.is-pending,
+.footer-case__link[aria-disabled="true"] { color: var(--text-muted); cursor: default; }
+a.footer-case__link[aria-disabled="true"]:hover,
+a.footer-case__link[aria-disabled="true"]:hover .icon { color: var(--text-muted); }
+.footer-case__arrow { color: var(--text-muted); font-size: 0.8em; }
+.footer-case__meta { font-size: 0.6875rem; color: var(--text-muted); }
+
+/* Email + copiar en la misma fila */
+.footer-case__copy-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0 var(--space-s); }
+.footer-case__copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2rem;
+  padding: 0 0.6rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  background: none;
+  color: var(--text-muted);
+  font-size: 0.6875rem;
+  cursor: pointer;
+  transition: border-color var(--dur-fast), color var(--dur-fast);
+}
+.footer-case__copy .icon { width: 0.9rem; height: 0.9rem; }
+.footer-case__copy:hover { border-color: var(--c-stage-line); color: var(--text); }
+
+.footer-case__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-s) var(--space-xl);
+  padding-top: var(--space-l);
+  border-top: 1px solid var(--c-stage-line);
+  color: var(--text-muted);
+  font-size: var(--fs-mono);
+}

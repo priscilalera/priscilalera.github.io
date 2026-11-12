@@ -1,12 +1,16 @@
 /* ==========================================================================
-   BASE — reset, tipografía y utilidades
+   BASE — reset, tipografía base, utilidades y accesibilidad (todas las páginas)
    ========================================================================== */
 
 *,
 *::before,
-*::after { box-sizing: border-box; }
+*::after {
+  box-sizing: border-box;
+}
 
-* { margin: 0; }
+* {
+  margin: 0;
+}
 
 html {
   -webkit-text-size-adjust: 100%;
@@ -15,7 +19,9 @@ html {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -31,33 +37,57 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-img, svg, video { display: block; max-width: 100%; height: auto; }
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
-button, input, select, textarea { font: inherit; color: inherit; }
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
 
-ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  padding: 0;
+}
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 400;
   line-height: var(--lh-snug);
   text-wrap: balance;
 }
 
-p { text-wrap: pretty; }
+p {
+  text-wrap: pretty;
+}
 
-em { font-style: italic; }
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
 
-a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
-
-::selection { background: var(--c-rose-mist); color: var(--c-ink); }
+::selection {
+  background: var(--c-rose-mist);
+  color: var(--c-ink);
+}
 
 :focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
   border-radius: 2px;
 }
-
-/* ---- Utilidades ---------------------------------------------------- */
 
 .container {
   width: min(var(--container), 100% - var(--gutter) * 2);
@@ -71,28 +101,70 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.2em
   text-transform: uppercase;
 }
 
-.serif { font-family: var(--font-display); }
-
 .visually-hidden {
   position: absolute !important;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
   border: 0;
 }
 
-.skip-link {
-  position: fixed;
-  top: 0.75rem; left: 0.75rem;
-  z-index: 100;
-  padding: 0.75rem 1.25rem;
-  background: var(--c-ink);
-  color: var(--c-paper);
-  border-radius: var(--radius-pill);
-  font-size: var(--fs-sm);
-  text-decoration: none;
-  transform: translateY(-200%);
+/* Manrope no tiene itálica: el énfasis es color, no inclinación */
+em {
+  font-style: normal;
 }
-.skip-link:focus { transform: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-intro] {
+    animation: fade-up var(--dur-slow) var(--ease-out) both;
+    animation-delay: calc(250ms + var(--d, 0) * 110ms);
+  }
+}
+
+body {
+  letter-spacing: -0.01em;
+}
+
+/* Acento editorial: una palabra por bloque, nunca un titular entero.
+   Cormorant tiene ojo medio bajo: se compensa con un 12–15 % más de tamaño. */
+.accent,
+.section-title em,
+.system-card__title em {
+  line-height: 0;
+  color: var(--accent);
+}
+
+#i-linkedin circle {
+  fill: currentColor;
+}
+
+.accent,
+.section-title em,
+.system-card__title em {
+  font-size: 1.06em;
+}
+
+.accent,
+.section-title em,
+.system-card__title em,
+.hero-b__word--light,
+.contact-b7__title,
+.art-brand__mark {
+  font-style: normal;
+  font-weight: 400;
+}
+
+.accent,
+.section-title em,
+.system-card__title em {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  font-optical-sizing: auto;
+  letter-spacing: -0.01em;
+}
+
