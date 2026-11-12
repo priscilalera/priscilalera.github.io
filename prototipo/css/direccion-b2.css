@@ -29,16 +29,6 @@ body { letter-spacing: -0.01em; }
 }
 .hero-b__lead .accent { font-size: 1.18em; }
 
-/* Variante opcional del nombre (botón de revisión "Nombre en serif").
-   Mismo tamaño, misma posición y misma animación: solo cambia la familia. */
-.name-serif .hero-b__word--light {
-  font-family: var(--font-accent);
-  font-style: italic;
-  font-weight: 500;
-  letter-spacing: -0.035em;
-}
-.name-serif .hero-b__dot { font-family: var(--font-display); font-style: normal; }
-
 /* ---- 2. Detalle "selección de texto" en Sobre mí --------------------- */
 
 .text-select { position: relative; display: inline-block; }
@@ -519,28 +509,8 @@ a.social:hover .icon { color: var(--accent); transform: translateY(-1px); }
   color: var(--text-muted);
 }
 
-/* ---- 8. Selector de revisión ---------------------------------------- */
-
-.compare { padding: 0; }
-.compare__opt {
-  padding: 0.55rem 0.75rem;
-  border: 0;
-  border-left: 1px solid var(--c-line);
-  background: none;
-  color: var(--c-ink);
-  font: inherit;
-  letter-spacing: inherit;
-  text-transform: inherit;
-  text-decoration: none;
-  cursor: pointer;
-}
-.compare__opt:first-child { border-left: 0; }
-.compare__opt:hover { color: var(--c-rose-deep); }
-.compare__opt.is-current { background: var(--c-ink); color: var(--c-paper); cursor: default; }
-.compare__toggle[aria-pressed="true"] { background: var(--c-rose-deep); color: var(--c-white); }
-.compare__toggle[aria-pressed="true"]:hover { color: var(--c-white); }
+/* ---- 8. Cursor "Vos" del contacto en mobile ---------------------------- */
 @media (max-width: 40rem) {
-  .compare { left: 1rem; right: auto; bottom: 3.75rem; }
   .contact-b2__cursor { right: auto; left: 10.25rem; bottom: 0.2rem; }
 }
 

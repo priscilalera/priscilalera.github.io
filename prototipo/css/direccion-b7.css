@@ -7,14 +7,7 @@
    - Fondo oscuro y malva como acento; se conserva el cursor "Vos" de B6
    ========================================================================== */
 
-/* ---- Serif de acento: Italiana (Google Fonts, licencia SIL OFL) ------ *
- * Reemplaza a Ogg/Canela. Tiene un solo estilo (Regular, sin itálica).
- * Se pisa en las dos clases que pone direccion-b3.js.                    */
-.type-ogg,
-.type-canela {
-  --font-accent: "Italiana", "Didot", "Bodoni 72", Georgia, serif;
-  --accent-label: "Italiana · Regular";
-}
+/* Estilo de los acentos (la familia se define en direccion-b10.css) */
 .accent,
 .section-title em,
 .system-card__title em,

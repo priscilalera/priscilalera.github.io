@@ -465,35 +465,6 @@ em { font-style: normal; }
   letter-spacing: -0.035em;
 }
 
-/* ---- 7. Selector de propuesta (solo para revisión) ------------------- */
-
-.compare {
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 60;
-  display: inline-flex;
-  align-items: center;
-  border: 1px solid var(--c-ink);
-  border-radius: var(--radius-pill);
-  background: var(--c-white);
-  color: var(--c-ink);
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  text-decoration: none;
-  overflow: hidden;
-  box-shadow: 0 8px 24px -10px rgb(0 0 0 / 0.3);
-}
-.compare__current { padding: 0.55rem 0.8rem; background: var(--c-ink); color: var(--c-paper); }
-.compare__go { padding: 0.55rem 0.8rem; }
-.compare:hover .compare__go { color: var(--c-rose-deep); }
-/* En mobile se apila sobre el botón "Contenido pendiente" */
-@media (max-width: 40rem) {
-  .compare { bottom: 3.75rem; }
-}
-
 /* ==========================================================================
    MOVIMIENTO DE LA PROPUESTA B
    Secuencia del hero (≈3 s en total; el texto está legible antes de 1,2 s).

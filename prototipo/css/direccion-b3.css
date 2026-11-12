@@ -5,63 +5,8 @@
    la tipografía de "Lera" y la foto ocupa el lugar del placeholder.
    ========================================================================== */
 
-/* ---- 1. Serif de prueba: Ogg y Canela ------------------------------- *
- * Son fuentes comerciales (Sharp Type y Commercial Type). Sus versiones
- * de prueba solo permiten evaluación privada, nunca publicar en la web.
- * Para verlas en este prototipo local:
- *   a) instalar las fuentes de prueba en la computadora (las toma local()), o
- *   b) copiar los archivos en assets/fonts/ogg/ y assets/fonts/canela/
- *      con los nombres indicados abajo.
- * Si no están disponibles, el navegador usa su serif genérica y la página
- * lo avisa. NO se reemplazan por otras familias parecidas.               */
-
-@font-face {
-  font-family: "Ogg Prueba";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local("Ogg Regular"), local("Ogg-Regular"), local("Ogg Roman"), local("Ogg-Roman"),
-       local("Ogg TRIAL Regular"), local("OggTRIAL-Regular"),
-       url("../assets/fonts/ogg/Ogg-Regular-BF646c18fc3ed57.otf") format("opentype"),  /* prueba (Befonts) */
-       url("../assets/fonts/ogg/Ogg-Regular.woff2") format("woff2"),
-       url("../assets/fonts/ogg/Ogg-Regular.otf") format("opentype");
-}
-@font-face {
-  font-family: "Ogg Prueba";
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: local("Ogg Italic"), local("Ogg-Italic"),
-       local("Ogg TRIAL Italic"), local("OggTRIAL-Italic"),
-       url("../assets/fonts/ogg/Ogg-RegularItalic-BF646c18fc462a5.otf") format("opentype"),  /* prueba (Befonts) */
-       url("../assets/fonts/ogg/Ogg-Italic.woff2") format("woff2"),
-       url("../assets/fonts/ogg/Ogg-Italic.otf") format("opentype");
-}
-@font-face {
-  font-family: "Canela Prueba";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local("Canela Regular"), local("Canela-Regular"),
-       local("Canela Trial Regular"), local("CanelaTrial-Regular"),
-       url("../assets/fonts/canela/Canela-Regular.woff2") format("woff2"),
-       url("../assets/fonts/canela/Canela-Regular.otf") format("opentype");
-}
-@font-face {
-  font-family: "Canela Prueba";
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: local("Canela Regular Italic"), local("Canela-RegularItalic"),
-       local("Canela Trial Regular Italic"), local("CanelaTrial-RegularItalic"),
-       url("../assets/fonts/canela/Canela-RegularItalic.woff2") format("woff2"),
-       url("../assets/fonts/canela/Canela-RegularItalic.otf") format("opentype");
-}
-
-/* La serif activa se elige con una clase en <html> (barra de revisión).
-   B2 ya usa --font-accent en todos los acentos: alcanza con redefinirla. */
-.type-ogg    { --font-accent: "Ogg Prueba", serif;    --accent-label: "Ogg · Italic"; }
-.type-canela { --font-accent: "Canela Prueba", serif; --accent-label: "Canela · Italic"; }
+/* ---- 1. Serif de acento ---------------------------------------------- *
+ * La familia se define en direccion-b10.css (Playfair Display).          */
 
 /* ---- 2. Dónde aparece la serif (y solo ahí) ------------------------- *
  * Itálica: "Lera", una palabra por título de sección, una palabra en el
@@ -276,33 +221,6 @@ a.xlink:not([aria-disabled]):hover .xlink__arrow { transform: translate(2px, -2p
 
 /* Cierre: una sola línea, sin repetir enlaces del bloque de contacto */
 .footer-b3 { padding-block: var(--space-l); }
-
-/* ---- 7. Barra de revisión -------------------------------------------- */
-
-.compare__sep { width: 1px; align-self: stretch; background: var(--c-ink); }
-.compare__type[aria-pressed="true"] { background: var(--c-rose-deep); color: var(--c-white); }
-.compare__type[aria-pressed="true"]:hover { color: var(--c-white); }
-
-.type-note {
-  position: fixed;
-  right: 1rem;
-  bottom: 3.6rem;
-  z-index: 60;
-  max-width: min(24rem, calc(100% - 2rem));
-  padding: 0.55rem 0.8rem;
-  border: 1px solid var(--c-rose-deep);
-  border-radius: 10px;
-  background: var(--c-white);
-  color: var(--c-ink);
-  font-size: 0.625rem;
-  line-height: 1.5;
-  text-transform: none;
-  box-shadow: 0 8px 24px -10px rgb(0 0 0 / 0.3);
-}
-@media (max-width: 40rem) {
-  .compare--b3 .compare__opt { padding-inline: 0.55rem; }
-  .type-note { left: 1rem; right: auto; bottom: 6.6rem; }
-}
 
 /* ---- 8. Cinta de programas (movimiento lento y continuo) -------------- */
 

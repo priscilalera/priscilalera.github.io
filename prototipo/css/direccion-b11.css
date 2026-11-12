@@ -1,77 +1,58 @@
 /* ==========================================================================
-   PROPUESTA B · ITERACIÓN 11 — Instrument Sans + Playfair Display
-   Se carga ENCIMA de B10 (que ya define ambas familias). Prueba de pesos
-   más livianos para Instrument Sans. No cambia tamaños, espacios,
-   composición, colores ni animaciones. Playfair Display Italic no cambia.
+   PROPUESTA B · ITERACIÓN 11 — ajustes finales de la versión oficial
+   Se carga ENCIMA de B … B7 y B10.
 
-   Instrument Sans va de 400 a 700 (fuente variable): admite pesos
-   intermedios como 450 o 550. Su peso mínimo es 400, por eso el texto
-   corrido (ya en 400) no puede bajar más.
+   1. Pesos de Instrument Sans (escala 450)
+   2. "Lera" en malva oscuro
+   3. Cinta de programas
+   4. Hero: el cursor estira el marco de la foto (una sola vez)
+   5. Lienzo: grilla de puntos en todo el hero + linterna que sigue al mouse
+   6. Eco del lienzo en el contacto
 
-   Escala de pesos            Actual   450    400
-   - Nombre, capítulos         700      600    500
-   - Títulos de sección        600      550    500
-   - Subtítulos                600      550    500
-   - Texto destacado / UI      500      450    450
-   - Texto corrido             400      400    400
+   Nota: varias reglas llevan ":root" delante solo para conservar la
+   especificidad que tenían cuando dependían de una clase de revisión.
    ========================================================================== */
 
-.peso-450 { --wt-display: 600; --wt-title: 550; --wt-sub: 550; --wt-medium: 450; --wt-lead: 450; }
-.peso-400 { --wt-display: 500; --wt-title: 500; --wt-sub: 500; --wt-medium: 450; --wt-lead: 400; }
+/* ---- 1. Pesos ---------------------------------------------------------- *
+ * Instrument Sans va de 400 a 700 (fuente variable). Texto corrido: 400.
+ *   Nombre, capítulos ...... 600     Subtítulos ............ 550
+ *   Títulos de sección ..... 550     Destacados / interfaz . 450       */
+:root { --wt-display: 600; --wt-title: 550; --wt-sub: 550; --wt-medium: 450; --wt-lead: 450; }
 
-/* Nombre ("Priscila" con sans), nombres de proyecto, marca */
-:is(.peso-450, .peso-400) :is(.hero-b__title, .chapter__title, .contact__title, .brand__name, .tool__mark) {
+/* Nombre ("Priscila"), nombres de proyecto, marca */
+:root :is(.hero-b__title, .chapter__title, .contact__title, .brand__name, .tool__mark) {
   font-weight: var(--wt-display);
 }
-
 /* Títulos de sección (la palabra en Playfair Italic conserva su peso) */
-:is(.peso-450, .peso-400) :is(.section-title, .disc__title, .tool-groups--b2 .tool-group__title) {
+:root :is(.section-title, .disc__title, .tool-groups--b2 .tool-group__title) {
   font-weight: var(--wt-title);
 }
-
 /* Subtítulos: principios, tarjeta del sistema, trayectoria */
-:is(.peso-450, .peso-400) :is(.principle__title, .system-card__title, .practices, .tool-group__title, .timeline__title) {
+:root :is(.principle__title, .system-card__title, .practices, .tool-group__title, .timeline__title) {
   font-weight: var(--wt-sub);
 }
-
 /* Párrafo grande de "Sobre mí" */
-:is(.peso-450, .peso-400) .statement { font-weight: var(--wt-lead); }
-
+:root .statement { font-weight: var(--wt-lead); }
 /* Botones, enlaces y nombres de programas */
-:is(.peso-450, .peso-400) :is(.btn, .link-arrow, .hero__role, .xlink, .social, .prog__name, .ribbon__name, .tool-groups--b2 .tool,
+:root :is(.btn, .link-arrow, .hero__role, .xlink, .social, .prog__name, .ribbon__name, .tool-groups--b2 .tool,
   .contact-b7__email-link, .contact-b7__copy, .contact-b7__link, .contact-b7__cv) {
   font-weight: var(--wt-medium);
 }
 
-/* Barra de revisión */
-.compare [data-b11-nombre][aria-pressed="true"],
-.compare [data-b11-peso][aria-pressed="true"] { background: var(--c-ink); color: var(--c-paper); }
+/* ---- 2. "Lera" en malva oscuro --------------------------------------- *
+ * #87596A sobre el fondo claro #F3F3F3: 5.2:1. El punto final sigue en malva. */
+:root .hero-b__word--light { color: var(--c-mauve-deep, #87596A); }
 
-/* ---- Color en el nombre ---------------------------------------------- *
- * Solo malvas de la paleta (sin colores nuevos). Contraste sobre el fondo
- * claro #F3F3F3: malva #AD7D8B ≈ 3.1:1 (alcanza para texto muy grande),
- * malva oscuro #87596A ≈ 5.2:1. El punto final sigue en malva.          */
-.color-lera         .hero-b__word--light { color: var(--c-mauve, #AD7D8B); }
-.color-lera-oscuro  .hero-b__word--light { color: var(--c-mauve-deep, #87596A); }
-.color-priscila     .hero-b__word:not(.hero-b__word--light) { color: var(--c-mauve-deep, #87596A); }
-
-.compare [data-b11-color][aria-pressed="true"] { background: var(--c-ink); color: var(--c-paper); }
-
-/* ---- Cinta de programas (solo B11: .ribbon--b11) --------------------- */
-/* 1. Espacios parejos
-   - La lista traía el margen izquierdo por defecto del navegador: sumaba
-     un hueco extra en cada vuelta (entre Notion y Figma).
-   - Cada programa ocupa el mismo ancho: los logos quedan equidistantes,
-     sin importar lo largo del nombre ("After Effects" vs. "CSS").       */
+/* ---- 3. Cinta de programas (.ribbon--b11) ----------------------------- *
+ * - Sin margen por defecto de la lista (sumaba un hueco en cada vuelta).
+ * - Cada programa ocupa el mismo ancho: los logos quedan equidistantes.
+ * - Logos en gris; el negro vuelve al pasar el cursor.                   */
 .ribbon--b11 {
   --ribbon-gap: clamp(0.5rem, 0.2rem + 1vw, 1.25rem);
   --ribbon-cell: 7rem;
 }
 .ribbon--b11 .ribbon__group { margin: 0; padding: 0; list-style: none; }
 .ribbon--b11 .ribbon__item { width: var(--ribbon-cell); min-width: 0; }
-
-/* 2. Menos peso: logos en gris en lugar de negro; el negro vuelve al
-      pasar el cursor por cada programa */
 .ribbon--b11 .ribbon__logo {
   fill: var(--text-muted);
   opacity: 0.85;
@@ -79,40 +60,25 @@
 }
 .ribbon--b11 .ribbon__item:hover .ribbon__logo { fill: var(--c-ink); opacity: 1; }
 
-/* ==========================================================================
-   Motion del hero (solo B11) — tres detalles que se prenden por separado
-   (barra: Motion → Lera / Cursor / Paleta). Con "reducir movimiento"
-   no hay transiciones: se ve directamente el estado final.
-   ========================================================================== */
-
-/* Color final de "Lera" según el selector de color */
-.color-lera        { --lera-color: var(--c-mauve, #AD7D8B); }
-.color-lera-oscuro { --lera-color: var(--c-mauve-deep, #87596A); }
-
-/* ---- 1. "Lera" se tiñe: negro → malva, letra por letra, una sola vez -- */
-.js.mo-tinta .hero-b__word--light { color: var(--c-ink); }   /* sin JS no se tiñe: queda el color final */
-.js.mo-tinta.mo-tinta-play .hero-b__word--light { color: var(--lera-color, var(--c-ink)); }
+/* ---- 4. El cursor estira el marco de la foto y lo suelta -------------- *
+ * js/home.js agrega .cursor-play en <html> cuando termina la selección
+ * del marco (≈3.7 s). Se usan margin, inset y scale (no transform) para
+ * no pisar las animaciones de entrada y de reposo.
+ * Con "reducir movimiento" no ocurre.                                    */
 @media (prefers-reduced-motion: no-preference) {
-  .mo-tinta .hero-b__word--light .ch:not(.hero-b__dot) {
-    transition: color 700ms var(--ease-out);
-    transition-delay: calc((var(--i, 8) - 8) * 110ms);
-  }
-}
-
-/* ---- 2. El cursor ajusta el frame: estira la esquina y la suelta ------ *
- * Se usa margin (no transform/translate) para no pisar las animaciones
- * de entrada y de reposo que ya tiene el cursor.                        */
-@media (prefers-reduced-motion: no-preference) {
-  .mo-cursor-play .canvas__select { animation: b11-frame 2200ms var(--ease-in-out) both; }
-  /* La foto acompaña al marco (como al redimensionar en Figma). "scale" es
-     independiente de transform/clip-path: no pisa la entrada de la foto */
-  .mo-cursor-play .canvas__media { transform-origin: 0 0; animation: unveil 1300ms var(--ease-in-out) 450ms both, b11-media 2200ms var(--ease-in-out) both; }
-  .mo-cursor-play .canvas__cursor { animation-name: b-cursor-in, b-click, b-idle, b11-drag; animation-duration: 1000ms, 280ms, 7s, 2200ms; animation-delay: 1300ms, 2250ms, 3200ms, 0ms; animation-iteration-count: 1, 1, infinite, 1; animation-timing-function: var(--ease-out), var(--ease-in-out), var(--ease-in-out), var(--ease-in-out); animation-fill-mode: both, both, none, none; }
-  .mo-cursor-play .canvas__size { margin-left: 0; animation: fade-up 500ms var(--ease-out) 3300ms both, b11-size 2200ms var(--ease-in-out) both; }
+  .cursor-play .canvas__select { animation: b11-frame 2200ms var(--ease-in-out) both; }
+  /* La foto acompaña al marco, como al redimensionar en Figma */
+  .cursor-play .canvas__media { transform-origin: 0 0; animation: unveil 1300ms var(--ease-in-out) 450ms both, b11-media 2200ms var(--ease-in-out) both; }
+  .cursor-play .canvas__cursor { animation-name: b-cursor-in, b-click, b-idle, b11-drag; animation-duration: 1000ms, 280ms, 7s, 2200ms; animation-delay: 1300ms, 2250ms, 3200ms, 0ms; animation-iteration-count: 1, 1, infinite, 1; animation-timing-function: var(--ease-out), var(--ease-in-out), var(--ease-in-out), var(--ease-in-out); animation-fill-mode: both, both, none, none; }
+  .cursor-play .canvas__size { margin-left: 0; animation: fade-up 500ms var(--ease-out) 3300ms both, b11-size 2200ms var(--ease-in-out) both; }
 }
 @keyframes b11-frame {
   0%, 100% { inset: 0; }
   40%, 62% { inset: 0 -18px -22px 0; }
+}
+@keyframes b11-media {
+  0%, 100% { scale: 1; }
+  40%, 62% { scale: 1.049 1.048; }   /* 386/368 × 482/460 */
 }
 @keyframes b11-drag {
   0%, 100% { margin: 0; }
@@ -123,30 +89,13 @@
   40%, 62% { margin-left: 9px; }
 }
 
-/* ---- 3. La tarjeta de color recorre la paleta al pasar el cursor ------ */
-.mo-paleta .canvas__chip { cursor: default; }
-@media (prefers-reduced-motion: no-preference) {
-  .mo-paleta .canvas__chip-swatch { transition: background-color 350ms var(--ease-out), scale 350ms var(--ease-out); }
-  .mo-paleta .canvas__chip.is-cycling .canvas__chip-swatch { scale: 1.08; }
-}
+/* ---- 5. Lienzo: grilla de puntos en todo el hero ---------------------- */
+:root .hero-b { position: relative; isolation: isolate; }
 
-/* Barra de revisión */
-.compare [data-b11-motion][aria-pressed="true"] { background: var(--c-ink); color: var(--c-paper); }
-@keyframes b11-media {
-  0%, 100% { scale: 1; }
-  40%, 62% { scale: 1.049 1.048; }   /* 386/368 × 482/460 */
-}
-
-/* ==========================================================================
-   Lienzo: la grilla de puntos de la foto se extiende a todo el hero
-   (barra: Lienzo → Actual / Puntos / Puntos + cursor)
-   ========================================================================== */
-:is(.lienzo-puntos, .lienzo-cursor) .hero-b { position: relative; isolation: isolate; }
-
-/* A. Puntos en todo el hero, quietos y suaves. Se desvanecen arriba y abajo,
-      y quedan más tenues del lado del texto para no competir con la lectura. */
-:is(.lienzo-puntos, .lienzo-cursor) .hero-b::before,
-.lienzo-cursor .hero-b::after {
+/* Puntos quietos y suaves. Se desvanecen arriba y abajo, y quedan más
+   tenues del lado del texto para no competir con la lectura. */
+:root .hero-b::before,
+:root .hero-b::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -156,7 +105,7 @@
   background-position: center top;
   pointer-events: none;
 }
-:is(.lienzo-puntos, .lienzo-cursor) .hero-b::before {
+:root .hero-b::before {
   --dot-a: 0.13;
   -webkit-mask-image:
     linear-gradient(to bottom, transparent, #000 14%, #000 72%, transparent),
@@ -167,43 +116,28 @@
     linear-gradient(to right, rgb(0 0 0 / 0.5), rgb(0 0 0 / 0.5) 38%, #000 62%);
           mask-composite: intersect;
 }
-/* La grilla propia de la foto se apaga: ahora es parte de la del hero */
-:is(.lienzo-puntos, .lienzo-cursor) .canvas::before { display: none; }
+/* La grilla propia de la foto se apaga: es parte de la del hero */
+:root .canvas::before { display: none; }
 
-/* B. Los puntos cerca del mouse se oscurecen apenas (solo con mouse) */
-.lienzo-cursor .hero-b::after {
+/* Linterna: los puntos cerca del mouse se oscurecen apenas (solo con mouse) */
+:root .hero-b::after {
   --dot-a: 0.42;
   opacity: 0;
   transition: opacity 400ms var(--ease-out);
   -webkit-mask-image: radial-gradient(circle 9rem at var(--mx, 50%) var(--my, 50%), #000, transparent);
           mask-image: radial-gradient(circle 9rem at var(--mx, 50%) var(--my, 50%), #000, transparent);
 }
-.lienzo-cursor .hero-b.is-pointing::after { opacity: 1; }
+:root .hero-b.is-pointing::after { opacity: 1; }
 
 @media (prefers-reduced-motion: no-preference) {
-  :is(.lienzo-puntos, .lienzo-cursor) .hero-b::before { animation: fade-in 1400ms var(--ease-out) 200ms both; }
+  :root .hero-b::before { animation: fade-in 1400ms var(--ease-out) 200ms both; }
 }
 
-.compare [data-b11-lienzo][aria-pressed="true"] { background: var(--c-ink); color: var(--c-paper); }
-
-/* Barra de revisión: con tantos selectores pasa a varias filas */
-.compare {
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  max-width: min(calc(100vw - 2rem), 52rem);
-  overflow: hidden;
-  border-radius: 14px;
-}
-.compare__opt { white-space: nowrap; }
-.compare__sep { display: none; }
-.compare__label { border-left: 1px solid var(--c-line); padding-block: 0.55rem; }
-
-/* ==========================================================================
-   Eco del lienzo en el cierre: puntos quietos en "Hablemos." (sin linterna)
-   (barra: Eco → Con / Sin). La página empieza y termina en el lienzo.
-   ========================================================================== */
-.eco-con .contact-b7 { position: relative; isolation: isolate; }
-.eco-con .contact-b7::before {
+/* ---- 6. Eco del lienzo en el contacto ---------------------------------- *
+ * Puntos quietos en malva, sin linterna. La página empieza y termina en
+ * el lienzo. Más presentes del lado de "Hablemos.".                      */
+:root .contact-b7 { position: relative; isolation: isolate; }
+:root .contact-b7::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -212,7 +146,6 @@
   background-size: 18px 18px;
   background-position: center top;
   pointer-events: none;
-  /* Más presente del lado de "Hablemos.", se apaga hacia los datos de contacto */
   -webkit-mask-image:
     linear-gradient(to bottom, transparent, #000 18%, #000 78%, transparent),
     linear-gradient(to right, #000, #000 35%, rgb(0 0 0 / 0.35) 70%, rgb(0 0 0 / 0.2));
@@ -222,4 +155,3 @@
     linear-gradient(to right, #000, #000 35%, rgb(0 0 0 / 0.35) 70%, rgb(0 0 0 / 0.2));
           mask-composite: intersect;
 }
-.compare [data-b11-eco][aria-pressed="true"] { background: var(--c-ink); color: var(--c-paper); }

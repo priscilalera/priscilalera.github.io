@@ -131,22 +131,5 @@
   .dtool:hover,
   .dtool.is-tapped { transform: translateY(-2px); }
 }
-
-/* Variante a evaluar: color original de cada marca (barra de revisión) */
-.logos-color .dtool--figma             { color: #F24E1E; }
-.logos-color .dtool--adobeillustrator  { color: #FF9A00; }
-.logos-color .dtool--adobephotoshop    { color: #31A8FF; }
-.logos-color .dtool--adobeaftereffects { color: #9999FF; }
-.logos-color .dtool--html5             { color: #E34F26; }
-.logos-color .dtool--css3              { color: #1572B6; }
-.logos-color .dtool--bootstrap         { color: #7952B3; }
-.logos-color .dtool--wordpress         { color: #21759B; }
-.logos-color .dtool--notion            { color: #000000; }
-/* El amarillo de JavaScript no se ve sobre claro: se apoya en su fondo oficial */
-.logos-color .dtool--javascript,
-.logos-color .dtool--javascript:hover  { color: #F7DF1E; background: #1C1C1C; }
-
-.compare__logos[aria-pressed="true"] { background: var(--c-periwinkle); color: var(--c-ink); }
-
 /* La muestra "ink" coincide con el fondo oscuro: se le marca el borde */
 .system-card .swatch__chip { box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.2); }

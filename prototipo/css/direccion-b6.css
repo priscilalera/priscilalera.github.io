@@ -12,9 +12,8 @@
  *   butter #F2DF9B (rellenos con texto ink): 12.8:1
  * Las líneas de selección usan malva #AD7D8B (decorativas, sin texto).     */
 
-/* Amarillo integrado como en B5: líneas doradas + rellenos butter; fondo rosa */
-.pal-rosa-amarillo { --ui-line: #C4A644; --ui-fill: #F2DF9B; --c-lavender: #F6E6EA; }
-.pal-rosa          { --ui-line: #AD7D8B; --ui-fill: #F3CFD8; --c-lavender: #F6E6EA; }
+/* Paleta elegida: rosa + amarillo (líneas doradas, rellenos butter, fondo blush) */
+:root { --ui-line: #C4A644; --ui-fill: #F2DF9B; --c-lavender: #F6E6EA; }
 
 /* ---- 2. Cinta de logotipos ------------------------------------------- */
 

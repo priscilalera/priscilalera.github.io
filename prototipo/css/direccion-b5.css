@@ -14,9 +14,7 @@
  *   ink / periwinkle #8995C5 ... 5.8:1      ink / butter #F2DF9B ... 12.8:1
  *   mauve-deep / cream #F5EFDD . 5.0:1      ink-muted / cream ...... 5.8:1   */
 
-.pal-violeta  { --ui-line: #8995C5; --ui-fill: #8995C5; --c-lavender: #E7E9F4; }
-.pal-amarillo { --ui-line: #C4A644; --ui-fill: #F2DF9B; --c-lavender: #F5EFDD; }
-.pal-mixta    { --ui-line: #8995C5; --ui-fill: #F2DF9B; --c-lavender: #E7E9F4; }
+/* Las variables --ui-line / --ui-fill se definen en direccion-b6.css (paleta elegida) */
 
 /* Retrato seleccionado */
 .canvas__edge        { background: var(--ui-line); }
@@ -99,30 +97,4 @@
 @media (max-width: 40rem) {
   .prog { width: 5.5rem; height: 5.75rem; }
   .prog__name { font-size: 0.75rem; }
-}
-
-/* ---- 3. Barra de revisión -------------------------------------------- */
-
-.compare__pal { display: inline-flex; align-items: center; gap: 0.4rem; }
-.compare__pal[aria-pressed="true"] { background: var(--c-ink); color: var(--c-paper); }
-.compare__pal[aria-pressed="true"]:hover { color: var(--c-paper); }
-.compare__dots { display: inline-flex; }
-.compare__dots i {
-  width: 0.6rem;
-  height: 0.6rem;
-  margin-left: -0.18rem;
-  border-radius: 50%;
-  background: var(--d);
-  box-shadow: 0 0 0 1.5px var(--c-white);
-}
-.compare__dots i:first-child { margin-left: 0; }
-
-@media (max-width: 40rem) {
-  .compare--b5 {
-    flex-wrap: wrap;
-    max-width: calc(100% - 2rem);
-    border-radius: 14px;
-  }
-  .compare--b5 .compare__sep { display: none; }
-  .type-note { bottom: 9rem; }
 }
