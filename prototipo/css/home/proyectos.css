@@ -177,3 +177,10 @@
   color: var(--text-muted);
 }
 
+
+/* Acceso a "Todos los proyectos", debajo de los dos destacados */
+.stage__more {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-3xl);
+}

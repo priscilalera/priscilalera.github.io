@@ -34,18 +34,21 @@ Las versiones anteriores (Propuesta A y B1–B11) quedaron guardadas en el commi
 
 ```
 prototipo/
-├── index.html                 Home: hero, proyectos, sobre mí, herramientas, trayectoria, contacto
+├── index.html                 Home: hero, proyectos destacados (+ "Ver todos los proyectos"), sobre mí,
+│                              herramientas, trayectoria, contacto
 ├── proyectos/
+│   ├── index.html             Todos los proyectos (grilla; para sumar uno, copiar un <article class="work">)
 │   ├── fullescabio.html       Caso de estudio UX/UI (fondo claro)
 │   └── zombie-walk.html       Caso de estudio de branding (fondo negro, .theme-zombie)
 ├── css/
 │   ├── tokens.css             Identidad: colores, tipografías, pesos, espacios, tiempos
 │   ├── base.css               Reset, tipografía base, utilidades, accesibilidad
-│   ├── components.css         Header, menú, botones, enlaces, títulos, etiquetas, placeholders,
+│   ├── components.css         Header, menú, botones, enlaces, títulos, etiquetas, placeholders, pie compacto,
 │   │                          teléfono, contenido pendiente, footer, piezas de proyecto (showcase)
 │   ├── motion.css             Animaciones comunes y keyframes (respetan prefers-reduced-motion)
 │   ├── contacto.css           "Hablemos.", email, perfiles, CV y cierre de la home
-│   ├── case.css               Casos de estudio: plantilla, pie con contacto, tema oscuro de Zombie Walk
+│   ├── case.css               Casos de estudio: plantilla y tema oscuro de Zombie Walk
+│   ├── proyectos.css          Página "Todos los proyectos": encabezado y grilla
 │   └── home/                  Secciones de la home, en el orden de la página
 │       ├── hero.css
 │       ├── proyectos.css
@@ -63,7 +66,7 @@ prototipo/
         └── fullescabio-logo.png   (copiado de la versión anterior)
 ```
 
-Orden de carga: `tokens` → `base` → `components` → `motion` → home: `home/*.css` + `contacto.css` · casos: `case.css`.
+Orden de carga: `tokens` → `base` → `components` → `motion` → home: `home/*.css` + `contacto.css` · casos: `case.css` · todos los proyectos: `proyectos.css`.
 
 ## Cómo reemplazar un placeholder por una imagen
 
