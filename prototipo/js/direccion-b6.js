@@ -102,7 +102,8 @@
         rail.append(clone);
       }
       ribbon.style.setProperty("--ribbon-loop", `${loop}px`);
-      ribbon.style.setProperty("--ribbon-dur", `${(loop / SPEED).toFixed(1)}s`);
+      const speed = Number(ribbon.dataset.ribbonSpeed) || SPEED; // B11 la ajusta desde el HTML
+      ribbon.style.setProperty("--ribbon-dur", `${(loop / speed).toFixed(1)}s`);
     };
 
     const start = () => {

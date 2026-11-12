@@ -1,0 +1,41 @@
+/* ==========================================================================
+   PROPUESTA B · ITERACIÓN 8 — refinamiento tipográfico
+   Se carga ENCIMA de B … B7. No cambia colores, composición, espacios
+   ni animaciones: solo tamaño, inclinación y espaciado de letras de la serif.
+
+   Reparto de roles
+   - Manrope: voz principal (nombre, textos, interfaz).
+   - Italiana redonda: títulos y su palabra destacada (sin cambios).
+   - Italiana inclinada: palabra destacada dentro de un párrafo
+     ("personas", "interfaces").
+   ========================================================================== */
+
+/* ---- 1. "Lera": acompaña a "Priscila" sin competir ------------------- *
+ * Con el mismo cuerpo, Italiana se ve más ancha y llamativa que el
+ * Manrope extra negrita. Al 78 % ocupa casi el mismo ancho que
+ * "Priscila" y la jerarquía queda clara: primero el nombre, después
+ * el apellido como acento.                                              */
+.hero-b__word--light {
+  font-size: 0.78em;
+  letter-spacing: -0.005em;
+}
+
+/* ---- 2. Palabras destacadas dentro del texto ------------------------- *
+ * Italiana no tiene itálica: Google Fonts solo ofrece Regular.
+ * Esta inclinación la genera el navegador (oblicua simulada). Sirve para
+ * evaluar el efecto; si se aprueba, conviene confirmarlo en Safari y
+ * Firefox, porque cada navegador inclina un poco distinto.             */
+.hero-b__lead .accent,
+.statement .accent {
+  font-style: italic;
+  font-synthesis: style;
+  letter-spacing: 0.005em;
+}
+/* Italiana tiene el ojo medio más bajo que Manrope: este tamaño iguala
+   la altura de las minúsculas para que la palabra no parezca de otro cuerpo */
+.hero-b__lead .accent { font-size: 1.16em; }
+.statement .accent    { font-size: 1.12em; }
+
+/* La etiqueta de la selección de texto nombra el estilo que se ve */
+.type-ogg,
+.type-canela { --accent-label: "Italiana · Oblicua"; }

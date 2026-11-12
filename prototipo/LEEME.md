@@ -39,7 +39,35 @@ Para probar las transiciones entre páginas, abrilo desde un servidor local
 - `index-b7.html` — **Propuesta B, iteración 7** (alternativa a B6): igual que B6 salvo el contacto y el cierre
   (dos columnas con más aire, email como medio principal, perfiles en filas, CV como enlace propio, solo malva
   como acento) y la foto con más contraste (`assets/img/retrato-16-contraste.jpg`; `?foto=16` muestra la anterior).
-  Carga además `direccion-b7.css`.
+  Carga además `direccion-b7.css`. La serif de acento es **Italiana** (Google Fonts, licencia libre SIL OFL),
+  en redonda; reemplaza a Ogg/Canela, que siguen solo en B3–B6.
+
+- `index-b8.html` — **Propuesta B, iteración 8** (alternativa a B7): refinamiento tipográfico. "Lera" al 78 %
+  del tamaño de "Priscila"; "personas" e "interfaces" en Italiana inclinada (oblicua simulada por el navegador:
+  Italiana no tiene itálica). Títulos de sección sin cambios. Carga además `direccion-b8.css`.
+
+- `index-b9.html` — **Propuesta B, iteración 9** (alternativa a B7, descarta B8): Italiana solo en tamaños grandes;
+  "personas" e "interfaces" en Manrope SemiBold malva. Selectores en la barra: Nombre (Peso / Tamaño / Mixto)
+  y Acento (Oblicua / Recta); también `?nombre=tamano&acento=recta`. Carga `direccion-b9.css` y `js/direccion-b9.js`.
+
+- `index-b10.html` — **Propuesta B, iteración 10**: **Bodoni Moda** (Google Fonts, SIL OFL, con itálica real) reemplaza a Italiana.
+  "Lera", los acentos de los títulos y "personas" / "interfaces" en itálica (estas dos en malva). Selector de nombre:
+  Todo serif / Con sans; de serif: Bodoni / Playfair Display; y de sans: Manrope / Instrument Sans / DM Sans /
+  Hanken Grotesk (también `?nombre=mixto&serif=playfair&sans=dm`).
+
+- `index-b11.html` — **Propuesta B, iteración 11**: combinación elegida, **Instrument Sans + Playfair Display**
+  (Italic en las palabras destacadas). Prueba de pesos más livianos para Instrument Sans: selector Peso
+  Actual / 450 / 400 (también `?peso=450`) y Nombre (Todo serif / Con sans). Carga `direccion-b10.css` + `direccion-b11.css`
+  y `js/direccion-b11.js`. Tamaños, espacios, colores y animaciones sin cambios.
+  Selector Color del nombre: Sin color / Lera malva / Lera malva oscuro / Priscila malva (también `?color=lera`).
+  Cinta de programas propia (`.ribbon--b11`): sin botón de pausa (se detiene con cursor, foco o toque), espacios parejos,
+  orden Diseño → Desarrollo, logos en gris y un poco más rápida (`data-ribbon-speed="30"`; B6–B10 siguen en 26).
+  Motion del hero (interruptores en la barra; también `?motion=tinta,cursor,paleta`): 1 «Lera» se tiñe de malva,
+  2 el cursor estira el marco de la foto y lo suelta, 3 la tarjeta de color recorre la paleta al pasar el cursor.
+  Lienzo (`?lienzo=actual|puntos|cursor`): grilla de puntos en todo el hero; «Puntos + cursor» suma una linterna que oscurece
+  los puntos cerca del mouse. Eco (`?eco=con|sin`): puntos quietos en malva tenue en el contacto «Hablemos.».
+  Predeterminado: motion = cursor, lienzo = puntos + cursor, eco = con.
+  Carga `direccion-b10.css` (no usa B8 ni B9) y `js/direccion-b10.js`.
 
 ## Tipografías de prueba (Ogg / Canela)
 

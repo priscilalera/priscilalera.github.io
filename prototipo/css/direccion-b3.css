@@ -22,6 +22,7 @@
   font-display: swap;
   src: local("Ogg Regular"), local("Ogg-Regular"), local("Ogg Roman"), local("Ogg-Roman"),
        local("Ogg TRIAL Regular"), local("OggTRIAL-Regular"),
+       url("../assets/fonts/ogg/Ogg-Regular-BF646c18fc3ed57.otf") format("opentype"),  /* prueba (Befonts) */
        url("../assets/fonts/ogg/Ogg-Regular.woff2") format("woff2"),
        url("../assets/fonts/ogg/Ogg-Regular.otf") format("opentype");
 }
@@ -32,6 +33,7 @@
   font-display: swap;
   src: local("Ogg Italic"), local("Ogg-Italic"),
        local("Ogg TRIAL Italic"), local("OggTRIAL-Italic"),
+       url("../assets/fonts/ogg/Ogg-RegularItalic-BF646c18fc462a5.otf") format("opentype"),  /* prueba (Befonts) */
        url("../assets/fonts/ogg/Ogg-Italic.woff2") format("woff2"),
        url("../assets/fonts/ogg/Ogg-Italic.otf") format("opentype");
 }

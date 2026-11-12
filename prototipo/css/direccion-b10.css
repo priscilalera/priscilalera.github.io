@@ -1,0 +1,120 @@
+/* ==========================================================================
+   PROPUESTA B · ITERACIÓN 10 — Bodoni Moda reemplaza a Italiana
+   Se carga ENCIMA de B … B7 (no usa B8 ni B9). No cambia colores,
+   composición, espacios ni animaciones.
+
+   Bodoni Moda (Google Fonts, licencia SIL OFL): serif de alto contraste,
+   con itálica REAL (dibujada, no inclinada por el navegador) y ajuste
+   óptico automático según el tamaño (eje "opsz" 6–96).
+   ========================================================================== */
+
+.type-ogg,
+.type-canela {
+  --font-accent: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --accent-label: "Bodoni Moda · Italic";
+}
+
+/* ---- 1. Acentos: itálica real ---------------------------------------- */
+.accent,
+.section-title em,
+.system-card__title em {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  font-optical-sizing: auto;
+  letter-spacing: -0.01em;
+}
+/* Palabras destacadas dentro de los párrafos, en malva */
+.hero-b__lead .accent,
+.statement .accent {
+  font-size: 1.14em;   /* Bodoni tiene el ojo medio más bajo que Manrope */
+  letter-spacing: 0;
+  line-height: inherit;
+  color: var(--accent);
+}
+
+/* "Hablemos." y la marca del sitio: redonda, como titular */
+.contact-b7__title,
+.art-brand__mark { font-style: normal; font-weight: 400; letter-spacing: -0.02em; }
+
+/* ---- 2. Nombre ------------------------------------------------------- */
+/* "Lera" siempre en itálica */
+.hero-b__word--light {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+/* Todo serif: "Priscila" en Bodoni Moda redonda, "Lera" en itálica */
+.nombre-serif .hero-b__word:not(.hero-b__word--light) {
+  font-family: var(--font-accent);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+.nombre-serif .hero-b__dot { font-family: var(--font-accent); font-weight: 400; }
+
+/* Con sans: "Priscila" queda en la sans elegida, en negrita (como B7) */
+
+/* ---- 3. Barra de revisión -------------------------------------------- */
+.compare__label {
+  align-self: center;
+  padding-inline: 0.6rem 0.2rem;
+  color: var(--c-ink-muted, #5C5C5C);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.compare [data-b10-nombre][aria-pressed="true"] { background: var(--c-ink); color: var(--c-paper); }
+.compare [data-b10-serif][aria-pressed="true"] { background: var(--c-ink); color: var(--c-paper); }
+
+/* ---- 4. Prueba: Playfair Display (Google Fonts, SIL OFL, itálica real) */
+.type-ogg.serif-playfair,
+.type-canela.serif-playfair {
+  --font-accent: "Playfair Display", "Didot", Georgia, serif;
+  --accent-label: "Playfair Display · Italic";
+}
+/* Playfair tiene el ojo medio más alto que Bodoni: el acento del párrafo
+   necesita menos aumento para igualar a Manrope */
+.serif-playfair .hero-b__lead .accent,
+.serif-playfair .statement .accent { font-size: 1.04em; }
+
+/* ---- 5. Prueba: reemplazos de Manrope (Google Fonts, SIL OFL) -------- *
+ * Cambia la sans de títulos, textos e interfaz. El espaciado de los
+ * titulares grandes estaba calibrado para Manrope (muy compacta): cada
+ * alternativa lleva el suyo para no verse apretada.                    */
+.sans-instrument {
+  --font-display: "Instrument Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-sans:    "Instrument Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --track-xl: -0.035em;  /* nombre, capítulos */
+  --track-l:  -0.025em;  /* títulos de sección y tarjetas */
+}
+.sans-dm {
+  --font-display: "DM Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-sans:    "DM Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --track-xl: -0.03em;
+  --track-l:  -0.02em;
+}
+.sans-hanken {
+  --font-display: "Hanken Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-sans:    "Hanken Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --track-xl: -0.04em;
+  --track-l:  -0.03em;
+}
+:is(.sans-instrument, .sans-dm, .sans-hanken) :is(.hero-b__title, .chapter__title) {
+  letter-spacing: var(--track-xl);
+}
+:is(.sans-instrument, .sans-dm, .sans-hanken) :is(.section-title, .principle__title, .system-card__title) {
+  letter-spacing: var(--track-l);
+}
+.compare [data-b10-sans][aria-pressed="true"] { background: var(--c-ink); color: var(--c-paper); }
+/* Párrafo grande de "Sobre mí": también estaba calibrado para Manrope */
+.sans-instrument .statement { letter-spacing: -0.02em; }
+/* DM Sans ajusta su forma según el tamaño (eje óptico) y en grande ya viene
+   más cerrada: no necesita espaciado negativo */
+.sans-dm .statement         { letter-spacing: 0; }
+.sans-hanken .statement     { letter-spacing: -0.02em; }
+
+/* El punto final acompaña siempre a "Lera" (serif): Instrument y Hanken
+   tienen el punto cuadrado y se veía ajeno al nombre */
+.hero-b__dot { font-family: var(--font-accent); font-style: normal; font-weight: 400; }
