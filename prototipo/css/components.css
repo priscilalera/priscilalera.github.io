@@ -525,6 +525,17 @@
   border: 0;
 }
 
+/* Captura real dentro del marco: llena la pantalla y muestra la parte superior */
+.phone__screen {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.7rem;
+  object-fit: cover;
+  object-position: top;
+  background: var(--c-white);
+}
+
 .tbd {
   text-decoration: underline dashed var(--c-rose);
   text-decoration-thickness: 1px;
