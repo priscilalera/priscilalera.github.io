@@ -218,9 +218,16 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
   gap: var(--space-m);
-  margin-top: var(--space-2xl);
+  margin-top: var(--space-s);
   counter-reset: step;
 }
+/* Etiqueta de cada etapa (2024 / 2026) sobre su fila de pasos */
+.steps-label {
+  margin-top: var(--space-xl);
+  color: var(--accent);
+  font-size: var(--fs-mono);
+}
+.flow-title + .steps-label { margin-top: var(--space-m); }
 .step {
   padding: var(--space-l);
   border: 1px solid var(--border);
@@ -448,6 +455,13 @@
   justify-content: center;
 }
 .screens--flow { margin-top: var(--space-l); }
+/* Cinco pantallas en una fila (proceso de compra) */
+@media (min-width: 75rem) {
+  .screens--five {
+    grid-template-columns: repeat(5, minmax(0, 10rem));
+    column-gap: var(--space-m);
+  }
+}
 
 /* Enlace para seguir en Figma */
 .case-more { margin-top: var(--space-m); }
