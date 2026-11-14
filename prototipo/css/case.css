@@ -437,29 +437,47 @@
 .theme-zombie .screens { background: var(--surface); }
 
 /* Pantallas con epígrafe (antes / después) */
-.screens figure { display: grid; gap: var(--space-s); }
+/* El epígrafe queda debajo de la sombra del teléfono */
+.screens figure { display: grid; gap: var(--space-l); }
 .screens figure .annot { text-align: center; }
 .screens + .screens { margin-top: var(--space-m); }
 
-/* Flujos: una fila de pantallas que se desplaza en horizontal */
-.flow {
+/* Selección de pantallas: tamaño acotado y centradas, aunque sean 2 o 3 */
+.screens--fit {
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 12rem));
+  justify-content: center;
+}
+.screens--flow { margin-top: var(--space-l); }
+
+/* Enlace para seguir en Figma */
+.case-more { margin-top: var(--space-m); }
+.case-more + .case-more { margin-top: var(--space-xs); }
+
+/* Acceso destacado al prototipo */
+.proto-cta {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(9.5rem, 22%);
+  justify-items: start;
   gap: var(--space-m);
-  margin-top: var(--space-l);
-  padding: var(--space-l);
+  margin-top: var(--space-xl);
+  padding: clamp(1.5rem, 1rem + 3vw, 3.5rem);
   border-radius: var(--radius-l);
   background: var(--c-rose-mist);
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent) transparent;
 }
-.flow > figure { display: grid; gap: var(--space-s); scroll-snap-align: start; }
-.flow figcaption { text-align: center; }
-.flow:focus-visible { outline-offset: 4px; }
+.proto-cta__eyebrow { color: var(--text-muted); }
+.proto-cta__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem);
+  font-weight: var(--wt-display);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+.proto-cta__title em {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}
+.proto-cta .btn { margin-top: var(--space-xs); }
 .flow-title {
   margin-top: var(--space-2xl);
   font-family: var(--font-display);
