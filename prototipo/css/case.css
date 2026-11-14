@@ -195,10 +195,17 @@
   gap: var(--space-m);
   margin-top: var(--space-2xl);
 }
+.media-grid--1 { grid-template-columns: 1fr; }
 .media-grid--2 { grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
 .media-grid--3 { grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); }
 .media-grid--4 { grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); }
-.media-grid figure { display: grid; gap: var(--space-s); }
+.media-grid figure { display: grid; gap: var(--space-s); align-content: start; }
+
+/* Imágenes del caso (piezas, recortes del manual) */
+.case-img { width: 100%; height: auto; border-radius: var(--radius-m); }
+.flow-title + .media-grid { margin-top: var(--space-l); }
+.case-media + .media-grid { margin-top: var(--space-m); }
+.ds-type .case-img { margin-bottom: var(--space-s); }
 
 /* Pantallas en fila */
 .screens {
@@ -376,6 +383,8 @@
   scrollbar-color: var(--accent) transparent;
 }
 .rail > * { scroll-snap-align: start; }
+/* Páginas horizontales: más anchas para que se lean */
+.rail--wide { grid-auto-columns: minmax(16rem, 70%); }
 .rail:focus-visible { outline-offset: 6px; }
 .rail-hint { margin-top: var(--space-xs); color: var(--text-muted); }
 
