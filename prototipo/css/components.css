@@ -741,6 +741,15 @@
   transform: rotate(-4deg);
 }
 
+/* Calmi: dos celulares y el logo sobre el lila de la app */
+.showcase--calmi .showcase__bg {
+  background: #E3D1E6;
+}
+
+.showcase--calmi .showcase__logo {
+  width: 16%;
+}
+
 /* Burger Company: captura de escritorio + celular sobre el amarillo del sitio */
 .showcase--burger .showcase__bg {
   background: #D8B60C;

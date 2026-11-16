@@ -93,6 +93,7 @@
 .case-cover .zw-piece--app    { right: 24%; bottom: 8%; width: 28%; }
 .case-cover .zw-piece--web    { left: 10%; top: 13%; width: 58%; }
 .case-cover .showcase--burger .showcase__phone--b { left: auto; right: 13%; top: 9%; width: 17%; }
+.case-cover .showcase--calmi .showcase__logo { width: 12%; left: 8%; bottom: 14%; }
 
 @media (max-width: 40rem) {
   .case-cover .showcase { aspect-ratio: 4 / 5; }
@@ -105,6 +106,7 @@
   .case-cover .zw-piece--app    { right: 8%; bottom: 6%; width: 60%; }
   .case-cover .zw-piece--web    { left: 5%; top: 8%; width: 82%; }
   .case-cover .showcase--burger .showcase__phone--b { right: 7%; top: 34%; width: 38%; }
+  .case-cover .showcase--calmi .showcase__logo { width: 24%; left: 6%; bottom: 6%; }
 }
 
 /* ---- Ficha técnica --------------------------------------------------- */
