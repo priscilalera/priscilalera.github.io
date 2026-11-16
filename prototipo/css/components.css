@@ -741,6 +741,25 @@
   transform: rotate(-4deg);
 }
 
+/* Burger Company: captura de escritorio + celular sobre el amarillo del sitio */
+.showcase--burger .showcase__bg {
+  background: #D8B60C;
+}
+
+.zw-piece--web {
+  left: 6%;
+  top: 14%;
+  width: 66%;
+  z-index: 1;
+}
+
+.showcase--burger .showcase__phone--b {
+  left: auto;
+  right: 8%;
+  top: 8%;
+  width: 24%;
+}
+
 .zw-piece--app .zw-piece__inner {
   transform: rotate(3deg);
 }

@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Burger Company — Caso de estudio · Priscila Lera</title>
+    <meta name="description" content="Burger Company: sitio web responsive para una hamburguesería, diseñado y desarrollado con HTML, CSS, JavaScript, jQuery y Bootstrap para la materia Desarrollo II." />
+    <meta name="theme-color" content="#FAF6F1" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Instrument+Sans:wght@400..700&display=swap" />
+
+    <link rel="stylesheet" href="../css/tokens.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/motion.css" />
+    <link rel="stylesheet" href="../css/case.css" />
+
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script src="../js/main.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <div class="progress" aria-hidden="true"></div>
+
+    <header class="site-header" data-header>
+      <div class="container site-header__inner">
+        <a class="brand" href="../index.html">
+          <span class="brand__name">Priscila Lera</span>
+          <span class="brand__role mono">UI Designer</span>
+        </a>
+        <button class="nav-toggle mono" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          <span class="nav-toggle__label">Menú</span>
+          <span class="nav-toggle__icon" aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Principal" data-nav>
+          <ul>
+            <li><a class="is-active" aria-current="true" href="index.html"><span class="site-nav__num">01</span><span class="site-nav__label">Proyectos</span></a></li>
+            <li><a href="../index.html#sobre-mi"><span class="site-nav__num">02</span><span class="site-nav__label">Sobre mí</span></a></li>
+            <li><a href="../index.html#herramientas"><span class="site-nav__num">03</span><span class="site-nav__label">Herramientas</span></a></li>
+            <li><a href="../index.html#trayectoria"><span class="site-nav__num">04</span><span class="site-nav__label">Trayectoria</span></a></li>
+            <li><a class="site-nav__cta" href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <article>
+        <!-- ============================ HERO ============================ -->
+        <header class="case-hero" data-lienzo>
+          <div class="container">
+            <div class="case-hero__top mono">
+              <a class="link-arrow" href="index.html"><span class="link-arrow__icon link-arrow__icon--back" aria-hidden="true">←</span><span class="link-arrow__label">Proyectos</span></a>
+              <span class="case-hero__meta">Caso 03 / 03 — Desarrollo web</span>
+            </div>
+
+            <h1 class="case-hero__title">Burger Company</h1>
+
+            <div class="case-hero__intro">
+              <p class="case-hero__lead">
+                Sitio web responsive para una hamburguesería, con catálogo de productos, carrito de compras y formulario de contacto. Lo rehice sola desde cero a partir de un proyecto grupal.
+              </p>
+              <!-- Enlaces pendientes: se completan cuando el sitio esté publicado en GitHub Pages -->
+              <div class="case-hero__actions">
+                <a class="btn btn--primary" aria-disabled="true" role="link">Ver sitio <span class="btn__icon" aria-hidden="true">↗</span></a>
+                <a class="btn" aria-disabled="true" role="link">Ver código <span class="btn__icon" aria-hidden="true">↗</span></a>
+                <span class="tbd-tag">links pendientes</span>
+              </div>
+            </div>
+
+            <div class="case-cover" aria-hidden="true">
+              <div class="showcase showcase--burger">
+                <div class="showcase__bg"></div>
+                <div class="zw-piece zw-piece--web">
+                  <div class="zw-piece__inner"><img src="../assets/img/burger-company/inicio.jpg" alt="" width="1440" height="900" /></div>
+                </div>
+                <div class="showcase__phone showcase__phone--b">
+                  <div class="phone"><img class="phone__screen" src="../assets/img/burger-company/movil-inicio.jpg" alt="" width="780" height="1688" /></div>
+                </div>
+              </div>
+            </div>
+
+            <dl class="case-facts">
+              <div><dt class="mono">Rol</dt><dd>Diseño y desarrollo web</dd></div>
+              <div><dt class="mono">Tipo</dt><dd>Proyecto académico</dd></div>
+              <div><dt class="mono">Materias</dt><dd>Desarrollo II y Programación II</dd></div>
+              <div><dt class="mono">Año</dt><dd>2024</dd></div>
+              <div><dt class="mono">Herramientas</dt><dd>HTML, CSS, JavaScript, jQuery, Bootstrap</dd></div>
+              <div><dt class="mono">Entregables</dt><dd>Sitio web de 6 páginas</dd></div>
+            </dl>
+          </div>
+        </header>
+
+        <!-- ============================ CUERPO ============================ -->
+        <div class="container case-body">
+          <nav class="case-toc" aria-label="Secciones del caso">
+            <div class="case-toc__inner">
+              <p class="case-toc__title mono">Índice</p>
+              <ol role="list" data-toc>
+                <li><a href="#contexto"><span>01</span>Contexto</a></li>
+                <li><a href="#sitio"><span>02</span>El sitio</a></li>
+                <li><a href="#funcionalidades"><span>03</span>Funcionalidades</a></li>
+                <li><a href="#responsive"><span>04</span>Responsive</a></li>
+                <li><a href="#aprendizajes"><span>05</span>Aprendizajes</a></li>
+              </ol>
+            </div>
+          </nav>
+
+          <div class="case-main">
+            <!-- 01 -->
+            <section class="case-section" id="contexto" aria-labelledby="t-contexto">
+              <p class="case-section__num mono">01</p>
+              <h2 class="case-section__title" id="t-contexto"><em>Contexto</em></h2>
+              <p class="case-section__text">
+                <strong>La consigna.</strong>
+                Diseñar, maquetar y poner en funcionamiento un sitio web con HTML, CSS, JavaScript y Bootstrap 5, aplicando la técnica mobile first. El sitio debía tener un inicio con banner, carrusel, pastillas de información y galería de productos; páginas internas con contenido propio; un catálogo de productos y una página de contacto con formulario validado e información de las sucursales.
+              </p>
+              <p class="case-section__text">
+                <strong>El punto de partida.</strong>
+                La marca y el contenido surgieron de un trabajo grupal. Esa versión no se adaptaba a las distintas pantallas y corregirla era más complejo que empezar de nuevo, así que la reconstruí sola desde cero: mantuve la estructura general, cambié los colores, maqueté todo el sitio mobile first, incorporé Bootstrap, que la versión anterior no tenía, y desarrollé las funcionalidades con JavaScript y jQuery.
+              </p>
+            </section>
+
+            <!-- 02 -->
+            <section class="case-section" id="sitio" aria-labelledby="t-sitio">
+              <p class="case-section__num mono">02</p>
+              <h2 class="case-section__title" id="t-sitio">El <em>sitio</em></h2>
+              <p class="case-section__text">
+                Seis páginas: inicio, nosotros, productos, sucursales, preguntas frecuentes y contacto. La paleta combina amarillo, rojo y negro, con la tipografía Montserrat.
+              </p>
+              <div class="rail rail--wide" tabindex="0" role="region" aria-label="Páginas del sitio (desplazable)" data-reveal>
+                <img class="case-img" src="../assets/img/burger-company/inicio.jpg" alt="Inicio: banner con una hamburguesa sobre fondo negro y el título Bienvenido a Burger Company" loading="lazy" width="1440" height="900" />
+                <img class="case-img" src="../assets/img/burger-company/nosotros.jpg" alt="Nosotros: historia de la hamburguesería junto a una foto del local" loading="lazy" width="1440" height="900" />
+                <img class="case-img" src="../assets/img/burger-company/productos.jpg" alt="Productos: grilla de hamburguesas con precio y botón Agregar, y el carrito a la derecha" loading="lazy" width="1440" height="900" />
+                <img class="case-img" src="../assets/img/burger-company/sucursales.jpg" alt="Sucursales: direcciones y teléfonos de los locales de CABA y Zona Norte" loading="lazy" width="1440" height="900" />
+                <img class="case-img" src="../assets/img/burger-company/preguntas-frecuentes.jpg" alt="Preguntas frecuentes: acordeón con la primera pregunta abierta" loading="lazy" width="1440" height="900" />
+                <img class="case-img" src="../assets/img/burger-company/contacto.jpg" alt="Contacto: datos de contacto y formulario" loading="lazy" width="1440" height="900" />
+              </div>
+              <p class="rail-hint mono">Desplazá horizontalmente →</p>
+            </section>
+
+            <!-- 03 -->
+            <section class="case-section" id="funcionalidades" aria-labelledby="t-funcionalidades">
+              <p class="case-section__num mono">03</p>
+              <h2 class="case-section__title" id="t-funcionalidades"><em>Funcionalidades</em></h2>
+              <p class="case-section__text">
+                El sitio combina componentes de Bootstrap con plugins de jQuery.
+              </p>
+
+              <h3 class="flow-title">Catálogo y carrito de compras</h3>
+              <p class="case-section__text">
+                Los productos se cargan con JavaScript desde un archivo de datos y se agregan a un carrito, armado con el plugin Smart Cart, que calcula el subtotal.
+              </p>
+              <figure class="case-media" data-reveal>
+                <img class="case-img" src="../assets/img/burger-company/carrito.jpg" alt="Página de productos con tres hamburguesas agregadas al carrito y el subtotal" loading="lazy" width="1440" height="900" />
+                <figcaption class="annot">Carrito con productos</figcaption>
+              </figure>
+
+              <h3 class="flow-title">Inicio</h3>
+              <div class="media-grid media-grid--1" data-reveal data-reveal-stagger>
+                <figure><img class="case-img" src="../assets/img/burger-company/beneficios.jpg" alt="Tres tarjetas: Combos, Take Away y Entregas a domicilio" loading="lazy" width="1440" height="760" /><figcaption class="annot">Pastillas de información (cards de Bootstrap)</figcaption></figure>
+                <figure><img class="case-img" src="../assets/img/burger-company/carrusel.jpg" alt="Carrusel de fotos de hamburguesas y clientes" loading="lazy" width="1440" height="360" /><figcaption class="annot">Carrusel de imágenes (Owl Carousel)</figcaption></figure>
+                <figure><img class="case-img" src="../assets/img/burger-company/testimonios.jpg" alt="Testimonios de clientes en tarjetas superpuestas" loading="lazy" width="1440" height="700" /><figcaption class="annot">Testimonios (Flipster)</figcaption></figure>
+              </div>
+
+              <h3 class="flow-title">Contacto</h3>
+              <p class="case-section__text">
+                El formulario se valida con JavaScript antes de enviarse, y un botón flotante de WhatsApp acompaña todas las páginas.
+              </p>
+              <figure class="case-media" data-reveal>
+                <img class="case-img" src="../assets/img/burger-company/formulario.jpg" alt="Formulario de contacto con nombre, mail, teléfono, mensaje y aceptación de términos" loading="lazy" width="1440" height="760" />
+                <figcaption class="annot">Formulario de contacto</figcaption>
+              </figure>
+            </section>
+
+            <!-- 04 -->
+            <section class="case-section" id="responsive" aria-labelledby="t-responsive">
+              <p class="case-section__num mono">04</p>
+              <h2 class="case-section__title" id="t-responsive"><em>Responsive</em></h2>
+              <p class="case-section__text">
+                El sitio se maquetó mobile first, con la grilla de Bootstrap, y se adapta a celular, tablet y escritorio.
+              </p>
+              <div class="screens screens--fit" data-reveal data-reveal-stagger>
+                <figure><div class="phone"><img class="phone__screen" src="../assets/img/burger-company/movil-inicio.jpg" alt="Inicio en el celular" loading="lazy" width="780" height="1688" /></div><figcaption class="annot">Inicio</figcaption></figure>
+                <figure><div class="phone"><img class="phone__screen" src="../assets/img/burger-company/movil-productos.jpg" alt="Productos en el celular" loading="lazy" width="780" height="1688" /></div><figcaption class="annot">Productos</figcaption></figure>
+                <figure><div class="phone"><img class="phone__screen" src="../assets/img/burger-company/movil-contacto.jpg" alt="Contacto en el celular" loading="lazy" width="780" height="1688" /></div><figcaption class="annot">Contacto</figcaption></figure>
+              </div>
+              <div class="media-grid media-grid--2" data-reveal data-reveal-stagger>
+                <figure><img class="case-img" src="../assets/img/burger-company/tablet-inicio.jpg" alt="Inicio en una tablet" loading="lazy" width="768" height="1024" /><figcaption class="annot">Tablet · Inicio</figcaption></figure>
+                <figure><img class="case-img" src="../assets/img/burger-company/tablet-productos.jpg" alt="Productos en una tablet, con el carrito al costado del catálogo" loading="lazy" width="768" height="1024" /><figcaption class="annot">Tablet · Productos</figcaption></figure>
+              </div>
+              <figure class="case-media" data-reveal>
+                <img class="case-img" src="../assets/img/burger-company/inicio.jpg" alt="Inicio en escritorio, con el banner a pantalla completa" loading="lazy" width="1440" height="900" />
+                <figcaption class="annot">Escritorio</figcaption>
+              </figure>
+            </section>
+
+            <!-- 05 -->
+            <section class="case-section" id="aprendizajes" aria-labelledby="t-aprendizajes">
+              <p class="case-section__num mono">05</p>
+              <h2 class="case-section__title" id="t-aprendizajes"><em>Aprendizajes</em></h2>
+              <p class="case-section__text">
+                <span class="tbd">Texto pendiente.</span><span class="tbd-tag">pendiente</span>
+              </p>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!-- ======================= SIGUIENTE PROYECTO ======================= -->
+      <section class="next-project on-stage" data-surface="stage" aria-label="Siguiente proyecto">
+        <div class="container">
+          <a class="next-project__link" href="fullescabio.html">
+            <span class="next-project__label mono">Siguiente proyecto — 01 / 03</span>
+            <span class="next-project__title"><span class="next-project__name">Fullescabio</span><span class="next-project__arrow" aria-hidden="true">→</span></span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======================= PIE DE LOS PROYECTOS ======================= -->
+    <footer class="site-footer footer-case on-stage" id="contacto" data-surface="stage" aria-labelledby="footer-case-title">
+      <div class="container">
+        <div class="footer-case__grid">
+          <div class="footer-case__intro">
+            <p class="footer-case__name" id="footer-case-title">Priscila Lera</p>
+            <p class="footer-case__role">UI Designer · Buenos Aires, Argentina</p>
+            <p class="footer-case__status mono"><span class="footer-case__dot" aria-hidden="true"></span>Disponible · remoto / híbrido</p>
+          </div>
+
+          <div class="footer-case__col">
+            <p class="footer-case__key mono">Contacto</p>
+            <ul class="footer-case__list" role="list">
+              <li class="footer-case__copy-row">
+                <a class="footer-case__link" href="mailto:priscilamlera@gmail.com">
+                  <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg><span>priscilamlera@gmail.com</span>
+                </a>
+                <button class="footer-case__copy mono" type="button" data-copy="priscilamlera@gmail.com">
+                  <svg class="icon" aria-hidden="true"><use href="#i-copy" /></svg><span data-copy-label>Copiar</span>
+                </button>
+                <p class="visually-hidden" role="status" data-copy-status></p>
+              </li>
+              <li>
+                <a class="footer-case__link" href="https://wa.me/5491124548583" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" aria-hidden="true"><use href="#i-whatsapp" /></svg><span>WhatsApp</span><span class="footer-case__arrow" aria-hidden="true">↗</span>
+                  <span class="visually-hidden">(se abre en una pestaña nueva)</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <nav class="footer-case__col" aria-labelledby="footer-case-perfiles">
+            <p class="footer-case__key mono" id="footer-case-perfiles">Perfiles</p>
+            <ul class="footer-case__list" role="list">
+              <li>
+                <a class="footer-case__link" href="https://www.linkedin.com/in/priscilalera" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" aria-hidden="true"><use href="#i-linkedin" /></svg><span>LinkedIn</span><span class="footer-case__arrow" aria-hidden="true">↗</span>
+                  <span class="visually-hidden">(se abre en una pestaña nueva)</span>
+                </a>
+              </li>
+              <li>
+                <a class="footer-case__link" href="https://github.com/LMPriscila" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg><span>GitHub</span><span class="tbd-tag">confirmar</span><span class="footer-case__arrow" aria-hidden="true">↗</span>
+                  <span class="visually-hidden">(se abre en una pestaña nueva)</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="footer-case__col">
+            <p class="footer-case__key mono">Más</p>
+            <ul class="footer-case__list" role="list">
+              <li>
+                <a class="footer-case__link" aria-disabled="true" role="link">
+                  <svg class="icon" aria-hidden="true"><use href="#i-file" /></svg><span>Descargar CV <span class="mono footer-case__meta">PDF</span></span><span class="tbd-tag">pendiente</span>
+                </a>
+              </li>
+              <li><a class="footer-case__link" href="index.html"><span>Todos los proyectos</span></a></li>
+              <li><a class="footer-case__link" href="../index.html#sobre-mi"><span>Sobre mí</span></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-case__bottom mono">
+          <p>© 2026 Priscila Lera</p>
+          <a class="link-arrow to-top" href="#contenido"><span class="link-arrow__label">Volver arriba</span><span class="to-top__icon" aria-hidden="true">↑</span></a>
+        </div>
+      </div>
+    </footer>
+
+    <svg class="icon-sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4" /><path d="M8 10.5V16.5" /><circle cx="8" cy="7.6" r="0.4" /><path d="M11.5 16.5V10.5M11.5 13.2c0-1.7 1-2.7 2.4-2.7s2.4 1 2.4 2.7v3.3" /></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" /><path d="M9 18c-4.51 2-5-2-7-2" /></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5" /><path d="m3 7 7.9 5.3a2 2 0 0 0 2.2 0L21 7" /></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2.5H6.5a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V8z" /><path d="M14 2.5V8h5.5M12 11.5v6M9.3 14.8 12 17.5l2.7-2.7" /></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="12" height="12" rx="2.5" /><path d="M15.5 8.5V6a2.5 2.5 0 0 0-2.5-2.5H6A2.5 2.5 0 0 0 3.5 6v7A2.5 2.5 0 0 0 6 15.5h2.5" /></symbol>
+      <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M3.6 20.4l1.2-3.9a8.6 8.6 0 1 1 3.3 3.1z" /><path d="M9 8.6c.2-.5.6-.6.9-.6h.5l.9 2.1-.7.9a5.4 5.4 0 0 0 2.6 2.6l.9-.7 2.1.9v.5c0 .3-.1.7-.6.9-.7.4-1.8.3-3.2-.5a8 8 0 0 1-2.9-2.9C8.7 10.4 8.6 9.3 9 8.6z" /></symbol>
+    </svg>
+  </body>
+</html>
