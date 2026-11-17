@@ -741,9 +741,9 @@
   transform: rotate(-4deg);
 }
 
-/* Calmi: dos celulares y el logo sobre el lila de la app */
+/* Calmi: dos celulares y el logo sobre el rosa claro de la portada del caso */
 .showcase--calmi .showcase__bg {
-  background: #E3D1E6;
+  background: var(--c-rose-mist);
 }
 
 .showcase--calmi .showcase__logo {

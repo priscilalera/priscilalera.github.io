@@ -483,31 +483,44 @@
 .case-more { margin-top: var(--space-m); }
 .case-more + .case-more { margin-top: var(--space-xs); }
 
-/* Acceso destacado al prototipo */
+/* Acceso destacado al prototipo: texto y botón a la izquierda,
+   dos pantallas que se asoman desde abajo a la derecha */
 .proto-cta {
   display: grid;
-  justify-items: start;
-  gap: var(--space-m);
+  gap: var(--space-xl);
+  align-items: center;
+  overflow: hidden;
   margin-top: var(--space-xl);
-  padding: clamp(1.5rem, 1rem + 3vw, 3.5rem);
+  padding: clamp(1.75rem, 1rem + 3vw, 3.5rem);
   border-radius: var(--radius-l);
   background: var(--c-rose-mist);
 }
+@media (min-width: 48rem) { .proto-cta { grid-template-columns: 1fr 1fr; } }
+.proto-cta__text { display: grid; justify-items: start; }
 .proto-cta__eyebrow { color: var(--text-muted); }
 .proto-cta__title {
+  margin: var(--space-s) 0 var(--space-xl);
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem);
+  font-size: clamp(1.875rem, 1.2rem + 2vw, 2.75rem);
   font-weight: var(--wt-display);
   line-height: 1.05;
   letter-spacing: -0.03em;
 }
+.proto-cta__phones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-m);
+  width: min(100%, 22rem);
+  justify-self: center;
+  margin-bottom: -6rem;
+}
+.proto-cta__phones > :last-child { margin-top: var(--space-2xl); }
 .proto-cta__title em {
   font-family: var(--font-accent);
   font-style: italic;
   font-weight: 400;
   color: var(--accent);
 }
-.proto-cta .btn { margin-top: var(--space-xs); }
 .flow-title {
   margin-top: var(--space-2xl);
   font-family: var(--font-display);
