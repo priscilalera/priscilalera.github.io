@@ -81,3 +81,11 @@
   letter-spacing: -0.02em;
 }
 
+
+.timeline__text {
+  max-width: 52ch;
+  margin-top: var(--space-s);
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}

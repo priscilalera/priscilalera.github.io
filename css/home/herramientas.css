@@ -641,8 +641,74 @@ ul.disc__track,
   transition: fill var(--dur-fast), opacity var(--dur-fast);
 }
 
+.ribbon--b11 .ribbon__name {
+  transition: color var(--dur-fast);
+}
+
+/* Hover: logo y nombre en malva; sin fondo, porque los programas no son clickeables */
 .ribbon--b11 .ribbon__item:hover .ribbon__logo {
-  fill: var(--c-ink);
+  fill: var(--c-mauve-deep);
   opacity: 1;
 }
 
+.ribbon--b11 .ribbon__item:hover .ribbon__name {
+  color: var(--c-mauve-deep);
+}
+
+
+/* UX Research: tres notas de un mapa de afinidad y el insight que sale de ellas */
+.art-research__note {
+  position: absolute;
+  top: 1.35rem;
+  display: grid;
+  align-content: start;
+  gap: 0.25rem;
+  width: 2.7rem;
+  height: 2.7rem;
+  padding: 0.45rem 0.4rem;
+  border-radius: 3px;
+  background: var(--c);
+  box-shadow: 0 3px 6px -2px rgb(0 0 0 / 0.18);
+  transition: translate var(--dur-base) var(--ease-out);
+}
+
+.art-research__note::before,
+.art-research__note::after {
+  content: "";
+  height: 2px;
+  border-radius: 2px;
+  background: rgb(28 28 28 / 0.22);
+}
+
+.art-research__note::after {
+  width: 60%;
+}
+
+.art-research__note:nth-child(1) { left: calc(50% - 4.4rem); rotate: -7deg; }
+.art-research__note:nth-child(2) { left: calc(50% - 1.35rem); top: 1rem; rotate: 3deg; }
+.art-research__note:nth-child(3) { left: calc(50% + 1.7rem); rotate: -3deg; }
+
+.art-research__note:nth-child(3)::before,
+.art-research__note:nth-child(3)::after {
+  background: rgb(255 255 255 / 0.55);
+}
+
+.art-research__tag {
+  position: absolute;
+  bottom: 0.55rem;
+  left: 50%;
+  translate: -50% 0;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  background: var(--c-rose-mist);
+  color: var(--c-ink);
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.04em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .disc__card:hover .art-research__note:nth-child(1) { translate: -4px 2px; }
+  .disc__card:hover .art-research__note:nth-child(2) { translate: 0 -4px; }
+  .disc__card:hover .art-research__note:nth-child(3) { translate: 4px 2px; }
+}

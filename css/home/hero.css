@@ -334,11 +334,6 @@
   white-space: nowrap;
 }
 
-.canvas__caption {
-  display: flex;
-  align-items: center;
-  margin-top: 2.6rem;
-}
 
 @media (max-width: 60rem) {
   .hero-b {
@@ -390,8 +385,7 @@
   .canvas__media {
     animation: unveil 1300ms var(--ease-in-out) 450ms both;
   }
-  .canvas__layer,
-  .canvas__caption {
+  .canvas__layer {
     animation: fade-in var(--dur-slow) var(--ease-out) 1300ms both;
   }
   /* El cursor entra, hace clic y el frame queda seleccionado */

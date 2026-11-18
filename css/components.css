@@ -724,9 +724,9 @@
 }
 
 .zw-piece--logo {
-  right: 8%;
-  top: 17%;
-  width: 30%;
+  right: 7%;
+  top: 21%;
+  width: 36%;
   z-index: 1;
 }
 
@@ -841,7 +841,7 @@
     left: 9%;
   }
   .zw-piece--logo {
-    width: 25%;
+    width: 30%;
   }
   .zw-piece--app {
     width: 38%;

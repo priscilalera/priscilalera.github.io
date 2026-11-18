@@ -1,6 +1,6 @@
 # Portfolio de Priscila Lera
 
-Portfolio profesional de Priscila Lera, UI Designer. Reúne cuatro casos de estudio:
+Portfolio profesional de Priscila Lera, UX/UI Designer. Reúne cuatro casos de estudio:
 
 1. **Fullescabio**: diseño de una app móvil de e-commerce (UI Design).
 2. **Calmi**: diseño y prototipo de una app de acompañamiento emocional (prototipado).
