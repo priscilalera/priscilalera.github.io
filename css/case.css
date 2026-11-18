@@ -512,7 +512,7 @@
   gap: var(--space-m);
   width: min(100%, 22rem);
   justify-self: center;
-  margin-bottom: -6rem;
+  margin-bottom: 0;
 }
 .proto-cta__phones > :last-child { margin-top: var(--space-2xl); }
 .proto-cta__title em {
