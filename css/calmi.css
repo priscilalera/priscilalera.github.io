@@ -166,6 +166,9 @@ h3.cm-feature__title, h3.cm-result__title { font-family: var(--font-display); }
 
 /* Pendientes de contenido */
 .cm-sub { margin: var(--space-2xl) 0 var(--space-m); color: var(--text-muted); font-weight: 400; }
+.cm-hifi__title { margin: var(--space-2xl) 0 var(--space-m); color: var(--text-muted); font-weight: 400; }
+.cm-hifi { display: grid; grid-template-columns: repeat(2, minmax(0, 11rem)); gap: var(--space-l); }
+.cm-hifi figcaption { margin-top: var(--space-s); text-align: center; }
 .cm-pending-screens { display: grid; grid-template-columns: repeat(2, minmax(0, 11rem)); gap: var(--space-l); }
 .cm-pending { padding: var(--space-m); border: 1px dashed var(--border); border-radius: var(--radius-m); color: var(--text-muted); font-size: var(--fs-sm); }
 .cm-pending .tbd-tag { margin: 0 0.4em 0 0; }
