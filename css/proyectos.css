@@ -1,6 +1,6 @@
 /* ==========================================================================
    TODOS LOS PROYECTOS — página con la colección completa de trabajos
-   Reutiliza header, pie compacto, enlaces, placeholders y las composiciones
+   Reutiliza header, pie compacto, enlaces y las composiciones
    de proyecto (.showcase) de components.css. Acá solo va lo propio:
    encabezado de la página y grilla de proyectos.
    ========================================================================== */
@@ -105,24 +105,9 @@
 }
 .work__link { justify-self: start; margin-top: var(--space-xs); }
 
-/* Proyectos todavía sin caso de estudio */
-.work__soon {
-  margin-top: var(--space-xs);
-  color: var(--text-muted);
-  font-size: var(--fs-mono);
-}
-
 /* Movimiento sutil: la imagen sube apenas, como en la home */
 @media (prefers-reduced-motion: no-preference) {
   .work__visual { transition: transform var(--dur-slow) var(--ease-out); }
   .work:not(.is-pending):hover .work__visual { transform: translateY(-6px); }
 }
 
-/* La composición de Zombie Walk es oscura: sus piezas usan los mismos
-   placeholders oscuros que en la sala de la home (.on-stage .ph) */
-.work .showcase--zombie .ph:not(.ph--rose) {
-  --ph-bg: #1A1A1A;
-  --ph-line: rgb(243 243 243 / 0.05);
-  --ph-border: #3A3A3A;
-  --ph-ink: var(--c-stage-muted);
-}

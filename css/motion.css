@@ -86,11 +86,6 @@
   }
 }
 
-@keyframes line-rise {
-  from { transform: translateY(105%); }
-  to   { transform: translateY(0); }
-}
-
 @keyframes unveil {
   from { clip-path: inset(100% 0 0 0 round 999px 999px 14px 14px); transform: scale(1.04); }
   to   { clip-path: inset(0 0 0 0 round 999px 999px 14px 14px);    transform: none; }
@@ -163,16 +158,6 @@
 }
 
 @keyframes b2-dash { to { stroke-dashoffset: -12; } }
-
-/* Cada fila se mueve exactamente su ancho + el espacio entre filas: el bucle no salta */
-@keyframes b3-marquee {
-  to { transform: translateX(calc(-100% - var(--space-m))); }
-}
-
-@keyframes b5-rail {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-38%); }
-}
 
 /* El desplazamiento es exactamente un grupo + un espacio: el bucle no salta */
 @keyframes b6-ribbon {

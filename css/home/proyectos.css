@@ -106,12 +106,6 @@
   transform: translateX(6px);
 }
 
-.chapter:hover .showcase__badge,
-.chapter:focus-within .showcase__badge {
-  opacity: 1;
-  transform: none;
-}
-
 .chapter:hover .showcase__phone--a .phone {
   transform: translateY(-14px) rotate(-2.5deg);
 }

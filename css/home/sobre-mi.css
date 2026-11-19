@@ -282,8 +282,6 @@
 /* Subtítulos: principios, tarjeta del sistema, trayectoria */
 :root :is(.principle__title,
 .system-card__title,
-.practices,
-.tool-group__title,
 .timeline__title) {
   font-weight: var(--wt-sub);
 }

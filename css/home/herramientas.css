@@ -614,8 +614,7 @@ ul.disc__track,
 
 .ribbon.is-running:hover .ribbon__rail,
 .ribbon.is-running:focus-within .ribbon__rail,
-.ribbon.is-holding .ribbon__rail,
-.ribbon.is-paused .ribbon__rail {
+.ribbon.is-holding .ribbon__rail {
   animation-play-state: paused;
 }
 

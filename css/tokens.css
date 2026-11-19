@@ -24,7 +24,6 @@
   --font-mono: "Geist Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
   --fs-mono: 0.75rem;
   --fs-sm: 0.875rem;
-  --lh-tight: 0.92;
   --lh-snug: 1.2;
   --lh-body: 1.6;
   --space-2xs: 0.25rem;
@@ -62,7 +61,6 @@
   --w-light: 300;
   --c-mauve: #AD7D8B;
   --c-mauve-deep: #87596A;
-  --c-periwinkle: #8995C5;
   --c-rose: var(--c-mauve);
   --c-rose-deep: var(--c-mauve-deep);
   --c-rose-mist: var(--c-lavender);

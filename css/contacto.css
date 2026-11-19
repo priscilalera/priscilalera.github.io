@@ -230,10 +230,6 @@ a.contact-b7__link:hover .contact-b7__arrow {
   transform: translate(2px, -2px);
 }
 
-.contact-b7__link.is-pending {
-  color: var(--text-muted);
-}
-
 /* CV: enlace independiente, con su ícono de descarga */
 .contact-b7__cv {
   display: inline-flex;

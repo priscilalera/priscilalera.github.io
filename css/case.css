@@ -38,7 +38,7 @@
   letter-spacing: var(--track-xl);
 }
 
-/* Lienzo (prueba): la grilla de puntos del hero de la home, con la linterna
+/* Lienzo: la grilla de puntos del hero de la home, con la linterna
    que sigue al mouse (main.js, bloque "Lienzo"). Se desvanece hacia abajo. */
 .case-hero { position: relative; isolation: isolate; --dot: 28 28 28; }
 .case-hero::before,
@@ -204,7 +204,6 @@
 .media-grid--1 { grid-template-columns: 1fr; }
 .media-grid--2 { grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
 .media-grid--3 { grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); }
-.media-grid--4 { grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); }
 .media-grid figure { display: grid; gap: var(--space-s); align-content: start; }
 
 /* Imágenes del caso (piezas, recortes del manual) */
@@ -392,7 +391,6 @@
 /* Páginas horizontales: más anchas para que se lean */
 .rail--wide { grid-auto-columns: minmax(16rem, 70%); }
 .rail:focus-visible { outline-offset: 6px; }
-.rail-hint { margin-top: var(--space-xs); color: var(--text-muted); }
 
 /* ---- Siguiente proyecto --------------------------------------------- */
 
@@ -444,12 +442,6 @@
 .theme-zombie .case-hero { --dot: 237 235 234; }
 .theme-zombie .case-hero::before { --dot-a: 0.1; }
 .theme-zombie .case-hero::after  { --dot-a: 0.32; }
-.theme-zombie .ph {
-  --ph-bg: #1E1D1E;
-  --ph-line: rgb(237 235 234 / 0.05);
-  --ph-border: #3A3839;
-  --ph-ink: #A6A2A0;
-}
 .theme-zombie .site-header { --text: #EDEBEA; --text-muted: #A6A2A0; --accent: var(--c-mauve); }
 .theme-zombie .site-header.is-scrolled {
   background: color-mix(in srgb, #121112 82%, transparent);

@@ -23,8 +23,6 @@
 }
 
 /* ---- Sistema ---- */
-.cm-split { display: grid; gap: var(--space-xl); align-items: center; }
-@media (min-width: 48rem) { .cm-split { grid-template-columns: 1.3fr 1fr; } }
 /* Moodboard: ilustraciones en filas justificadas (cada imagen crece según su proporción --r), como en Zombie Walk */
 .cm-mood__board {
   display: grid;
@@ -158,7 +156,7 @@
 .cm-pin, .cm-notes__n { background: var(--ui-fill); color: var(--c-ink); }
 .cm-pin { box-shadow: 0 0 0 2px var(--ui-line), 0 2px 8px rgb(0 0 0 / 0.25); }
 
-/* ---- Diseño de interfaz: paneles y pendientes ---- */
+/* ---- Diseño de interfaz: paneles ---- */
 /* Paneles de pantallas: el rosa claro de las filas de Fullescabio */
 .cm-panel {
   display: grid;
@@ -185,9 +183,6 @@
 .cm-feature__media--stack > :nth-child(3) { right: 0; top: 18%; width: 40%; z-index: 3; }
 h3.cm-feature__title, h3.cm-result__title { font-family: var(--font-display); }
 
-
-/* Pendientes de contenido */
-.cm-sub { margin: var(--space-2xl) 0 var(--space-m); color: var(--text-muted); font-weight: 400; }
 /* Wireframes: el sketch en papel va dentro del mismo celular que las otras etapas, entero y centrado */
 .phone__screen.cm-sketch { object-fit: contain; object-position: 50% 50%; background: #fff; }
 .cm-ab__note { margin-top: var(--space-m); max-width: 46rem; color: var(--text-muted); text-transform: none; letter-spacing: 0; line-height: 1.5; }

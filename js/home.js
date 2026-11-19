@@ -24,7 +24,6 @@
     const prev = carousel.querySelector("[data-carousel-prev]");
     const next = carousel.querySelector("[data-carousel-next]");
     const count = carousel.querySelector("[data-carousel-count]");
-    const bar = carousel.querySelector("[data-carousel-bar]");
     if (!track) return;
 
     const cards = Array.from(track.children);
@@ -52,13 +51,6 @@
 
       const first = Math.min(cards.length, Math.round(x / step()) + 1);
       if (count) count.textContent = `${pad(first)} — ${pad(cards.length)}`;
-
-      if (bar) {
-        const size = track.clientWidth / track.scrollWidth;
-        const pos = max > 0 ? (x / max) * (1 / size - 1) : 0;
-        bar.style.setProperty("--size", size.toFixed(3));
-        bar.style.setProperty("--pos", pos.toFixed(3));
-      }
     };
     const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
 

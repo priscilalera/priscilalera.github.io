@@ -420,13 +420,6 @@
     animation: b-slide-in 800ms var(--ease-out) 1700ms both,
       b-idle 8s var(--ease-in-out) 2600ms infinite reverse;
   }
-  /* Pequeña reacción al pasar el mouse por el lienzo */
-  .canvas__media .ph {
-    transition: transform var(--dur-slow) var(--ease-out);
-  }
-  .canvas:hover .canvas__media .ph {
-    transform: scale(1.02);
-  }
 }
 
 .hero-b__lead .accent {
@@ -515,9 +508,7 @@
 /* Nombre ("Priscila"), nombres de proyecto, marca */
 :root :is(.hero-b__title,
 .chapter__title,
-.contact__title,
-.brand__name,
-.tool__mark) {
+.brand__name) {
   font-weight: var(--wt-display);
 }
 
