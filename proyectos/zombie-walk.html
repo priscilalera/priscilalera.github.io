@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Zombie Walk — Caso de estudio · Priscila Lera</title>
-    <meta name="description" content="Zombie Walk: propuesta académica de rediseño de la identidad visual de la Zombie Walk de Buenos Aires. Isologo, sistema visual, manual de marca y piezas gráficas." />
+    <meta name="description" content="Zombie Walk: proyecto académico de rediseño de la identidad visual de Zombie Walk Buenos Aires. Isologo, sistema visual, manual de marca y piezas gráficas." />
     <meta name="theme-color" content="#121112" />
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
 
@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../css/components.css" />
     <link rel="stylesheet" href="../css/motion.css" />
     <link rel="stylesheet" href="../css/case.css" />
+    <link rel="stylesheet" href="../css/zombie-walk.css" />
 
     <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script src="../js/main.js" defer></script>
@@ -62,7 +63,7 @@
 
             <div class="case-hero__intro">
               <p class="case-hero__lead">
-                Propuesta académica de rediseño de la identidad visual de la Zombie Walk de Buenos Aires: isologo, sistema visual, manual de marca y piezas para vía pública y redes sociales.
+                Proyecto académico de rediseño de la identidad visual de Zombie Walk Buenos Aires. Desarrollo de isologo, sistema visual, manual de marca y piezas gráficas para vía pública y redes sociales.
               </p>
               <div class="case-hero__actions">
                 <a class="btn btn--primary" href="#manual">Manual de marca <span class="btn__icon btn__icon--down" aria-hidden="true">↓</span></a>
@@ -119,15 +120,15 @@
               <h2 class="case-section__title" id="t-contexto"><em>Contexto</em></h2>
               <p class="case-section__text">
                 <strong>La consigna.</strong>
-                Zombie Walk fue un proyecto académico individual para la materia Branding I, de la carrera de Diseño Gráfico, en 2024. La consigna consistía en investigar cómo se comunica un evento en distintos países y desarrollar una propuesta de rediseño de su identidad.
+                Zombie Walk fue un proyecto académico individual desarrollado en 2024 para la materia Branding I, de la carrera de Diseño Gráfico. El objetivo era analizar cómo se comunica el evento en distintos países y desarrollar una propuesta de rediseño para su identidad visual.
               </p>
               <p class="case-section__text">
                 <strong>El punto de partida.</strong>
-                Al compararla con otras ediciones, la comunicación de la Zombie Walk en Argentina mostraba poca consistencia visual entre piezas y plataformas. A partir de ahí desarrollé una nueva identidad para el evento.
+                Al comparar la comunicación de Zombie Walk Argentina con la de otros países, observé que, aunque la marca era reconocible, sus piezas combinaban tipografías, colores y composiciones sin un criterio visual unificado.
               </p>
               <p class="case-section__text">
-                <strong>Aclaración.</strong>
-                Proyecto académico, sin relación con la organización de la Zombie Walk.
+                <strong>Alcance.</strong>
+                Se trata de un proyecto académico independiente, sin vinculación con la organización oficial de Zombie Walk.
               </p>
             </section>
 
@@ -136,13 +137,43 @@
               <p class="case-section__num mono">02</p>
               <h2 class="case-section__title" id="t-concepto">Investigación y <em>concepto</em></h2>
               <p class="case-section__text">
-                Analicé la identidad del evento en Argentina y la comparé con la de Chile. La marca era reconocible, pero combinaba tipografías, colores y composiciones sin un criterio común.
+                A partir de este análisis, identifiqué un concepto central: durante unas horas, Zombie Walk transforma el espacio cotidiano de la ciudad y convierte a quienes participan en protagonistas.
               </p>
-              <p class="case-section__text">
-                La investigación dejó un insight: durante unas horas, la Zombie Walk transforma el espacio cotidiano de la ciudad y convierte a quienes participan en protagonistas.
-              </p>
-              <figure class="case-media" data-reveal>
-                <img class="case-img" src="../assets/img/zombie-walk/moodboard.jpg" alt="Moodboard: collages urbanos de Buenos Aires, afiches de terror, manos de zombie y la paleta violeta, verde y amarilla" loading="lazy" width="1600" height="1600" />
+              <!-- Moodboard armado con las referencias recortadas de moodboard.jpg (assets/img/zombie-walk/mood/) -->
+              <figure class="case-media zw-mood" data-reveal>
+                <div class="zw-mood__board zw-mood__rows" role="img" aria-label="Moodboard: collages y afiches gráficos, afiches de terror y fotos de la ciudad de Buenos Aires">
+                      <div class="zw-mood__row">
+                      <img src="../assets/img/zombie-walk/mood/afiche-manos-rosa.jpg" alt="" loading="lazy" width="166" height="242" style="--r: 0.686" />
+                      <img src="../assets/img/zombie-walk/mood/collage-retrato.jpg" alt="" loading="lazy" width="209" height="269" style="--r: 0.777" />
+                      <img src="../assets/img/zombie-walk/mood/afiche-coreano.jpg" alt="" loading="lazy" width="201" height="310" style="--r: 0.648" />
+                      <img src="../assets/img/zombie-walk/mood/collage-calle.jpg" alt="" loading="lazy" width="210" height="200" style="--r: 1.05" />
+                      <img src="../assets/img/zombie-walk/mood/afiche-manos.jpg" alt="" loading="lazy" width="199" height="148" style="--r: 1.345" />
+                      </div>
+                      <div class="zw-mood__row">
+                      <img src="../assets/img/zombie-walk/mood/afiche-circulo.jpg" alt="" loading="lazy" width="134" height="156" style="--r: 0.859" />
+                      <img src="../assets/img/zombie-walk/mood/collage-edificio.jpg" alt="" loading="lazy" width="131" height="176" style="--r: 0.744" />
+                      <img src="../assets/img/zombie-walk/mood/afiche-ruso.jpg" alt="" loading="lazy" width="129" height="183" style="--r: 0.705" />
+                      <img src="../assets/img/zombie-walk/mood/afiche-hilo.jpg" alt="" loading="lazy" width="166" height="181" style="--r: 0.917" />
+                      <img src="../assets/img/zombie-walk/mood/afiche-amarillo.jpg" alt="" loading="lazy" width="118" height="176" style="--r: 0.67" />
+                      </div>
+                      <div class="zw-mood__row">
+                      <img src="../assets/img/zombie-walk/mood/terror-brains.jpg" alt="" loading="lazy" width="202" height="301" style="--r: 0.671" />
+                      <img src="../assets/img/zombie-walk/mood/ciudad-zombies.jpg" alt="" loading="lazy" width="325" height="182" style="--r: 1.786" />
+                      <img src="../assets/img/zombie-walk/mood/terror-cabeza.jpg" alt="" loading="lazy" width="147" height="210" style="--r: 0.7" />
+                      <img src="../assets/img/zombie-walk/mood/ciudad-noche.jpg" alt="" loading="lazy" width="165" height="214" style="--r: 0.771" />
+                      <img src="../assets/img/zombie-walk/mood/terror-returning.jpg" alt="" loading="lazy" width="207" height="304" style="--r: 0.681" />
+                      </div>
+                      <div class="zw-mood__row">
+                      <img src="../assets/img/zombie-walk/mood/ciudad-calle.jpg" alt="" loading="lazy" width="273" height="181" style="--r: 1.508" />
+                      <img src="../assets/img/zombie-walk/mood/ciudad-congreso.jpg" alt="" loading="lazy" width="252" height="162" style="--r: 1.556" />
+                      <img src="../assets/img/zombie-walk/mood/ciudad-marcha.jpg" alt="" loading="lazy" width="136" height="205" style="--r: 0.663" />
+                      </div>
+                      <div class="zw-mood__row">
+                      <img src="../assets/img/zombie-walk/mood/ciudad-lluvia.jpg" alt="" loading="lazy" width="249" height="182" style="--r: 1.368" />
+                      <img src="../assets/img/zombie-walk/mood/ciudad-aerea.jpg" alt="" loading="lazy" width="309" height="205" style="--r: 1.507" />
+                      <img src="../assets/img/zombie-walk/mood/ciudad-parque.jpg" alt="" loading="lazy" width="245" height="137" style="--r: 1.788" />
+                      </div>
+                </div>
                 <figcaption class="annot">Moodboard</figcaption>
               </figure>
             </section>
@@ -152,7 +183,10 @@
               <p class="case-section__num mono">03</p>
               <h2 class="case-section__title" id="t-logo"><em>Logo</em></h2>
               <p class="case-section__text">
-                El isologo combina la tipografía Aller Display con la Z y la W dibujadas a mano, con detalles orgánicos que refuerzan la estética de terror. Cuenta con versiones en positivo y negativo, variantes de color, escala de grises, una reducción mínima con el monograma ZW y un perímetro libre.
+                El isologo combina la tipografía Aller Display con una Z y una W dibujadas a mano e intervenidas con detalles orgánicos que remiten al universo zombie. Esta combinación construye una identidad reconocible, con un carácter urbano, expresivo y ligado a la temática del evento.
+              </p>
+              <p class="case-section__text">
+                El sistema contempla versiones en positivo y negativo, variantes cromáticas, escala de grises y una reducción mínima mediante el monograma ZW, además de establecer un perímetro de seguridad para preservar su legibilidad.
               </p>
               <figure class="case-media" data-reveal>
                 <img class="case-img" src="../assets/img/zombie-walk/logo.jpg" alt="Isologo de Zombie Walk en verde y rosa sobre fondo de textura oscura" loading="lazy" width="1139" height="671" />
@@ -162,7 +196,7 @@
                 <figure><img class="case-img" src="../assets/img/zombie-walk/logo-positivo-negativo.jpg" alt="Isologo en positivo y en negativo" loading="lazy" width="1400" height="480" /><figcaption class="annot">Positivo y negativo</figcaption></figure>
                 <figure><img class="case-img" src="../assets/img/zombie-walk/logo-variantes-color.jpg" alt="Isologo a dos colores, a un color y grisado a color" loading="lazy" width="1400" height="392" /><figcaption class="annot">Variantes de color</figcaption></figure>
                 <figure><img class="case-img" src="../assets/img/zombie-walk/logo-reduccion.jpg" alt="Reducción mínima del isologo y del monograma ZW" loading="lazy" width="1400" height="434" /><figcaption class="annot">Reducción mínima</figcaption></figure>
-                <figure><img class="case-img" src="../assets/img/zombie-walk/logo-perimetro.jpg" alt="Perímetro libre alrededor del isologo" loading="lazy" width="955" height="677" /><figcaption class="annot">Perímetro libre</figcaption></figure>
+                <figure><img class="case-img" src="../assets/img/zombie-walk/logo-perimetro.jpg" alt="Perímetro de seguridad alrededor del isologo" loading="lazy" width="955" height="677" /><figcaption class="annot">Perímetro de seguridad</figcaption></figure>
               </div>
             </section>
 
@@ -171,10 +205,13 @@
               <p class="case-section__num mono">04</p>
               <h2 class="case-section__title" id="t-sistema">Sistema <em>visual</em></h2>
               <p class="case-section__text">
-                Una paleta principal rosa, verde y negra, y una secundaria violeta, amarilla y verde oliva. Aller Display se usa en el isologo y Bebas Neue Pro en subtítulos y textos. Los círculos, las líneas punteadas, las manos de zombie y las texturas dan continuidad a todas las piezas.
+                La identidad se construye a partir de una paleta principal de rosa, verde y negro, complementada por una paleta secundaria de violeta, amarillo y verde oliva.
               </p>
               <p class="case-section__text">
-                Las manos se generaron con IA (ChatGPT y Photoshop) y se ajustaron en Photoshop.
+                La combinación de Aller Display para el isologo y Bebas Neue Pro para subtítulos y textos establece una jerarquía tipográfica reconocible. Los círculos, las líneas punteadas, las manos de zombie y las texturas funcionan como recursos gráficos que conectan las distintas piezas y mantienen la unidad del sistema.
+              </p>
+              <p class="case-section__text">
+                Las manos fueron generadas con herramientas de IA (ChatGPT) y posteriormente ajustadas e integradas en Photoshop.
               </p>
               <div class="ds" data-reveal data-reveal-stagger>
                 <div class="ds-card">
@@ -213,7 +250,7 @@
               <p class="case-section__num mono">05</p>
               <h2 class="case-section__title" id="t-manual">Manual de <em>marca</em></h2>
               <p class="case-section__text">
-                El sistema de identidad se documentó en un manual de marca que reúne sus lineamientos, recursos, usos no permitidos y aplicaciones.
+                El sistema de identidad se documentó en un manual de marca que establece sus lineamientos de uso, versiones del isologo, paleta cromática, tipografías, recursos gráficos, criterios de aplicación y usos no permitidos.
               </p>
               <div class="rail rail--wide" tabindex="0" role="region" aria-label="Páginas del manual de marca (desplazable)" data-reveal>
                 <img class="case-img" src="../assets/img/zombie-walk/manual-01.jpg" alt="Manual de marca: portada" loading="lazy" width="1100" height="619" />
@@ -234,27 +271,30 @@
               <p class="case-section__num mono">06</p>
               <h2 class="case-section__title" id="t-aplicaciones"><em>Aplicaciones</em></h2>
               <p class="case-section__text">
-                La identidad se aplicó en dos afiches informativos y en posteos para redes sociales. Los identificatorios vinculan el evento con lugares reconocibles de Buenos Aires, y los persuasivos lo hacen con frases como «Donde la sangre es el vínculo». Las piezas se presentan también en mockups de vía pública e Instagram.
+                La identidad se trasladó a distintas piezas de comunicación: afiches informativos y publicaciones para redes sociales. Cada pieza adapta los recursos del sistema visual según su propósito, combinando información del evento con mensajes de carácter promocional. Los posteos identificatorios vinculan el evento con lugares reconocibles de Buenos Aires, y los persuasivos lo hacen con frases como «Donde la sangre es el vínculo».
+              </p>
+              <p class="case-section__text">
+                También desarrollé mockups de vía pública y de Instagram para mostrar cómo la identidad funciona en distintos soportes y contextos.
               </p>
 
               <h3 class="flow-title">Afiches informativos</h3>
               <div class="media-grid media-grid--2" data-reveal data-reveal-stagger>
                 <figure><img class="case-img" src="../assets/img/zombie-walk/afiche-1.jpg" alt="Afiche con la Casa Rosada dentro de un círculo y los datos del evento" loading="lazy" width="1000" height="1502" /></figure>
-                <figure><img class="case-img" src="../assets/img/zombie-walk/afiche-2.jpg" alt="Afiche con la frase «Donde la sangre es el vínculo» y una mano sosteniendo un corazón" loading="lazy" width="1000" height="1551" /></figure>
+                <figure><img class="case-img" src="../assets/img/zombie-walk/afiche-2.jpg" alt="Afiche con la frase «Donde la sangre es el vínculo» y una mano sosteniendo un corazón" loading="lazy" width="996" height="1547" /></figure>
               </div>
 
               <h3 class="flow-title">Posteos identificatorios</h3>
               <div class="media-grid media-grid--3" data-reveal data-reveal-stagger>
-                <figure><img class="case-img" src="../assets/img/zombie-walk/post-identificatorio-1.jpg" alt="Posteo con el Planetario" loading="lazy" width="900" height="900" /></figure>
-                <figure><img class="case-img" src="../assets/img/zombie-walk/post-identificatorio-2.jpg" alt="Posteo con el Congreso" loading="lazy" width="900" height="900" /></figure>
-                <figure><img class="case-img" src="../assets/img/zombie-walk/post-identificatorio-3.jpg" alt="Posteo con el Obelisco" loading="lazy" width="900" height="900" /></figure>
+                <figure><img class="case-img" src="../assets/img/zombie-walk/post-identificatorio-1.jpg" alt="Posteo con el Congreso" loading="lazy" width="900" height="900" /></figure>
+                <figure><img class="case-img" src="../assets/img/zombie-walk/post-identificatorio-2.jpg" alt="Posteo con el Obelisco" loading="lazy" width="900" height="900" /></figure>
+                <figure><img class="case-img" src="../assets/img/zombie-walk/post-identificatorio-3.jpg" alt="Posteo con el Planetario" loading="lazy" width="900" height="900" /></figure>
               </div>
 
               <h3 class="flow-title">Posteos persuasivos</h3>
               <div class="media-grid media-grid--3" data-reveal data-reveal-stagger>
-                <figure><img class="case-img" src="../assets/img/zombie-walk/post-persuasivo-1.jpg" alt="Posteo «Donde la sangre es el vínculo»" loading="lazy" width="900" height="901" /></figure>
-                <figure><img class="case-img" src="../assets/img/zombie-walk/post-persuasivo-2.jpg" alt="Posteo «Donde el horror es cercanía»" loading="lazy" width="900" height="901" /></figure>
-                <figure><img class="case-img" src="../assets/img/zombie-walk/post-persuasivo-3.jpg" alt="Posteo «Donde lo monstruoso es lo humano»" loading="lazy" width="900" height="900" /></figure>
+                <figure><img class="case-img" src="../assets/img/zombie-walk/post-persuasivo-1.jpg" alt="Posteo «Donde la sangre es el vínculo»" loading="lazy" width="900" height="900" /></figure>
+                <figure><img class="case-img" src="../assets/img/zombie-walk/post-persuasivo-2.jpg" alt="Posteo «Donde lo monstruoso es lo humano»" loading="lazy" width="900" height="900" /></figure>
+                <figure><img class="case-img" src="../assets/img/zombie-walk/post-persuasivo-3.jpg" alt="Posteo «Donde el horror es cercanía»" loading="lazy" width="900" height="900" /></figure>
               </div>
 
               <h3 class="flow-title">Mockups</h3>
@@ -262,8 +302,50 @@
                 <figure><img class="case-img" src="../assets/img/zombie-walk/mockup-via-publica-1.jpg" alt="Afiche informativo en un refugio de colectivo" loading="lazy" width="1600" height="1108" /><figcaption class="annot">Vía pública</figcaption></figure>
                 <figure><img class="case-img" src="../assets/img/zombie-walk/mockup-via-publica-2.jpg" alt="Afiche persuasivo en un refugio de colectivo" loading="lazy" width="1600" height="1120" /><figcaption class="annot">Vía pública</figcaption></figure>
               </div>
-              <figure class="case-media" data-reveal>
-                <img class="case-img" src="../assets/img/zombie-walk/mockup-instagram.jpg" alt="Mockup de un perfil de Instagram con los posteos de la identidad" loading="lazy" width="899" height="788" />
+              <!-- Mockup de Instagram armado con los posteos; reemplaza a mockup-instagram.jpg -->
+              <figure class="case-media zw-ig" data-reveal>
+                <div class="zw-ig__stage" role="img" aria-label="Mockup de Instagram: una publicación del perfil zombiewalkargentina y el perfil con la grilla de los seis posteos">
+                  <div class="zw-ig__screen" aria-hidden="true">
+                    <div class="zw-ig__bar">
+                      <div class="zw-ig__user">
+                        <span class="zw-ig__avatar"><img src="../assets/img/zombie-walk/logo-cuadrado.jpg" alt="" loading="lazy" width="900" height="900" /></span>
+                        <span><b>zombiewalkargentina</b><small>Buenos Aires</small></span>
+                      </div>
+                      <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+                    </div>
+                    <img class="zw-ig__post" src="../assets/img/zombie-walk/post-identificatorio-1.jpg" alt="" loading="lazy" width="900" height="900" />
+                    <div class="zw-ig__icons">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-3.2-6.4A8 8 0 0 1 20 12zM20 12l1 7-5-2"/></svg>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M21 3 3 10l7 3 3 7 8-17zM10 13l5-5"/></svg>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+                    </div>
+                    <p class="zw-ig__caption"><b>zombiewalkargentina</b> ¡La ciudad se llena de zombies! Prepará tu mejor caracterización… <span>más</span></p>
+                  </div>
+
+                  <div class="zw-ig__screen zw-ig__screen--profile" aria-hidden="true">
+                    <div class="zw-ig__bar"><span class="zw-ig__handle">zombiewalkargentina</span></div>
+                    <div class="zw-ig__head">
+                      <span class="zw-ig__avatar zw-ig__avatar--l"><img src="../assets/img/zombie-walk/logo-cuadrado.jpg" alt="" loading="lazy" width="900" height="900" /></span>
+                      <span class="zw-ig__stats">
+                        <span class="zw-ig__stat"><b>6</b>publicaciones</span>
+                        <span class="zw-ig__stat"><b>12k</b>seguidores</span>
+                        <span class="zw-ig__stat"><b>2k</b>seguidos</span>
+                      </span>
+                    </div>
+                    <p class="zw-ig__bio"><b>Zombie Walk Argentina</b>Una ciudad, mil historias de terror</p>
+                    <div class="zw-ig__btns"><span class="zw-ig__btn">Editar perfil</span><span class="zw-ig__btn">Compartir perfil</span></div>
+                    <div class="zw-ig__tabs"><span class="zw-ig__tab is-active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M9.3 4v16M14.7 4v16M4 9.3h16M4 14.7h16"/></svg></span><span class="zw-ig__tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M3.5 8.5h17M9 3.5l3 5M14.5 3.5l3 5"/><path d="M10.5 11.5v5l4-2.5z"/></svg></span><span class="zw-ig__tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M9 4.5H4.5v15h15V15M14 4.5h5.5V10"/><circle cx="12" cy="10" r="2.5"/><path d="M7.5 17c.8-2.2 2.5-3.3 4.5-3.3s3.7 1.1 4.5 3.3"/></svg></span></div>
+                    <div class="zw-ig__grid">
+                      <img src="../assets/img/zombie-walk/post-identificatorio-1.jpg" alt="" loading="lazy" width="900" height="900" />
+                      <img src="../assets/img/zombie-walk/post-persuasivo-1.jpg" alt="" loading="lazy" width="900" height="900" />
+                      <img src="../assets/img/zombie-walk/post-identificatorio-3.jpg" alt="" loading="lazy" width="900" height="900" />
+                      <img src="../assets/img/zombie-walk/post-persuasivo-3.jpg" alt="" loading="lazy" width="900" height="900" />
+                      <img src="../assets/img/zombie-walk/post-identificatorio-2.jpg" alt="" loading="lazy" width="900" height="900" />
+                      <img src="../assets/img/zombie-walk/post-persuasivo-2.jpg" alt="" loading="lazy" width="900" height="900" />
+                    </div>
+                  </div>
+                </div>
                 <figcaption class="annot">Instagram (perfil ficticio)</figcaption>
               </figure>
             </section>
@@ -273,13 +355,13 @@
               <p class="case-section__num mono">07</p>
               <h2 class="case-section__title" id="t-aprendizajes"><em>Aprendizajes</em></h2>
               <p class="case-section__text">
-                El desarrollo del proyecto me permitió profundizar en la construcción de identidades visuales como sistemas, desde la conceptualización hasta su aplicación en diferentes medios.
+                Desarrollar este proyecto me permitió comprender la importancia de construir una identidad visual como un sistema, donde cada decisión gráfica contribuye a mantener una comunicación coherente.
               </p>
               <p class="case-section__text">
-                Aprendí a traducir un concepto en un lenguaje gráfico propio y a comprender cómo cada elemento visual contribuye a construir un mensaje. También avancé en la comunicación de marca, adaptando las piezas según su propósito, público y contexto, sin perder la coherencia de la identidad.
+                Aprendí a traducir un concepto en recursos visuales y a adaptar su lenguaje según el propósito de cada pieza, el público y el medio en el que se comunica.
               </p>
               <p class="case-section__text">
-                Durante el proceso, la atención al detalle y la búsqueda de consistencia me llevaron a revisar y cuestionar muchas de mis decisiones. Así desarrollé una mirada más crítica y aprendí a equilibrar el perfeccionismo con la capacidad de priorizar y cerrar decisiones de diseño.
+                También reconocí aspectos de mi propio proceso de diseño que necesitaba mejorar. Mi atención al detalle y búsqueda de consistencia me llevaban a revisar muchas veces las decisiones. Con el tiempo, aprendí a equilibrar esa exigencia con la capacidad de priorizar, resolver y cerrar propuestas.
               </p>
             </section>
           </div>

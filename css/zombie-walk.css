@@ -1,0 +1,157 @@
+/* Zombie Walk: mockup de Instagram armado en HTML con los posteos de la identidad */
+.zw-ig {
+  --zw-purple: #3B0B47;
+  --zw-lime: #B5D334;
+  --zw-pink: #E0559A;
+  --zw-ui: #121212;
+  --zw-ui-line: rgb(255 255 255 / 0.1);
+  --zw-ui-muted: rgb(255 255 255 / 0.6);
+}
+
+.zw-ig__stage {
+  display: grid;
+  gap: clamp(1rem, 0.5rem + 2vw, 2rem);
+  justify-content: center;
+  padding: clamp(1.5rem, 1rem + 3vw, 3.5rem);
+  border-radius: var(--radius-l);
+  background:
+    radial-gradient(120% 90% at 85% 10%, rgb(181 211 52 / 0.16), transparent 60%),
+    radial-gradient(90% 80% at 10% 100%, rgb(224 85 154 / 0.18), transparent 60%),
+    var(--zw-purple);
+}
+
+@media (min-width: 44rem) {
+  .zw-ig__stage { grid-template-columns: repeat(2, minmax(0, 20rem)); align-items: start; }
+}
+
+.zw-ig__screen {
+  overflow: hidden;
+  border: 1px solid var(--zw-ui-line);
+  border-radius: 24px;
+  background: var(--zw-ui);
+  color: #F5F5F5;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  box-shadow: 0 24px 48px -24px rgb(0 0 0 / 0.6);
+}
+
+.zw-ig__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  padding: 0.75rem 0.875rem;
+  border-bottom: 1px solid var(--zw-ui-line);
+}
+
+.zw-ig__bar svg { flex: none; width: 1.125rem; height: 1.125rem; }
+
+.zw-ig__user { display: flex; align-items: center; gap: 0.5rem; }
+.zw-ig__user b { display: block; font-weight: 600; }
+.zw-ig__user small { display: block; color: var(--zw-ui-muted); font-size: 0.6875rem; }
+.zw-ig__handle { font-size: 0.875rem; font-weight: 600; }
+
+.zw-ig__avatar {
+  flex: none;
+  width: 2rem;
+  aspect-ratio: 1;
+  padding: 2px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--zw-lime), var(--zw-pink));
+}
+.zw-ig__avatar img {
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--zw-ui);
+  border-radius: 50%;
+  /* El logo cuadrado va de borde a borde: se achica para que la Z no quede cortada por el círculo */
+  padding: 14%;
+  background: #1B1B1B;
+  object-fit: contain;
+}
+.zw-ig__avatar--l { width: 4.75rem; padding: 3px; }
+
+.zw-ig__post { display: block; width: 100%; height: auto; }
+
+.zw-ig__icons {
+  display: flex;
+  gap: 0.875rem;
+  padding: 0.75rem 0.875rem 0.5rem;
+}
+.zw-ig__icons svg { width: 1.25rem; height: 1.25rem; }
+.zw-ig__icons svg:last-child { margin-left: auto; }
+
+.zw-ig__caption { padding: 0 0.875rem 1rem; }
+.zw-ig__caption b { font-weight: 600; }
+.zw-ig__caption span { color: var(--zw-ui-muted); }
+
+.zw-ig__head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 0.875rem 0.75rem;
+}
+.zw-ig__stats { display: flex; flex: 1; justify-content: space-around; gap: 0.25rem; font-size: 0.6875rem; }
+.zw-ig__stat { text-align: center; }
+.zw-ig__stat b { display: block; font-size: 0.9375rem; font-weight: 600; }
+
+.zw-ig__bio { padding: 0 0.875rem 1rem; }
+.zw-ig__bio b { display: block; font-weight: 600; }
+
+.zw-ig__btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.375rem;
+  padding: 0 0.875rem 0.875rem;
+}
+.zw-ig__btn {
+  padding: 0.4rem 0;
+  border-radius: 8px;
+  background: rgb(255 255 255 / 0.12);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Pestañas del perfil: publicaciones (activa), reels y etiquetados */
+.zw-ig__tabs {
+  display: flex;
+  border-top: 1px solid var(--zw-ui-line);
+}
+.zw-ig__tab {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid transparent;
+  color: var(--zw-ui-muted);
+}
+.zw-ig__tab.is-active { border-bottom-color: #F5F5F5; color: #F5F5F5; }
+.zw-ig__tabs svg { width: 1.125rem; height: 1.125rem; }
+
+.zw-ig__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.zw-ig__grid img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
+
+/* Moodboard: solo las referencias, en filas justificadas (cada imagen crece según su proporción --r) */
+.zw-mood__board {
+  padding: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: var(--radius-l);
+  background: #1A1A1A;
+}
+
+.zw-mood__rows { display: grid; gap: 6px; }
+.zw-mood__row { display: flex; gap: 6px; }
+/* Cada imagen ocupa un ancho proporcional a su relación de aspecto: toda la fila queda a la misma altura y llega al borde */
+.zw-mood__row img {
+  flex: var(--r) 1 0;
+  min-width: 0;
+  width: auto;
+  height: auto;
+  aspect-ratio: var(--r);
+  border-radius: 4px;
+  object-fit: cover;
+}
