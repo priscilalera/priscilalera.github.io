@@ -1,6 +1,10 @@
 # Portfolio de Priscila Lera
 
-Portfolio profesional de Priscila Lera, UX/UI Designer. Reúne cuatro casos de estudio:
+Portfolio profesional de Priscila Lera, UX/UI Designer.
+
+**Sitio:** [priscilalera.github.io](https://priscilalera.github.io/)
+
+Reúne cuatro casos de estudio:
 
 1. **Fullescabio**: diseño de una app móvil de e-commerce (UI Design).
 2. **Calmi**: diseño y prototipo de una app de acompañamiento emocional (prototipado).
@@ -11,7 +15,7 @@ Portfolio profesional de Priscila Lera, UX/UI Designer. Reúne cuatro casos de e
 
 HTML, CSS y JavaScript, sin dependencias ni instalación.
 
-## Cómo verlo
+## Cómo verlo en tu computadora
 
 Abrí `index.html` con doble clic (Chrome o Edge recomendados).
 Para ver las transiciones entre páginas, abrilo desde un servidor local
@@ -24,13 +28,6 @@ Para ver las transiciones entre páginas, abrilo desde un servidor local
 - **Paleta:** paper #F3F3F3 · ink #1C1C1C · malva #AD7D8B · malva oscuro #87596A ·
   butter #F2DF9B · blush #F6E6EA · dorado #C4A644.
 - Con "reducir movimiento" activado no hay animaciones: se ve el estado final.
-
-## Qué es provisional
-
-- **Texto con subrayado punteado rosa** (`.tbd`): borrador para revisar.
-- **Etiquetas `PENDIENTE` / `CONFIRMAR`** (`.tbd-tag`): dato faltante o dudoso.
-- **Rectángulos rayados** (`.ph`): lugar reservado para una imagen.
-- El botón **"Contenido pendiente"** (abajo a la izquierda) muestra u oculta esas marcas.
 
 ## Estructura
 
@@ -49,6 +46,8 @@ Para ver las transiciones entre páginas, abrilo desde un servidor local
 │   ├── motion.css             Animaciones (respetan prefers-reduced-motion)
 │   ├── contacto.css           Cierre de la página de inicio
 │   ├── case.css               Plantilla de los casos de estudio
+│   ├── calmi.css              Estilos propios del caso Calmi
+│   ├── zombie-walk.css        Estilos propios del caso Zombie Walk (mockup de Instagram y moodboard)
 │   ├── proyectos.css          Página "Todos los proyectos"
 │   └── home/                  Secciones de la página de inicio
 ├── js/
@@ -60,7 +59,7 @@ Para ver las transiciones entre páginas, abrilo desde un servidor local
 ```
 
 Orden de carga de los estilos: `tokens` → `base` → `components` → `motion`, y después el de cada página
-(`home/*.css` + `contacto.css`, `case.css` o `proyectos.css`).
+(`home/*.css` + `contacto.css`, `case.css` + el del caso, o `proyectos.css`).
 
 ## Limitaciones conocidas
 
