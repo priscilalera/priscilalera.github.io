@@ -380,13 +380,13 @@ ul.disc__track,
   border-radius: 50%;
   background: var(--c-ink);
   color: var(--c-rose);
-  font-family: var(--font-accent);
-  font-size: 1.75rem;
-  font-style: italic;
-  font-weight: 600;
-  line-height: 1;
-  padding-bottom: 0.15em;
   transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.art-brand__mark svg {
+  display: block;
+  width: 46%;
+  height: auto;
 }
 
 .art-brand__x {

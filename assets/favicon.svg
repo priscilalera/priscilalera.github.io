@@ -1,4 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="16" fill="#1C1C1C"/>
-  <text x="32" y="44" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-style="italic" fill="#B8757D">pl</text>
+  <defs><clipPath id="k"><rect x="5.5" y="5.5" width="89" height="89"/></clipPath></defs>
+  <g transform="translate(11 11) scale(0.42)" fill="none" stroke="#B8757D" stroke-width="9" stroke-linejoin="miter" stroke-miterlimit="20" clip-path="url(#k)">
+    <path d="M50 90 L90 10 V90 H10 V10 Z"/>
+    <path d="M10 10 H35 A20 20 0 0 1 35 50 H10"/>
+  </g>
 </svg>
