@@ -238,10 +238,6 @@
   text-transform: uppercase;
 }
 
-.hide-tbd .text-select .tbd {
-  text-decoration: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   /* La selección del texto se dibuja cuando el párrafo aparece */
   .js .statement .text-select__box {

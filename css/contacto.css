@@ -215,10 +215,6 @@
   transition: color var(--dur-base);
 }
 
-.contact-b7__link .tbd-tag {
-  margin-inline-start: 0;
-}
-
 .contact-b7__arrow {
   margin-inline-start: auto;
   color: var(--text-muted);
@@ -264,10 +260,6 @@ a.contact-b7__link:hover .contact-b7__arrow {
   margin-inline-start: 0.35rem;
   color: var(--text-muted);
   font-size: var(--fs-mono);
-}
-
-.contact-b7__cv .tbd-tag {
-  margin-inline-start: 0;
 }
 
 a.contact-b7__cv:not([aria-disabled]):hover {

@@ -163,29 +163,6 @@
     });
   });
 
-  /* ---- 6. Marcador de contenido pendiente (solo durante el desarrollo) -- */
-
-  if (document.querySelector(".tbd, .tbd-tag")) {
-    const KEY = "pl-hide-tbd";
-    let hidden = false;
-    try { hidden = localStorage.getItem(KEY) === "1"; } catch {}
-    root.classList.toggle("hide-tbd", hidden);
-
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "tbd-toggle";
-    btn.innerHTML = '<span class="tbd-toggle__dot" aria-hidden="true"></span><span>Contenido pendiente</span>';
-    btn.setAttribute("aria-pressed", String(!hidden));
-    btn.title = "Mostrar u ocultar las marcas de contenido provisional";
-    btn.addEventListener("click", () => {
-      hidden = !hidden;
-      root.classList.toggle("hide-tbd", hidden);
-      btn.setAttribute("aria-pressed", String(!hidden));
-      try { localStorage.setItem(KEY, hidden ? "1" : "0"); } catch {}
-    });
-    document.body.append(btn);
-  }
-
   /* ---- 7. Lienzo: linterna de puntos que sigue al mouse ----------------- *
    * En cualquier bloque con data-lienzo (hero de la home, portada de los
    * casos). Solo con mouse; la grilla y la linterna se dibujan en CSS.    */

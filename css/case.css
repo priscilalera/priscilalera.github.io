@@ -78,7 +78,6 @@
 }
 .case-hero__lead { font-size: var(--fs-lead); max-width: 40ch; }
 .case-hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-s); }
-.case-hero__actions .tbd-tag { align-self: center; }
 @media (min-width: 60rem) { .case-hero__actions { justify-content: flex-end; } }
 
 .case-cover { margin-top: var(--space-3xl); }
