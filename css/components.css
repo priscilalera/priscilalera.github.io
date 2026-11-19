@@ -536,71 +536,6 @@
   background: var(--c-white);
 }
 
-.tbd {
-  text-decoration: underline dashed var(--c-rose);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.22em;
-  text-decoration-skip-ink: none;
-}
-
-.tbd-tag {
-  display: inline-block;
-  margin-inline-start: 0.4em;
-  padding: 0.15em 0.45em;
-  border-radius: var(--radius-s);
-  background: var(--c-rose-mist);
-  color: var(--c-ink);
-  font-family: var(--font-mono);
-  font-size: 0.625rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  line-height: 1.4;
-  text-transform: uppercase;
-  vertical-align: 0.2em;
-  white-space: nowrap;
-}
-
-.hide-tbd .tbd {
-  text-decoration: none;
-}
-
-.hide-tbd .tbd-tag {
-  display: none;
-}
-
-.tbd-toggle {
-  position: fixed;
-  left: 1rem;
-  bottom: 1rem;
-  z-index: 60;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.55rem 0.9rem;
-  border: 1px solid var(--c-rose-deep);
-  border-radius: var(--radius-pill);
-  background: var(--c-white);
-  color: var(--c-ink);
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  cursor: pointer;
-  box-shadow: 0 8px 24px -10px rgb(0 0 0 / 0.3);
-}
-
-.tbd-toggle__dot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: var(--c-rose-deep);
-}
-
-.tbd-toggle[aria-pressed="false"] .tbd-toggle__dot {
-  background: var(--c-line);
-}
-
 .annot {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
@@ -746,8 +681,20 @@
   background: var(--c-rose-mist);
 }
 
+/* Celulares más separados entre sí que en Fullescabio */
+/* Los celulares ocupan la parte derecha de la tarjeta y dejan aire entre el logo y el primero */
+.showcase--calmi .showcase__phone--a { left: 29%; }
+.showcase--calmi .showcase__phone--b { left: 63%; }
+@media (min-width: 60rem) {
+  .showcase--calmi .showcase__phone--a { left: 32%; }
+  .showcase--calmi .showcase__phone--b { left: 63%; }
+}
+
+/* El logo es un PNG transparente: va directo sobre el fondo, sin tarjeta ni sombra */
 .showcase--calmi .showcase__logo {
   width: 16%;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 /* Burger Company: captura de escritorio + celular sobre el amarillo del sitio */

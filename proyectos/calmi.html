@@ -168,13 +168,12 @@
                     <ul>
                       <li>Falta de creatividad y desmotivación debido al estrés.</li>
                       <li>Sensación de estancamiento en su vida personal y profesional.</li>
-                      <li>Dificultad para acceder a terapia y encontrar herramientas que se adapten a su rutina.</li>
+                      <li>Tiene cobertura psicológica en su obra social, pero los tiempos de espera son demasiado largos para ayudarla en el momento.</li>
                     </ul>
                   </section>
                   <section>
                     <h4 class="cm-persona__h"><span class="mono">03</span> Motivaciones</h4>
                     <ul>
-                      <li>Crear un ambiente cálido para sus alumnos.</li>
                       <li>Encontrar equilibrio entre sus responsabilidades y su bienestar.</li>
                       <li>Contar con un apoyo emocional inmediato y accesible.</li>
                     </ul>
@@ -205,8 +204,8 @@
                 </li>
                 <li class="cm-story__step">
                   <p class="annot cm-story__label"><span class="cm-story__dot" aria-hidden="true"></span>03 · Resultado</p>
-                  <p class="cm-story__quote">«la mente <em>despejada</em>»</p>
-                  <p class="cm-story__text">La app le sugiere un ejercicio de respiración. Davina lo sigue y empieza a sentirse más tranquila. Vuelve a su taller con una sonrisa y la mente despejada. Con satisfacción, explora más la app y se siente agradecida por encontrar un recurso que la acompaña en momentos de estrés.</p>
+                  <p class="cm-story__quote">«logra hacer una <em>pausa</em>»</p>
+                  <p class="cm-story__text">La app le sugiere un ejercicio de respiración. Davina lo sigue y logra hacer una pausa en medio de su rutina. Se siente más tranquila y retoma su actividad con mayor claridad.</p>
                 </li>
               </ol>
             </section>
@@ -216,7 +215,7 @@
               <p class="case-section__num mono">03</p>
               <h2 class="case-section__title" id="t-definicion"><em>Definición</em></h2>
               <p class="case-section__text">
-                Separé las funciones imprescindibles del MVP (registro de emociones, chatbot, actividades y diario emocional) de las deseables, como la comunidad, el registro del sueño o una mascota virtual. Después ordené el contenido en una information architecture y definí los user flows del chatbot.
+                Separé las funciones imprescindibles del MVP (registro de emociones, chatbot, actividades y diario emocional) de las que quedaron para próximas versiones, como la comunidad, el registro del sueño o una mascota virtual. Después ordené el contenido en una arquitectura de información y definí los user flows del chatbot.
               </p>
               <!-- MVP -->
               <h3 class="flow-title">MVP</h3>
@@ -226,13 +225,13 @@
                   <p class="cm-mvp__tier">Imprescindible</p>
                   <div class="cm-mvp__items">
                     <div><h4>Registro de emociones</h4><p>Cuestionarios acompañados de emojis para reconocer cómo se siente el usuario.</p></div>
-                    <div><h4>Chat bot</h4><p>Conversar y recibir apoyo inmediato. Puede retomar conversaciones anteriores.</p></div>
+                    <div><h4>Chatbot</h4><p>Conversar y recibir apoyo inmediato. Puede retomar conversaciones anteriores.</p></div>
                     <div><h4>Actividades</h4><ul><li>Juegos interactivos</li><li>Ejercicios para controlar los estados de ánimo</li><li>Lectura sobre salud mental y su cuidado</li></ul></div>
                     <div><h4>Diario emocional</h4><p>Permite registrar pensamientos y emociones.</p></div>
                   </div>
                 </div>
                 <div class="cm-mvp__row">
-                  <p class="cm-mvp__tier cm-mvp__tier--soft">Deseable</p>
+                  <p class="cm-mvp__tier cm-mvp__tier--soft">Próximas versiones</p>
                   <div class="cm-mvp__items">
                     <ul><li>Creación de personajes o mascotas virtuales</li><li>Personalización de la interfaz</li><li>Sistema de recompensas</li></ul>
                     <ul><li>Comunidad e historias de otras personas</li><li>Sueño y registro del descanso</li><li>Historial de los avances que logró el usuario en el tiempo</li></ul>
@@ -241,19 +240,20 @@
               </div>
 
               <!-- Arquitectura -->
-              <h3 class="flow-title">Information architecture</h3>
+              <h3 class="flow-title">Arquitectura de información</h3>
+              <p class="case-section__text">Las secciones marcadas como <span class="cm-ia__tag">Próximas versiones</span> no forman parte del MVP, pero podrían integrarse si la aplicación sigue creciendo.</p>
               <div class="cm-ia" data-reveal>
                 <p class="cm-ia__root">Home</p>
                 <ul class="cm-ia__nodes">
                   <li><p class="cm-ia__node">Notificaciones</p><ul><li>Recordatorios de ejercicios y actividades</li><li>Notificaciones de logros y metas alcanzadas, progreso</li><li>Recordatorio de bienestar emocional (ej.: recordatorio de respirar si el usuario está estresado)</li><li>Recordatorio de descanso: alertas para que el usuario tome descansos regulares o apague el dispositivo antes de dormir</li></ul></li>
-                  <li><p class="cm-ia__node">Chatbot</p><ul><li>Es una IA con la cual el usuario podrá interactuar en el momento que lo necesite</li></ul></li>
-                  <li><p class="cm-ia__node">Gamificación</p><ul><li>Sistema de recompensas por uso continuo</li><li>Logros y metas alcanzadas</li><li>Retroalimentación positiva</li></ul></li>
+                  <li><p class="cm-ia__node">Chatbot</p><ul><li>Asistente conversacional con IA para conversar y recibir apoyo inmediato</li><li>Puede retomar conversaciones anteriores</li><li>No reemplaza la atención profesional</li></ul></li>
+                  <li><p class="cm-ia__node">Gamificación</p><span class="cm-ia__tag">Próximas versiones</span><ul><li>Sistema de recompensas por uso continuo</li><li>Logros y metas alcanzadas</li><li>Retroalimentación positiva</li></ul></li>
                   <li><p class="cm-ia__node">Mi diario</p><ul><li>Visualización de avances emocionales</li><li>Análisis de patrones emocionales</li><li>Comparación de emociones actuales con el historial</li></ul></li>
                   <li><p class="cm-ia__node">Configuración</p>
-                    <div class="cm-ia__sub"><p class="cm-ia__node cm-ia__node--sub">Personalizar</p><ul><li>Cambiar tema y/o diseño de la app</li><li>Configurar/modificar personaje o mascota virtual (reconocer y seleccionar cómo se siente rápidamente)</li></ul></div>
+                    <div class="cm-ia__sub"><p class="cm-ia__node cm-ia__node--sub">Personalizar</p><span class="cm-ia__tag">Próximas versiones</span><ul><li>Cambiar tema y/o diseño de la app</li><li>Configurar/modificar personaje o mascota virtual (reconocer y seleccionar cómo se siente rápidamente)</li></ul></div>
                   </li>
                   <li><p class="cm-ia__node">Perfil</p><ul><li>Información personal</li><li>Historial de emociones</li><li>Mi progreso</li></ul></li>
-                  <li><p class="cm-ia__node">Sueño</p><ul><li>Meditación</li><li>Sonidos relajantes</li><li>Música para dormir</li><li>Rutinas armadas para dormir mejor</li></ul></li>
+                  <li><p class="cm-ia__node">Sueño</p><span class="cm-ia__tag">Próximas versiones</span><ul><li>Meditación</li><li>Sonidos relajantes</li><li>Música para dormir</li><li>Rutinas armadas para dormir mejor</li></ul></li>
                   <li class="cm-ia__wide"><p class="cm-ia__node">Actividades</p>
                     <div class="cm-ia__subs">
                       <div class="cm-ia__sub"><p class="cm-ia__node cm-ia__node--sub">Juegos</p><ul><li>Reconocer emociones</li><li>Relajación</li><li>Distracción</li></ul></div>
@@ -261,9 +261,10 @@
                       <div class="cm-ia__sub"><p class="cm-ia__node cm-ia__node--sub">Lectura</p><ul><li>Artículo sobre cómo gestionar emociones</li><li>Reflexiones sobre la importancia del autocuidado</li><li>Consejos y recursos para momentos de crisis</li><li>Consejos prácticos sobre bienestar emocional</li><li>Consejos para mejorar el sueño</li></ul></div>
                     </div>
                   </li>
-                  <li><p class="cm-ia__node">Comunidad</p><ul><li>Grupos para compartir experiencias</li><li>Testimonios inspiradores de otros usuarios</li><li>Espacio de apoyo emocional en momentos difíciles (comunidad para recibir consejos y apoyo)</li></ul></li>
+                  <li><p class="cm-ia__node">Comunidad</p><span class="cm-ia__tag">Próximas versiones</span><ul><li>Grupos para compartir experiencias</li><li>Testimonios inspiradores de otros usuarios</li><li>Espacio de apoyo emocional en momentos difíciles (comunidad para recibir consejos y apoyo)</li></ul></li>
                 </ul>
               </div>
+              <p class="case-section__text cm-ia__note">El registro de emociones del MVP se hace desde «¿Cómo te sentís hoy?» en el Home; Mi diario muestra cómo evolucionan esas emociones en el tiempo.</p>
 
               <!-- Task flow -->
               <h3 class="flow-title">Task flow</h3>
@@ -273,8 +274,8 @@
                 <li>Usuario abre la aplicación</li>
                 <li class="is-screen">Pantalla inicio</li>
                 <li>Selecciona ícono «chatbot»</li>
-                <li class="is-screen">Pantalla de la interfaz del chat</li>
                 <li>Usuario ve una introducción por primera vez</li>
+                <li class="is-screen">Pantalla de la interfaz del chat</li>
                 <li>Usuario revisa el historial e inicia una conversación nueva</li>
                 <li>Usuario escribe un mensaje y recibe una respuesta</li>
                 <li class="is-screen">Pantalla de conversación con el chatbot</li>
@@ -284,23 +285,45 @@
               <!-- User flow: tramo del chatbot -->
               <h3 class="flow-title">User flow</h3>
               <p class="case-section__text">El user flow completo incluye el acceso, el registro, la recuperación de la contraseña y el onboarding. Este es el tramo del chatbot.</p>
-              <div class="cm-uflow-wrap" data-reveal><div class="cm-uflow" role="img" aria-label="User flow del chatbot: Home, selecciona el shortcut Chat bot, pantalla del chat bot, introducción al chatbot por primera vez. Desde ahí, nueva conversación, o ver historial de conversación y continuar conversación; ambos caminos llevan a que el usuario mantenga una conversación con el chatbot. Desde la conversación, fin o vuelta al Home.">
-                <div class="cm-uflow__box cm-uflow__box--to" style="grid-area:a">Home</div>
-                <div class="cm-uflow__box cm-uflow__box--to" style="grid-area:b">Selecciona shortcut «Chat bot»</div>
-                <div class="cm-uflow__box cm-uflow__box--to" style="grid-area:c">Pantalla del chat bot</div>
-                <div class="cm-uflow__box cm-uflow__box--to" style="grid-area:d">Introducción al chatbot por primera vez</div>
-                <div class="cm-uflow__box cm-uflow__box--to" style="grid-area:e">Nueva conversación</div>
-                <div class="cm-uflow__box cm-uflow__box--to" style="grid-area:f">Usuario mantiene una conversación con el chatbot</div>
-                <div class="cm-uflow__box cm-uflow__box--end" style="grid-area:k">Fin</div>
-                <div class="cm-uflow__box" style="grid-area:g">Ver historial de conversación</div>
-                <div class="cm-uflow__box" style="grid-area:h">Continuar conversación</div>
-                <span class="cm-uflow__branch" aria-hidden="true"></span>
-                <span class="cm-uflow__back" aria-hidden="true"></span>
-                <span class="cm-uflow__loop" aria-hidden="true"></span>
+              <div class="cm-uflow-wrap" data-reveal>
+                <svg class="cm-uflow2" viewBox="0 0 1080 404" role="img" aria-label="User flow del chatbot: desde el Home, el usuario selecciona el chatbot. Si es la primera vez, ve la introducción al chatbot y después la pantalla del chatbot; si no, va directo a la pantalla del chatbot. Desde ahí inicia una nueva conversación, o ve el historial de conversaciones y continúa una conversación. En ambos casos mantiene una conversación con el chatbot, y después cierra el chat o vuelve al Home.">
+                  <defs>
+                    <marker id="uf-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M2 1.5 8.5 5 2 8.5" /></marker>
+                  </defs>
+                  <!-- conectores -->
+                  <g class="cm-uflow2__lines">
+                    <path d="M112 112H134" /><path d="M250 112H272" /><path d="M392 112H410" /><path d="M526 112H548" /><path d="M664 112H686" /><path d="M802 112H824" /><path d="M940 112H962" />
+                    <path d="M332 164V196H590V152" />
+                    <path d="M640 148V266H686" />
+                    <path d="M746 302V328" />
+                    <path d="M802 368H884V152" />
+                    <path d="M884 76V24H56V72" />
+                  </g>
+                  <text class="cm-uflow2__lbl" x="401" y="100" text-anchor="middle">Sí</text>
+                  <text class="cm-uflow2__lbl" x="344" y="188">No</text>
+                  <!-- pantallas y acciones -->
+                  <g class="cm-uflow2__box">
+                    <rect x="0" y="76" width="112" height="72" rx="12" /><text x="56" y="116">Home</text>
+                    <rect x="138" y="76" width="112" height="72" rx="12" /><text x="194" y="108">Selecciona<tspan x="194" dy="17">el chatbot</tspan></text>
+                    <rect x="414" y="76" width="112" height="72" rx="12" /><text x="470" y="108">Introducción<tspan x="470" dy="17">al chatbot</tspan></text>
+                    <rect x="552" y="76" width="112" height="72" rx="12" /><text x="608" y="108">Pantalla<tspan x="608" dy="17">del chatbot</tspan></text>
+                    <rect x="690" y="76" width="112" height="72" rx="12" /><text x="746" y="108">Nueva<tspan x="746" dy="17">conversación</tspan></text>
+                    <rect x="828" y="76" width="112" height="72" rx="12" /><text x="884" y="99">Mantiene una<tspan x="884" dy="17">conversación</tspan><tspan x="884" dy="17">con el chatbot</tspan></text>
+                    <rect x="690" y="230" width="112" height="72" rx="12" /><text x="746" y="262">Ver historial de<tspan x="746" dy="17">conversaciones</tspan></text>
+                    <rect x="690" y="332" width="112" height="72" rx="12" /><text x="746" y="364">Continuar<tspan x="746" dy="17">conversación</tspan></text>
+                  </g>
+                  <g class="cm-uflow2__box cm-uflow2__box--end">
+                    <rect x="966" y="76" width="112" height="72" rx="12" /><text x="1022" y="108">Cierra<tspan x="1022" dy="17">el chat</tspan></text>
+                  </g>
+                  <!-- decisión -->
+                  <g class="cm-uflow2__box cm-uflow2__box--decision">
+                    <path d="M332 60 392 112 332 164 272 112Z" /><text x="332" y="108">¿Es la primera<tspan x="332" dy="17">vez?</tspan></text>
+                  </g>
+                </svg>
               </div>
-              </div>
+
               <p class="case-section__text">
-                <a class="link-arrow" href="https://www.figma.com/board/s6pfCCezqD0FzfkHCigint/Calmi---Prototipo?node-id=0-1" target="_blank" rel="noopener noreferrer"><span class="link-arrow__label">Ver user flows e information architecture en FigJam</span><span class="link-arrow__icon" aria-hidden="true">↗</span><span class="visually-hidden">(se abre en una pestaña nueva)</span></a>
+                <a class="link-arrow" href="https://www.figma.com/board/s6pfCCezqD0FzfkHCigint/Calmi---Prototipo?node-id=0-1" target="_blank" rel="noopener noreferrer"><span class="link-arrow__label">Ver user flows y arquitectura de información en FigJam</span><span class="link-arrow__icon" aria-hidden="true">↗</span><span class="visually-hidden">(se abre en una pestaña nueva)</span></a>
               </p>
             </section>
 
@@ -311,34 +334,33 @@
               <p class="case-section__text">
                 Cada pantalla pasó por tres etapas: sketch a mano (low fidelity), wireframe mid fidelity y diseño high fidelity.
               </p>
-              <p class="cm-pending"><span class="tbd-tag">pendiente</span> Nuevos sketches low fidelity: reemplazan a los actuales.</p>
               <h3 class="flow-title">Inicio de sesión</h3>
               <div class="screens screens--fit" data-reveal data-reveal-stagger>
-                <figure><div class="phone"><img class="phone__screen" src="../assets/img/calmi/wf-login-baja.jpg" alt="Inicio de sesión: sketch low fidelity" loading="lazy" width="314" height="680" /></div><figcaption class="annot">Low fidelity</figcaption></figure>
+                <figure><div class="phone"><img class="phone__screen cm-sketch" src="../assets/img/calmi/wf-login-baja.jpg" alt="Inicio de sesión: sketch low fidelity" loading="lazy" width="530" height="670" /></div><figcaption class="annot">Low fidelity</figcaption></figure>
                 <figure><div class="phone"><img class="phone__screen" src="../assets/img/calmi/wf-login-media.jpg" alt="Inicio de sesión: wireframe mid fidelity" loading="lazy" width="314" height="680" /></div><figcaption class="annot">Mid fidelity</figcaption></figure>
                 <figure><div class="phone"><img class="phone__screen" src="../assets/img/calmi/wf-login-alta.jpg" alt="Inicio de sesión: diseño high fidelity" loading="lazy" width="314" height="680" /></div><figcaption class="annot">High fidelity</figcaption></figure>
               </div>
               <h3 class="flow-title">Registro</h3>
               <div class="screens screens--fit" data-reveal data-reveal-stagger>
-                <figure><div class="phone"><img class="phone__screen" src="../assets/img/calmi/wf-registro-baja.jpg" alt="Registro: sketch low fidelity" loading="lazy" width="314" height="680" /></div><figcaption class="annot">Low fidelity</figcaption></figure>
+                <figure><div class="phone"><img class="phone__screen cm-sketch" src="../assets/img/calmi/wf-registro-baja.jpg" alt="Registro: sketch low fidelity" loading="lazy" width="825" height="1060" /></div><figcaption class="annot">Low fidelity</figcaption></figure>
                 <figure><div class="phone"><img class="phone__screen" src="../assets/img/calmi/wf-registro-media.jpg" alt="Registro: wireframe mid fidelity" loading="lazy" width="314" height="680" /></div><figcaption class="annot">Mid fidelity</figcaption></figure>
                 <figure><div class="phone"><img class="phone__screen" src="../assets/img/calmi/wf-registro-alta.jpg" alt="Registro: diseño high fidelity" loading="lazy" width="314" height="680" /></div><figcaption class="annot">High fidelity</figcaption></figure>
               </div>
               <h3 class="flow-title">Home</h3>
               <div class="screens screens--fit" data-reveal data-reveal-stagger>
-                <figure><div class="phone"><img class="phone__screen" src="../assets/img/calmi/wf-home-baja.jpg" alt="Home: sketch low fidelity" loading="lazy" width="311" height="666" /></div><figcaption class="annot">Low fidelity</figcaption></figure>
+                <figure><div class="phone"><img class="phone__screen cm-sketch" src="../assets/img/calmi/wf-home-baja.jpg" alt="Home: sketch low fidelity" loading="lazy" width="840" height="1085" /></div><figcaption class="annot">Low fidelity</figcaption></figure>
                 <figure><div class="phone"><img class="phone__screen" src="../assets/img/calmi/wf-home-media.jpg" alt="Home: wireframe mid fidelity" loading="lazy" width="311" height="666" /></div><figcaption class="annot">Mid fidelity</figcaption></figure>
                 <figure><div class="phone"><img class="phone__screen" src="../assets/img/calmi/wf-home-alta.jpg" alt="Home: diseño high fidelity" loading="lazy" width="311" height="666" /></div><figcaption class="annot">High fidelity</figcaption></figure>
               </div>
               <h3 class="flow-title">Inicio del chatbot</h3>
               <div class="screens screens--fit" data-reveal data-reveal-stagger>
-                <figure><div class="phone"><img class="phone__screen" src="../assets/img/calmi/wf-chatbot-intro-baja.jpg" alt="Inicio del chatbot: sketch low fidelity" loading="lazy" width="314" height="680" /></div><figcaption class="annot">Low fidelity</figcaption></figure>
+                <figure><div class="phone"><img class="phone__screen cm-sketch" src="../assets/img/calmi/wf-chatbot-intro-baja.jpg" alt="Inicio del chatbot: sketch low fidelity" loading="lazy" width="655" height="865" /></div><figcaption class="annot">Low fidelity</figcaption></figure>
                 <figure><div class="phone"><img class="phone__screen" src="../assets/img/calmi/wf-chatbot-intro-media.jpg" alt="Inicio del chatbot: wireframe mid fidelity" loading="lazy" width="314" height="680" /></div><figcaption class="annot">Mid fidelity</figcaption></figure>
                 <figure><div class="phone"><img class="phone__screen" src="../assets/img/calmi/wf-chatbot-intro-alta.jpg" alt="Inicio del chatbot: diseño high fidelity" loading="lazy" width="314" height="680" /></div><figcaption class="annot">High fidelity</figcaption></figure>
               </div>
               <h3 class="flow-title">Conversación del chatbot</h3>
               <div class="screens screens--fit" data-reveal data-reveal-stagger>
-                <figure><div class="phone"><img class="phone__screen" src="../assets/img/calmi/wf-chatbot-baja.jpg" alt="Conversación del chatbot: sketch low fidelity" loading="lazy" width="311" height="666" /></div><figcaption class="annot">Low fidelity</figcaption></figure>
+                <figure><div class="phone"><img class="phone__screen cm-sketch" src="../assets/img/calmi/wf-chatbot-baja.jpg" alt="Conversación del chatbot: sketch low fidelity" loading="lazy" width="735" height="947" /></div><figcaption class="annot">Low fidelity</figcaption></figure>
                 <figure><div class="phone"><img class="phone__screen" src="../assets/img/calmi/wf-chatbot-media.jpg" alt="Conversación del chatbot: wireframe mid fidelity" loading="lazy" width="311" height="666" /></div><figcaption class="annot">Mid fidelity</figcaption></figure>
                 <figure><div class="phone"><img class="phone__screen" src="../assets/img/calmi/wf-chatbot-alta.jpg" alt="Conversación del chatbot: diseño high fidelity" loading="lazy" width="311" height="666" /></div><figcaption class="annot">High fidelity</figcaption></figure>
               </div>
@@ -349,15 +371,31 @@
               <p class="case-section__num mono">05</p>
               <h2 class="case-section__title" id="t-sistema">Design <em>System</em></h2>
 
-              <div class="cm-split">
-                <p class="case-section__text">
-                  El moodboard reúne imágenes que reflejan los valores de la marca: cuidado, ayuda y resiliencia. De ahí salió la paleta: el violeta (primario) y el turquesa (secundario) transmiten tranquilidad y equilibrio, y el naranja (acento) aporta energía.
-                </p>
-                <figure class="cm-mood" data-reveal>
-                  <img class="case-img" src="../assets/img/calmi/slide-moodboard.jpg" alt="Moodboard de ilustraciones sobre salud mental y cuidado, con su paleta" loading="lazy" width="811" height="890" />
-                  <figcaption class="annot">Universo visual</figcaption>
-                </figure>
-              </div>
+              <p class="case-section__text">
+                El moodboard reúne imágenes que reflejan los valores de la marca: cuidado, ayuda y resiliencia. De ahí salió la paleta: el violeta (primario) y el turquesa (secundario) transmiten tranquilidad y equilibrio, y el naranja (acento) aporta energía.
+              </p>
+              <!-- Moodboard armado con las ilustraciones de assets/img/calmi/mood/ -->
+              <figure class="case-media cm-mood" data-reveal>
+                <div class="cm-mood__board" role="img" aria-label="Moodboard: ilustraciones sobre salud mental, cuidado y resiliencia">
+                  <div class="cm-mood__row">
+                    <img src="../assets/img/calmi/mood/cerebro.jpg" alt="" loading="lazy" width="166" height="145" style="--r: 1.145" />
+                    <img src="../assets/img/calmi/mood/nadadora.jpg" alt="" loading="lazy" width="164" height="284" style="--r: 0.577" />
+                    <img src="../assets/img/calmi/mood/abrazo.jpg" alt="" loading="lazy" width="183" height="283" style="--r: 0.647" />
+                    <img src="../assets/img/calmi/mood/libro.jpg" alt="" loading="lazy" width="286" height="229" style="--r: 1.249" />
+                    <img src="../assets/img/calmi/mood/cabeza-pasto.jpg" alt="" loading="lazy" width="176" height="317" style="--r: 0.555" />
+                    <img src="../assets/img/calmi/mood/tejido.jpg" alt="" loading="lazy" width="137" height="137" style="--r: 1" />
+                  </div>
+                  <div class="cm-mood__row">
+                    <img src="../assets/img/calmi/mood/cabeza-adn.jpg" alt="" loading="lazy" width="168" height="147" style="--r: 1.143" />
+                    <img src="../assets/img/calmi/mood/escalera.jpg" alt="" loading="lazy" width="147" height="180" style="--r: 0.817" />
+                    <img src="../assets/img/calmi/mood/verduras.jpg" alt="" loading="lazy" width="225" height="313" style="--r: 0.719" />
+                    <img src="../assets/img/calmi/mood/domino.jpg" alt="" loading="lazy" width="143" height="91" style="--r: 1.571" />
+                    <img src="../assets/img/calmi/mood/paraguas.jpg" alt="" loading="lazy" width="139" height="104" style="--r: 1.337" />
+                    <img src="../assets/img/calmi/mood/acantilado.jpg" alt="" loading="lazy" width="144" height="107" style="--r: 1.346" />
+                  </div>
+                </div>
+                <figcaption class="annot">Universo visual</figcaption>
+              </figure>
 
               <div class="ds" data-reveal data-reveal-stagger>
                 <div class="ds-card">
@@ -473,12 +511,15 @@
               <h2 class="case-section__title" id="t-testeos">Usability <em>testing</em></h2>
 
               <dl class="cm-method">
-                <div><dt class="mono">Usuarios</dt><dd>8</dd></div>
+                <div><dt class="mono">Usuarios</dt><dd>9</dd></div>
                 <div><dt class="mono">Tareas</dt><dd>5</dd></div>
                 <div><dt class="mono">Al final</dt><dd>Encuesta</dd></div>
               </dl>
               <p class="case-section__text">
                 Iniciar sesión, registrarse, registrar una emoción, conversar con el chatbot y elegir una actividad. Al terminar, cada persona respondió qué tan fácil le resultó cada tarea.
+              </p>
+              <p class="case-section__text">
+                El test se hizo en Maze, sin moderación. Lo empezaron 9 personas, pero algunas abandonaron en el camino: la cantidad de respuestas baja de 9 en la primera tarea a 6 en las dos últimas. Por eso cada porcentaje se calcula sobre quienes hicieron esa tarea.
               </p>
 
               <div class="cm-result">
@@ -487,7 +528,6 @@
                 <dl class="cm-figures">
                   <div><dd>100 %</dd><dt>completó la tarea</dt></div>
                   <div><dd>0 %</dd><dt>abandonó</dt></div>
-                  <div><dd>100 %</dd><dt>la consideró intuitiva</dt></div>
                 </dl>
               </div>
 
@@ -524,6 +564,7 @@
                   </div>
                 </div>
 
+                <p class="annot cm-ab__note">Métricas de Maze. La tasa de éxito y el abandono se calculan sobre las personas que hicieron la tarea; los clics fuera de lugar, sobre el total de clics.</p>
                 <h4 class="cm-hifi__title mono">Cómo quedó en high fidelity</h4>
                 <div class="cm-hifi">
                   <figure><div class="phone"><img class="phone__screen" src="../assets/img/calmi/alta-login.jpg" alt="Inicio de sesión en high fidelity, con la versión B aplicada" loading="lazy" width="720" height="1600" /></div><figcaption class="annot">Inicio de sesión</figcaption></figure>
@@ -538,7 +579,7 @@
                     <h3 class="cm-result__title">Iniciar una conversación con el chatbot</h3>
                     <dl class="cm-figures">
                       <div><dd>50 %</dd><dt>la consideró intuitiva</dt></div>
-                      <div><dd>33 %</dd><dt>no supo dónde hacer clic</dt></div>
+                      <div><dd>33 %</dd><dt>no supo qué hacer o dónde hacer clic</dt></div>
                       <div><dd>16,7 %</dd><dt>abandonó</dt></div>
                     </dl>
                     <p class="case-section__text"><strong>Próximo paso.</strong> Simplificar el flow de conversación y sumar señales visuales más claras sobre cómo empezar a conversar.</p>
@@ -571,7 +612,15 @@
             <section class="case-section" id="aprendizajes" aria-labelledby="t-aprendizajes">
               <p class="case-section__num mono">09</p>
               <h2 class="case-section__title" id="t-aprendizajes"><em>Aprendizajes</em></h2>
-              <p class="cm-pending"><span class="tbd-tag">pendiente</span> Se escribe a partir de la revisión del proceso con Priscila.</p>
+              <p class="case-section__text">
+                Desarrollar Calmi fue una instancia importante en mi proceso de aprendizaje. Me permitió incorporar herramientas de prototipado, trabajar en la organización de interfaces y comprender mejor cómo se conectan las distintas etapas de diseño.
+              </p>
+              <p class="case-section__text">
+                Con el tiempo, al revisar el proyecto desde una mirada más crítica, pude reconocer decisiones que hoy resolvería de otra manera. Esto me permitió tomar mayor conciencia de la importancia de la jerarquía visual, la consistencia y la atención al detalle.
+              </p>
+              <p class="case-section__text">
+                Más allá del resultado, Calmi representa una etapa de mi formación en la que adquirí conocimientos y desarrollé criterios que pude aplicar y seguir perfeccionando en proyectos posteriores.
+              </p>
             </section>
           </div>
         </div>
