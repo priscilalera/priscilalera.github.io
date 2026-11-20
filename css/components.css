@@ -644,6 +644,30 @@
   transform: rotate(3deg);
 }
 
+/* Atalaya: la portada de la presentación sobre el gris oscuro, como en Zombie Walk */
+.showcase--atalaya .showcase__bg {
+  background: var(--c-stage-2);
+  border: 1px solid var(--c-stage-line);
+}
+
+/* En la lista de proyectos, sobre un durazno de la misma diapositiva y con una sombra más suave */
+.work .showcase--atalaya .showcase__bg {
+  background: #F2C9A8;
+  border: 0;
+}
+
+.work .showcase--atalaya .zw-piece__inner {
+  box-shadow: 0 24px 50px -24px rgb(0 0 0 / 0.35);
+}
+
+/* Centrada en el fondo, que empieza al 9 % del alto */
+.zw-piece--cover {
+  left: 10%;
+  top: 54.5%;
+  translate: 0 -50%;
+  width: 80%;
+}
+
 .site-footer.on-stage {
   border-color: var(--c-stage-line);
 }

@@ -91,6 +91,7 @@
 .case-cover .zw-piece--logo   { right: 18%; top: 12%; width: 20%; }
 .case-cover .zw-piece--app    { right: 24%; bottom: 8%; width: 28%; }
 .case-cover .zw-piece--web    { left: 10%; top: 13%; width: 58%; }
+.case-cover .zw-piece--cover { left: 15%; top: 50%; width: 70%; }
 .case-cover .showcase--burger .showcase__phone--b { left: auto; right: 13%; top: 9%; width: 17%; }
 .case-cover .showcase--calmi .showcase__logo { width: 12%; left: 8%; bottom: 14%; }
 
@@ -104,6 +105,7 @@
   .case-cover .zw-piece--logo   { right: 8%; top: 12%; width: 36%; }
   .case-cover .zw-piece--app    { right: 8%; bottom: 6%; width: 60%; }
   .case-cover .zw-piece--web    { left: 5%; top: 8%; width: 82%; }
+  .case-cover .zw-piece--cover { left: 6%; width: 88%; }
   .case-cover .showcase--burger .showcase__phone--b { right: 7%; top: 34%; width: 38%; }
   .case-cover .showcase--calmi .showcase__logo { width: 24%; left: 6%; bottom: 6%; }
 }
@@ -204,6 +206,8 @@
 .media-grid--1 { grid-template-columns: 1fr; }
 .media-grid--2 { grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
 .media-grid--3 { grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); }
+.media-grid--pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 40rem) { .media-grid--pair { grid-template-columns: 1fr; } }
 .media-grid figure { display: grid; gap: var(--space-s); align-content: start; }
 
 /* Imágenes del caso (piezas, recortes del manual) */

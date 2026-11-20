@@ -4,12 +4,13 @@ Portfolio profesional de Priscila Lera, UX/UI Designer.
 
 **Sitio:** [priscilalera.github.io](https://priscilalera.github.io/)
 
-Reúne cuatro casos de estudio:
+Reúne cinco casos de estudio:
 
 1. **Fullescabio**: diseño de una app móvil de e-commerce (UI Design).
 2. **Calmi**: diseño y prototipo de una app de acompañamiento emocional (prototipado).
 3. **Zombie Walk**: identidad visual para un evento (branding).
 4. **Burger Company**: diseño y desarrollo de un sitio web responsive (desarrollo web).
+5. **Atalaya**: propuesta de estrategia de marketing digital para una marca real, en equipo (marketing digital).
 
 ## Tecnologías
 
@@ -38,7 +39,8 @@ Para ver las transiciones entre páginas, abrilo desde un servidor local
 │   ├── fullescabio.html       Caso de estudio: UI Design
 │   ├── calmi.html             Caso de estudio: prototipado
 │   ├── zombie-walk.html       Caso de estudio: branding (fondo negro, .theme-zombie)
-│   └── burger-company.html    Caso de estudio: desarrollo web
+│   ├── burger-company.html    Caso de estudio: desarrollo web
+│   └── atalaya.html           Caso de estudio: marketing digital (fondo negro, .theme-zombie)
 ├── css/
 │   ├── tokens.css             Colores, tipografías, pesos, espacios y tiempos
 │   ├── base.css               Reset, tipografía base, utilidades y accesibilidad
