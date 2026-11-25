@@ -55,9 +55,13 @@
   border-color: var(--c-stage-line);
 }
 
+/* Sin desenfoque con el menú abierto: backdrop-filter haría que el menú
+   (position: fixed) quede del alto del header en lugar de toda la pantalla */
 .site-header.nav-is-open {
   background: transparent;
   border-color: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 .site-header.is-hidden:not(.nav-is-open):not(:focus-within) {
