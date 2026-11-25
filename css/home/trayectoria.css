@@ -91,18 +91,25 @@
   line-height: 1.55;
 }
 
+/* Guion corto en el color de acento, igual que las listas de los casos */
 .timeline__list li {
   position: relative;
-  padding-left: 1.1rem;
+  padding-left: 1em;
 }
 
 .timeline__list li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.62em;
-  width: 0.35rem;
-  height: 0.35rem;
-  border-radius: 50%;
-  background: var(--c-mauve);
+  top: 0.75em;
+  width: 0.45em;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* En celular, el último ítem no suma aire extra antes de lo que sigue */
+@media (max-width: 40rem) {
+  .timeline__item:last-child {
+    padding-bottom: 0;
+  }
 }

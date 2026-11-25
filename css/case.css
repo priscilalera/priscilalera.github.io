@@ -175,6 +175,7 @@
 @media (max-width: 40rem) {
   .case-facts { padding-bottom: 0; }
   .case-section { padding-block: var(--space-xl); }
+  .case-section:last-child { padding-bottom: 0; }
 }
 .case-section__num { color: var(--accent); margin-bottom: var(--space-m); }
 /* Igual que los títulos de sección de la home: sans + una palabra en
@@ -220,6 +221,15 @@
 .case-img { width: 100%; height: auto; border-radius: var(--radius-m); }
 .flow-title + .media-grid { margin-top: var(--space-l); }
 .case-media + .media-grid { margin-top: var(--space-m); }
+
+/* En celular, imágenes, grillas y galerías más cerca del texto que las presenta
+   (va después de las reglas generales para poder pisarlas) */
+@media (max-width: 40rem) {
+  .case-media,
+  .media-grid,
+  .case-section .rail { margin-top: var(--space-l); }
+  .case-media + .media-grid { margin-top: var(--space-m); }
+}
 .ds-type .case-img { margin-bottom: var(--space-s); }
 
 /* Pantallas en fila */

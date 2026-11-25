@@ -83,9 +83,9 @@
 /* En celular, los espacios grandes se achican para que la lectura no se corte */
 @media (max-width: 40rem) {
   :root {
-    --section: 4rem;
-    --space-3xl: 3rem;
-    --space-4xl: 4rem;
+    --section: 3rem;
+    --space-3xl: 2.5rem;
+    --space-4xl: 3.5rem;
   }
 }
 

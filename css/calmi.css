@@ -354,3 +354,8 @@ h3.cm-feature__title, h3.cm-result__title { font-family: var(--font-display); }
 .cm-ia__subs { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
 .cm-ia__subs > :nth-child(2) { grid-column: 2; grid-row: 1 / span 2; }
 .cm-ia__subs > :nth-child(3) { grid-column: 1; grid-row: 2; }
+
+/* Próximas versiones: en celular las dos columnas se apilan como una sola lista */
+@media (max-width: 40rem) {
+  .cm-mvp__items--list { row-gap: var(--space-xs); }
+}

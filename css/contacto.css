@@ -282,6 +282,10 @@ a.contact-b7__cv:not([aria-disabled]):hover .icon {
   .contact-b7__main {
     gap: var(--space-xl);
   }
+  /* «Copiar» baja debajo del email: se corre su relleno para alinear el texto */
+  .contact-b7__copy {
+    margin-inline-start: -0.85rem;
+  }
 }
 
 /* "Hablemos." y la marca del sitio: redonda, como titular */
