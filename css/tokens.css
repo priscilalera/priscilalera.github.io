@@ -80,6 +80,15 @@
   --wt-lead: 450;
 }
 
+/* En celular, los espacios grandes se achican para que la lectura no se corte */
+@media (max-width: 40rem) {
+  :root {
+    --section: 4rem;
+    --space-3xl: 3rem;
+    --space-4xl: 4rem;
+  }
+}
+
 /* Superficie oscura (sala de proyectos, contacto) */
 /* Superficies oscuras: los componentes reutilizan los mismos roles */
 .on-stage,
