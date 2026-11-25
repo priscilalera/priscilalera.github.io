@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" width="390" height="844">
+  <rect width="390" height="844" fill="#E4E4E4"/>
+  <path d="M0 0L390 844M390 0L0 844" stroke="#CFCFCF" stroke-width="2"/>
+  <rect x="85" y="397" width="220" height="50" rx="25" fill="#E4E4E4"/>
+  <text x="195" y="430" text-anchor="middle" font-family="monospace" font-size="22" fill="#8A8A8A">PANTALLA MÓVIL</text>
+</svg>

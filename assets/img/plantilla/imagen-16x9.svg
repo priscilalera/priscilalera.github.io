@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <rect width="1600" height="900" fill="#E4E4E4"/>
+  <path d="M0 0L1600 900M1600 0L0 900" stroke="#CFCFCF" stroke-width="3"/>
+  <rect x="640" y="410" width="320" height="80" rx="40" fill="#E4E4E4"/>
+  <text x="800" y="462" text-anchor="middle" font-family="monospace" font-size="34" fill="#8A8A8A">IMAGEN 16:9</text>
+</svg>

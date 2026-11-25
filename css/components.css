@@ -55,13 +55,15 @@
   border-color: var(--c-stage-line);
 }
 
-/* Sin desenfoque con el menú abierto: backdrop-filter haría que el menú
-   (position: fixed) quede del alto del header en lugar de toda la pantalla */
+/* Con el menú abierto, sin desenfoque ni desplazamiento: backdrop-filter y
+   transform harían que el menú (position: fixed) quede del alto del header */
 .site-header.nav-is-open {
   background: transparent;
   border-color: transparent;
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
+  transform: none;
+  transition: none;
 }
 
 .site-header.is-hidden:not(.nav-is-open):not(:focus-within) {
@@ -218,6 +220,10 @@
   .js .site-nav {
     position: fixed;
     inset: 0;
+    /* Alto explícito: el menú cubre la pantalla aunque el header lo contenga */
+    bottom: auto;
+    height: 100vh;
+    height: 100dvh;
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -662,6 +668,11 @@
 
 .work .showcase--atalaya .zw-piece__inner {
   box-shadow: 0 24px 50px -24px rgb(0 0 0 / 0.35);
+}
+
+/* Plantilla de caso: cambiar por el color del proyecto */
+.showcase--plantilla .showcase__bg {
+  background: var(--c-line);
 }
 
 /* Centrada en el fondo, que empieza al 9 % del alto */
