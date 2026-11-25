@@ -170,6 +170,12 @@
   border-top: 1px solid var(--border);
 }
 .case-section:first-child { border-top: 0; padding-top: 0; }
+
+/* En celular: menos aire entre la ficha y el cuerpo, y entre secciones */
+@media (max-width: 40rem) {
+  .case-facts { padding-bottom: 0; }
+  .case-section { padding-block: var(--space-xl); }
+}
 .case-section__num { color: var(--accent); margin-bottom: var(--space-m); }
 /* Igual que los títulos de sección de la home: sans + una palabra en
    Playfair Display Italic, en malva */

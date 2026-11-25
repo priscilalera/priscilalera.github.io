@@ -92,6 +92,17 @@
   line-height: 1;
 }
 
+/* Logo PML antes del nombre: toma el color del texto (claro u oscuro).
+   Se sube 4 px para centrarlo con las letras del nombre y no con su caja,
+   que tiene lugar abajo para los descendentes */
+.brand__logo {
+  flex: none;
+  align-self: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  translate: 0 -0.25rem;
+}
+
 .brand__role {
   color: var(--text-muted);
 }
