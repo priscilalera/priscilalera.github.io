@@ -291,3 +291,10 @@
   font-weight: var(--wt-lead);
 }
 
+
+/* En celular la etiqueta de la tipografía tapa la línea de arriba */
+@media (max-width: 40rem) {
+  .text-select__box::after {
+    display: none;
+  }
+}

@@ -78,10 +78,31 @@
 }
 
 
-.timeline__text {
+/* Tareas de cada experiencia, en viñetas para leerlas de un vistazo */
+.timeline__list {
+  display: grid;
+  gap: var(--space-xs);
   max-width: 52ch;
   margin-top: var(--space-s);
+  padding: 0;
+  list-style: none;
   color: var(--text-muted);
   font-size: 0.9375rem;
   line-height: 1.55;
+}
+
+.timeline__list li {
+  position: relative;
+  padding-left: 1.1rem;
+}
+
+.timeline__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: var(--c-mauve);
 }

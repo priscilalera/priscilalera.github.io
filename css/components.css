@@ -788,10 +788,16 @@
   gap: var(--space-xs) var(--space-xl);
 }
 
+/* En celular: nombre y ciudad en dos líneas, y el botón de volver arriba a la derecha */
 @media (max-width: 40rem) {
   .footer-b7__inner {
-    flex-direction: column;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+  .footer-b7__inner .to-top {
+    grid-column: 2;
+    grid-row: 1 / span 2;
   }
 }
 
@@ -848,6 +854,28 @@
 .to-top:hover { border-color: var(--c-mauve); background: rgb(173 125 139 / 0.12); }
 .to-top:hover .to-top__icon { transform: translateY(-3px); }
 .to-top:focus-visible { outline-offset: 3px; }
+
+/* En celular, solo el círculo con la flecha (el texto queda para lectores de pantalla) */
+@media (max-width: 40rem) {
+  .to-top {
+    min-height: 0;
+    padding: 0;
+    border: 0;
+  }
+  .to-top:hover { background: none; }
+  .to-top .link-arrow__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .to-top__icon {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
 
 /* ---- Pie compacto (casos de estudio y páginas secundarias) ------------ *
  * Reemplaza al bloque "Hablemos." de la home: toda la información y las

@@ -15,6 +15,7 @@
   min-height: min(100svh, 58rem);
   padding-top: calc(var(--header-h) + clamp(1rem, 3vw, 2.5rem));
   padding-bottom: var(--space-xl);
+  overflow-x: hidden; /* respaldo para Safari viejo, que no soporta clip */
   overflow-x: clip;
 }
 

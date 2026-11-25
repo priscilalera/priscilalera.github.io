@@ -605,6 +605,7 @@ ul.disc__track,
 
 /* En movimiento (lo activa el JS solo si no se pidió reducir movimiento) */
 .ribbon.is-running .ribbon__viewport {
+  overflow: hidden; /* respaldo para Safari viejo, que no soporta clip */
   overflow: clip;
 }
 
