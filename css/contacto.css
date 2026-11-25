@@ -271,7 +271,14 @@ a.contact-b7__cv:not([aria-disabled]):hover .icon {
   cursor: not-allowed;
 }
 
+/* En celular, menos aire: que el pie no quede suelto al final */
 @media (max-width: 40rem) {
+  .contact-b7 {
+    padding-bottom: var(--space-2xl);
+  }
+  .contact-b7__grid {
+    row-gap: var(--space-2xl);
+  }
   .contact-b7__main {
     gap: var(--space-xl);
   }
